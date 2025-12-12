@@ -1,0 +1,170 @@
+import { useParams, Link } from 'react-router-dom';
+import { getProjectBySlug, getAllProjects } from '../data/projects';
+
+const ProjectPage = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const project = slug ? getProjectBySlug(slug) : undefined;
+  const allProjects = getAllProjects();
+
+  if (!project) {
+    return (
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center py-20">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Project Not Found
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
+            The project "{slug}" doesn't exist.
+          </p>
+          <Link
+            to="/"
+            className="text-gray-900 dark:text-white hover:underline"
+          >
+            &larr; Back to Home
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Find next/previous projects
+  const currentIndex = allProjects.findIndex((p) => p.slug === slug);
+  const prevProject = currentIndex > 0 ? allProjects[currentIndex - 1] : undefined;
+  const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Back Link */}
+      <Link
+        to="/"
+        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
+      >
+        &larr; Back to Work
+      </Link>
+
+      {/* Project Header */}
+      <header className="mb-12">
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          {project.title}
+        </h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
+          {project.shortDescription}
+        </p>
+
+        {/* Meta info */}
+        <div className="flex flex-wrap gap-6 text-sm text-gray-500 dark:text-gray-500">
+          <span>{project.year}</span>
+          <span className="capitalize">{project.category.replace('-', ' ')}</span>
+          {project.client && <span>Client: {project.client}</span>}
+        </div>
+      </header>
+
+      {/* Hero Image */}
+      {project.heroImage && (
+        <div className="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden mb-12">
+          <img
+            src={project.heroImage.src}
+            alt={project.heroImage.alt}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      {/* Description */}
+      <section className="mb-12">
+        <div className="prose prose-lg dark:prose-invert max-w-none">
+          <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+            {project.fullDescription}
+          </p>
+        </div>
+      </section>
+
+      {/* Skills */}
+      {project.skills.length > 0 && (
+        <section className="mb-12">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Tools & Skills
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {project.skills.map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Image Gallery Placeholder */}
+      {project.images.length > 0 && (
+        <section className="mb-12">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {project.images.map((image, index) => (
+              <div
+                key={index}
+                className="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Video Placeholder */}
+      {project.videos.length > 0 && (
+        <section className="mb-12">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Videos
+          </h2>
+          <div className="space-y-4">
+            {project.videos.map((video, index) => (
+              <div
+                key={index}
+                className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center"
+              >
+                <p className="text-gray-500">Video player placeholder</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Project Navigation */}
+      <nav className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-16">
+        <div className="flex justify-between">
+          {prevProject ? (
+            <Link
+              to={`/project/${prevProject.slug}`}
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              &larr; {prevProject.title}
+            </Link>
+          ) : (
+            <span />
+          )}
+          {nextProject && (
+            <Link
+              to={`/project/${nextProject.slug}`}
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              {nextProject.title} &rarr;
+            </Link>
+          )}
+        </div>
+      </nav>
+    </div>
+  );
+};
+
+export default ProjectPage;
