@@ -1,60 +1,219 @@
 import { Link } from 'react-router-dom';
-import { personalInfo } from '../data/personal';
+import { useEffect, useRef, useState } from 'react';
 import { getAllProjects } from '../data/projects';
+
+// Scroll-based video component with autoplay on visibility
+const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video || !container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {
+              // Autoplay may be blocked by browser
+            });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <video
+        ref={videoRef}
+        src={src}
+        muted
+        loop
+        playsInline
+        className={className}
+      />
+    </div>
+  );
+};
+
+// Scroll-based image component with parallax panning
+const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate how far through the viewport the element is (0 = top, 1 = bottom)
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Scale from 1.0 to 1.05 based on scroll progress
+      const newScale = 1 + clampedProgress * 0.05;
+      setScale(newScale);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={className}
+        style={{
+          transform: `scale(${scale})`,
+          transition: 'transform 0.1s ease-out',
+        }}
+      />
+    </div>
+  );
+};
+
+// Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
+const rowPatterns = [
+  [[1], [6, 4]],           // full, then 60/40
+  [[5.5, 4.5], [1]],       // 55/45, then full
+  [[1], [4, 6]],           // full, then 40/60
+  [[6.5, 3.5], [1]],       // 65/35, then full
+  [[1], [5, 5]],           // full, then 50/50
+  [[4.5, 5.5], [1]],       // 45/55, then full
+  [[1], [3.5, 6.5]],       // full, then 35/65
+  [[5, 5], [1]],           // 50/50, then full
+  [[1], [5.5, 4.5]],       // full, then 55/45
+  [[6, 4], [1]],           // 60/40, then full
+];
 
 const Home = () => {
   const projects = getAllProjects();
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="max-w-[1400px] mx-auto">
       {/* Hero Section */}
-      <section className="mb-20">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-          {personalInfo.name}
+      <section className="px-4 py-16 mb-8">
+        <h1
+          className="font-bold text-black dark:text-white"
+          style={{
+            fontSize: '34px',
+            lineHeight: '40.8px',
+          }}
+        >
+          JACLYN<br />LOWERY
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl">
-          {personalInfo.title}
+        <p
+          className="text-black dark:text-white mt-4"
+          style={{
+            fontFamily: '"adobe-garamond-pro", serif',
+            fontSize: '16px',
+            fontWeight: 400,
+          }}
+        >
+          San Francisco based creative offering Industrial Design, 3D Rendering, and 3D Animation services.
         </p>
       </section>
 
-      {/* Projects Grid */}
-      <section>
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">
-          Selected Work
-        </h2>
-
+      {/* Projects - Full Width Vertical Layout */}
+      <section className="px-4">
         {projects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Link
-                key={project.slug}
-                to={`/project/${project.slug}`}
-                className="group block"
-              >
-                <div className="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl mb-4 overflow-hidden">
-                  {project.thumbnail.src ? (
-                    <img
-                      src={project.thumbnail.src}
-                      alt={project.thumbnail.alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                      No image
+          <div>
+            {projects.map((project, projectIndex) => {
+              // Get up to 4 images
+              const displayImages = project.images.slice(0, 4);
+              // Get row pattern for this project
+              const pattern = rowPatterns[projectIndex % rowPatterns.length];
+
+              // Distribute images into rows based on pattern
+              const rows: { images: typeof displayImages; layout: number[] }[] = [];
+              let imageIndex = 0;
+
+              for (const rowLayout of pattern) {
+                if (imageIndex >= displayImages.length) break;
+                const imagesInRow = rowLayout.length === 1 ? 1 : 2;
+                const rowImages = displayImages.slice(imageIndex, imageIndex + imagesInRow);
+                if (rowImages.length > 0) {
+                  rows.push({ images: rowImages, layout: rowLayout });
+                  imageIndex += imagesInRow;
+                }
+              }
+
+              return (
+                <div key={project.slug} className="mb-16">
+                  {/* Project Header - inline */}
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
+                      {project.shortDescription}
+                    </p>
+                  </div>
+
+                  <Link
+                    to={`/project/${project.slug}`}
+                    className="group block"
+                  >
+                    {/* Video at top if available */}
+                    {project.videos.length > 0 && (
+                      <div className="mb-4">
+                        <ScrollVideo
+                          src={project.videos[0].src}
+                          className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                        />
+                      </div>
+                    )}
+
+                    {/* Image Rows with gaps */}
+                    <div className="flex flex-col gap-4">
+                      {rows.map((row, rowIndex) => (
+                        <div key={rowIndex} className="flex gap-4">
+                          {row.images.map((image, imgIdx) => {
+                            const flexValue = row.layout.length === 1
+                              ? 1
+                              : row.layout[imgIdx] || row.layout[0];
+                            return (
+                              <div
+                                key={imgIdx}
+                                style={{ flex: `${flexValue} 1 0%` }}
+                              >
+                                <ScrollImage
+                                  src={image.src}
+                                  alt={image.alt}
+                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ))}
                     </div>
-                  )}
+                  </Link>
+
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {project.shortDescription}
-                </p>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         ) : (
-          <div className="text-center py-20 bg-gray-50 dark:bg-gray-900 rounded-xl">
+          <div className="max-w-6xl mx-auto text-center py-20 bg-gray-50 dark:bg-gray-900 rounded-xl">
             <p className="text-gray-500 dark:text-gray-400 mb-2">
               No projects yet
             </p>

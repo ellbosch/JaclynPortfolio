@@ -6,6 +6,9 @@ export default {
   ],
   darkMode: 'media',
   theme: {
+    fontFamily: {
+      sans: ['"pragmatica"', 'sans-serif'],
+    },
     extend: {
       keyframes: {
         'fade-in': {
