@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { personalInfo } from '../data/personal';
 import { getAllProjects } from '../data/projects';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
@@ -22,13 +21,16 @@ const Home = () => {
   return (
     <div className="max-w-[1400px] mx-auto">
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mb-8">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-          {personalInfo.name}
+      <section className="px-4 py-16 mb-8">
+        <h1
+          className="font-bold text-black dark:text-white"
+          style={{
+            fontSize: '34px',
+            lineHeight: '40.8px',
+          }}
+        >
+          JACLYN<br />LOWERY
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl">
-          {personalInfo.title}
-        </p>
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
@@ -58,7 +60,7 @@ const Home = () => {
               return (
                 <div key={project.slug} className="mb-16">
                   {/* Project Header - inline */}
-                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-8">
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
                     <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
