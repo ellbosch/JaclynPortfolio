@@ -36,6 +36,7 @@ const Header = () => {
             to="/"
             className="font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             style={{
+              fontFamily: "'pragmatica', sans-serif",
               fontSize: '34px',
               lineHeight: '40.8px',
             }}

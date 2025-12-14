@@ -114,6 +114,7 @@ const Home = () => {
         <h1
           className="font-bold text-black dark:text-white"
           style={{
+            fontFamily: "'pragmatica', sans-serif",
             fontSize: '34px',
             lineHeight: '40.8px',
           }}
@@ -124,7 +125,7 @@ const Home = () => {
           className="text-black dark:text-white mt-4"
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
-            fontSize: '16px',
+            fontSize: '20px',
             fontWeight: 400,
           }}
         >
@@ -160,10 +161,10 @@ const Home = () => {
                 <div key={project.slug} className="mb-16">
                   {/* Project Header - inline */}
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
-                    <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
+                    <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                       {project.shortDescription}
                     </p>
                   </div>

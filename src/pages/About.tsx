@@ -15,6 +15,7 @@ const About = () => {
           <h1
             className="font-bold text-black dark:text-white"
             style={{
+              fontFamily: "'pragmatica', sans-serif",
               fontSize: '34px',
               lineHeight: '40.8px',
             }}
@@ -25,7 +26,7 @@ const About = () => {
             className="text-black dark:text-white mt-4"
             style={{
               fontFamily: '"adobe-garamond-pro", serif',
-              fontSize: '16px',
+              fontSize: '20px',
               fontWeight: 400,
             }}
           >
