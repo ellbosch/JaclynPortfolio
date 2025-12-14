@@ -2,6 +2,140 @@ import type { Project } from './types';
 
 export const projects: Project[] = [
   {
+    slug: 'nocturne',
+    title: 'Nocturne',
+    category: '3d-rendering',
+    shortDescription: '',
+    fullDescription: '',
+    thumbnail: { src: '', alt: 'Nocturne thumbnail' },
+    images: [],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nocturne_optimized.mp4', alt: 'Nocturne video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 1,
+  },
+  {
+    slug: 'arlo',
+    title: 'Arlo',
+    category: 'industrial-design',
+    shortDescription: 'Security camera system design and launch video renders',
+    fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.
+
+3D Visualization: Jaclyn Lowery (Arlo Pro video renders)
+
+Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle Savarese (Support), Jaclyn Lowery (Support)`,
+    thumbnail: { src: '/images/projects/arlo/01-cover.png', alt: 'Arlo thumbnail' },
+    images: [
+      { src: '/images/projects/arlo/01-cover.png', alt: 'Arlo cover' },
+      { src: '/images/projects/arlo/02-sketchwall.jpg', alt: 'Arlo sketchwall' },
+      { src: '/images/projects/arlo/03-mockups.jpg', alt: 'Arlo mockups' },
+      { src: '/images/projects/arlo/04-floating.jpg', alt: 'Arlo floating' },
+      { src: '/images/projects/arlo/05-footshot.jpg', alt: 'Arlo footshot' },
+      { src: '/images/projects/arlo/06-cmf-cases.jpg', alt: 'Arlo CMF cases' },
+      { src: '/images/projects/arlo/07-ceiling-mount.jpg', alt: 'Arlo ceiling mount' },
+      { src: '/images/projects/arlo/08-legacy.jpg', alt: 'Arlo legacy' },
+    ],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Arlo/ArloUltra_OctaneRenders_optimized.mp4', alt: 'Arlo Ultra Octane renders video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 2,
+  },
+  {
+    slug: 'mode',
+    title: 'Mode',
+    category: 'industrial-design',
+    shortDescription: 'Refined electric toothbrush design and website visuals',
+    fullDescription: `Mode was an exciting opportunity to design a refined electric toothbrush that I now use everyday. My main role was creating a scrolling video for Mode's website to walk through the design details and unique features.
+
+3D Visualization: Jaclyn Lowery (3D Lead, Video Editor), Kieran Moriarty (Direction)
+
+Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Nam (Support), Tyler Anderson (Support)`,
+    thumbnail: { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode thumbnail' },
+    images: [
+      { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode landscape' },
+      { src: '/images/projects/mode/02-brush-full.jpg', alt: 'Mode brush full' },
+      { src: '/images/projects/mode/03-brushhead.png', alt: 'Mode brushhead' },
+      { src: '/images/projects/mode/04-mode-01.jpg', alt: 'Mode product' },
+      { src: '/images/projects/mode/05-website-visual.png', alt: 'Mode website visual' },
+      { src: '/images/projects/mode/06-scroll.jpg', alt: 'Mode scroll' },
+      { src: '/images/projects/mode/07-charger.png', alt: 'Mode charger' },
+    ],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/MODE_Website_Scroll_optimized.mp4', alt: 'Mode website scroll video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 3,
+  },
+  {
+    slug: 'nice-hr40-remote',
+    title: 'Nice HR40 Remote',
+    category: 'industrial-design',
+    shortDescription: 'Next generation smart home remote design',
+    fullDescription: `Our team was tasked with re-imagining the previous generation Nice smart home remote into the next generation HR40. We upgraded the design to match the existing modern aesthetics of the Nice product portfolio, along with enhancing the experience of the extensive control.
+
+Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), John Nam (Support)`,
+    thumbnail: { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote thumbnail' },
+    images: [
+      { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote outro' },
+      { src: '/images/projects/nice-hr40-remote/02-prototypes.jpg', alt: 'Nice HR40 Remote prototypes' },
+      { src: '/images/projects/nice-hr40-remote/03-button-layout.png', alt: 'Nice HR40 Remote button layout' },
+      { src: '/images/projects/nice-hr40-remote/04-elan-remote.png', alt: 'Elan remote previous generation' },
+      { src: '/images/projects/nice-hr40-remote/05-remote-float.png', alt: 'Nice HR40 Remote floating' },
+      { src: '/images/projects/nice-hr40-remote/06-buttons-closeup.png', alt: 'Nice HR40 Remote buttons closeup' },
+      { src: '/images/projects/nice-hr40-remote/07-docked-closeup.jpg', alt: 'Nice HR40 Remote docked closeup' },
+    ],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Nice/Nice_Remote_optimized.mp4', alt: 'Nice HR40 Remote promo video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 4,
+  },
+  {
+    slug: 'jabra-packaging',
+    title: 'Jabra Packaging',
+    category: 'industrial-design',
+    shortDescription: '3D on-package renders for multiple Jabra product lines',
+    fullDescription: `I created 3D on-package renders for multiple Jabra product lines, collaborating with the graphic design team. I sketched render concept ideas, rendered, reviewed and made edits to pre-press color proofs. I served as the primary 3D visualizer for numerous color variations across various products.
+
+Products Featured: Evolve 2 85, Evolve 2 65, Elite 85t, Elite Active 75t, Elite 2, Elite 3, Elite 4, Elite 4 Active, Elite 5, and Elite 7.
+
+3D Visualization: Jaclyn Lowery (Lead on-package renders), Jasmine Schubert (Support), Kieran Moriarty (Panacast renders), Matt Hanzly (Support), Tyler Anderson (Package context renders)
+
+Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
+    thumbnail: { src: '/images/projects/jabra-packaging/01-elite7-active.jpg', alt: 'Jabra Packaging thumbnail' },
+    images: [
+      { src: '/images/projects/jabra-packaging/01-elite7-active.jpg', alt: 'Jabra Elite 7 Active' },
+      { src: '/images/projects/jabra-packaging/02-render.png', alt: 'Jabra render' },
+      { src: '/images/projects/jabra-packaging/03-render-2.png', alt: 'Jabra render' },
+      { src: '/images/projects/jabra-packaging/04-elite7-pro.jpg', alt: 'Jabra Elite 7 Pro' },
+      { src: '/images/projects/jabra-packaging/05-photo.jpg', alt: 'Jabra photo' },
+      { src: '/images/projects/jabra-packaging/06-elite-family.jpg', alt: 'Jabra Elite family' },
+      { src: '/images/projects/jabra-packaging/07-panacast-exploded.jpg', alt: 'Jabra Panacast exploded' },
+      { src: '/images/projects/jabra-packaging/08-panacast-box.jpg', alt: 'Jabra Panacast box' },
+    ],
+    videos: [],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 5,
+  },
+  {
+    slug: 'netgear-nighthawk',
+    title: 'Netgear Nighthawk',
+    category: '3d-rendering',
+    shortDescription: '',
+    fullDescription: '',
+    thumbnail: { src: '', alt: 'Netgear Nighthawk thumbnail' },
+    images: [],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Netgear/Night-Hawk_optimized.mp4', alt: 'Netgear Nighthawk video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 6,
+  },
+  {
     slug: 'arcsport',
     title: 'Arc Sport',
     category: 'industrial-design',
@@ -23,7 +157,7 @@ Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anders
     skills: [],
     year: 2024,
     featured: true,
-    order: 1,
+    order: 3,
   },
   {
     slug: 'auraglow',
@@ -53,35 +187,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Lead)`,
     skills: [],
     year: 2024,
     featured: true,
-    order: 2,
-  },
-  {
-    slug: 'nice-hr40-remote',
-    title: 'Nice HR40 Remote',
-    category: 'industrial-design',
-    shortDescription: 'Next generation smart home remote design',
-    fullDescription: `Our team was tasked with re-imagining the previous generation Nice smart home remote into the next generation HR40. We upgraded the design to match the existing modern aesthetics of the Nice product portfolio, along with enhancing the experience of the extensive control.
-
-The team also developed promotional video content for dealers to present to smart home customers, emphasizing the refined design and updated capabilities.
-
-3D Visualization: Jaclyn Lowery (Lead, Video Editor), Nathanael Gonzalez (Support)
-
-Industrial Design: Annie Pan (Support), Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Nathanael Gonzalez (Lead/Support)`,
-    thumbnail: { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote thumbnail' },
-    images: [
-      { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote outro' },
-      { src: '/images/projects/nice-hr40-remote/02-prototypes.jpg', alt: 'Nice HR40 Remote prototypes' },
-      { src: '/images/projects/nice-hr40-remote/03-button-layout.png', alt: 'Nice HR40 Remote button layout' },
-      { src: '/images/projects/nice-hr40-remote/04-elan-remote.png', alt: 'Elan remote previous generation' },
-      { src: '/images/projects/nice-hr40-remote/05-remote-float.png', alt: 'Nice HR40 Remote floating' },
-      { src: '/images/projects/nice-hr40-remote/06-buttons-closeup.png', alt: 'Nice HR40 Remote buttons closeup' },
-      { src: '/images/projects/nice-hr40-remote/07-docked-closeup.jpg', alt: 'Nice HR40 Remote docked closeup' },
-    ],
-    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Nice/Nice_Remote_optimized.mp4', alt: 'Nice HR40 Remote promo video' }],
-    skills: [],
-    year: 2024,
-    featured: true,
-    order: 3,
+    order: 4,
   },
   {
     slug: 'whistle',
@@ -106,7 +212,7 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Kiera
     skills: [],
     year: 2024,
     featured: true,
-    order: 4,
+    order: 6,
   },
   {
     slug: 'spansive',
@@ -133,59 +239,6 @@ Industrial Design: August Simmons (ID Support), Dayne Tanner (ID Direction), Jac
       { src: '/images/projects/spansive/07-aframe.jpg', alt: 'Spansive A-frame' },
     ],
     videos: [],
-    skills: [],
-    year: 2024,
-    featured: true,
-    order: 5,
-  },
-  {
-    slug: 'arlo',
-    title: 'Arlo',
-    category: 'industrial-design',
-    shortDescription: 'Security camera system design and launch video renders',
-    fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.
-
-3D Visualization: Jaclyn Lowery (Lead)
-
-Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Support), Kieran Moriarty (Support), Luis Velazquez (Support)`,
-    thumbnail: { src: '/images/projects/arlo/01-cover.png', alt: 'Arlo thumbnail' },
-    images: [
-      { src: '/images/projects/arlo/01-cover.png', alt: 'Arlo cover' },
-      { src: '/images/projects/arlo/02-sketchwall.jpg', alt: 'Arlo sketchwall' },
-      { src: '/images/projects/arlo/03-mockups.jpg', alt: 'Arlo mockups' },
-      { src: '/images/projects/arlo/04-floating.jpg', alt: 'Arlo floating' },
-      { src: '/images/projects/arlo/05-footshot.jpg', alt: 'Arlo footshot' },
-      { src: '/images/projects/arlo/06-cmf-cases.jpg', alt: 'Arlo CMF cases' },
-      { src: '/images/projects/arlo/07-ceiling-mount.jpg', alt: 'Arlo ceiling mount' },
-      { src: '/images/projects/arlo/08-legacy.jpg', alt: 'Arlo legacy' },
-    ],
-    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Arlo/ArloUltra_OctaneRenders_optimized.mp4', alt: 'Arlo Ultra Octane renders video' }],
-    skills: [],
-    year: 2024,
-    featured: true,
-    order: 6,
-  },
-  {
-    slug: 'mode',
-    title: 'Mode',
-    category: 'industrial-design',
-    shortDescription: 'Refined electric toothbrush design and website visuals',
-    fullDescription: `Mode was an exciting opportunity to design a refined electric toothbrush that I now use everyday. My main role was creating a scrolling video for Mode's website to walk through the design details and unique features.
-
-3D Visualization: Jaclyn Lowery (3D Lead, Video Editor), Kieran Moriarty (Direction)
-
-Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Nam (Support), Tyler Anderson (Support)`,
-    thumbnail: { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode thumbnail' },
-    images: [
-      { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode landscape' },
-      { src: '/images/projects/mode/02-brush-full.jpg', alt: 'Mode brush full' },
-      { src: '/images/projects/mode/03-brushhead.png', alt: 'Mode brushhead' },
-      { src: '/images/projects/mode/04-mode-01.jpg', alt: 'Mode product' },
-      { src: '/images/projects/mode/05-website-visual.png', alt: 'Mode website visual' },
-      { src: '/images/projects/mode/06-scroll.jpg', alt: 'Mode scroll' },
-      { src: '/images/projects/mode/07-charger.png', alt: 'Mode charger' },
-    ],
-    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/MODE_Website_Scroll_optimized.mp4', alt: 'Mode website scroll video' }],
     skills: [],
     year: 2024,
     featured: true,
@@ -220,36 +273,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Support), Jaclyn Lower
     skills: [],
     year: 2024,
     featured: true,
-    order: 8,
-  },
-  {
-    slug: 'jabra-packaging',
-    title: 'Jabra Packaging',
-    category: 'industrial-design',
-    shortDescription: '3D on-package renders for multiple Jabra product lines',
-    fullDescription: `I created 3D on-package renders for multiple Jabra product lines, collaborating with the graphic design team. I sketched render concept ideas, rendered, reviewed and made edits to pre-press color proofs. I served as the primary 3D visualizer for numerous color variations across various products.
-
-Products Featured: Evolve 2 85, Evolve 2 65, Elite 85t, Elite Active 75t, Elite 2, Elite 3, Elite 4, Elite 4 Active, Elite 5, and Elite 7.
-
-3D Visualization: Jaclyn Lowery (Lead on-package renders), Jasmine Schubert (Support), Kieran Moriarty (Panacast renders), Matt Hanzly (Support), Tyler Anderson (Package context renders)
-
-Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
-    thumbnail: { src: '/images/projects/jabra-packaging/01-elite7-active.jpg', alt: 'Jabra Packaging thumbnail' },
-    images: [
-      { src: '/images/projects/jabra-packaging/01-elite7-active.jpg', alt: 'Jabra Elite 7 Active' },
-      { src: '/images/projects/jabra-packaging/02-render.png', alt: 'Jabra render' },
-      { src: '/images/projects/jabra-packaging/03-render-2.png', alt: 'Jabra render' },
-      { src: '/images/projects/jabra-packaging/04-elite7-pro.jpg', alt: 'Jabra Elite 7 Pro' },
-      { src: '/images/projects/jabra-packaging/05-photo.jpg', alt: 'Jabra photo' },
-      { src: '/images/projects/jabra-packaging/06-elite-family.jpg', alt: 'Jabra Elite family' },
-      { src: '/images/projects/jabra-packaging/07-panacast-exploded.jpg', alt: 'Jabra Panacast exploded' },
-      { src: '/images/projects/jabra-packaging/08-panacast-box.jpg', alt: 'Jabra Panacast box' },
-    ],
-    videos: [],
-    skills: [],
-    year: 2024,
-    featured: true,
-    order: 9,
+    order: 10,
   },
   {
     slug: 'q-egg',
@@ -272,7 +296,7 @@ I led storytelling and 3D visuals/animation efforts on the project, collaboratin
     skills: [],
     year: 2024,
     featured: true,
-    order: 10,
+    order: 12,
   },
 ];
 

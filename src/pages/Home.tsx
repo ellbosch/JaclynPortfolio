@@ -118,7 +118,7 @@ const Home = () => {
             lineHeight: '40.8px',
           }}
         >
-          JACLYN<br />LOWERY
+          JACLYN LOWERY
         </h1>
         <p
           className="text-black dark:text-white mt-4"
