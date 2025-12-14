@@ -2,6 +2,34 @@ import type { Project } from './types';
 
 export const projects: Project[] = [
   {
+    slug: 'nocturne',
+    title: 'Nocturne',
+    category: '3d-rendering',
+    shortDescription: '',
+    fullDescription: '',
+    thumbnail: { src: '', alt: 'Nocturne thumbnail' },
+    images: [],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nocturne_optimized.mp4', alt: 'Nocturne video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 1,
+  },
+  {
+    slug: 'netgear-nighthawk',
+    title: 'Netgear Nighthawk',
+    category: '3d-rendering',
+    shortDescription: '',
+    fullDescription: '',
+    thumbnail: { src: '', alt: 'Netgear Nighthawk thumbnail' },
+    images: [],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Netgear/Night-Hawk_optimized.mp4', alt: 'Netgear Nighthawk video' }],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 2,
+  },
+  {
     slug: 'arcsport',
     title: 'Arc Sport',
     category: 'industrial-design',
@@ -23,7 +51,7 @@ Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anders
     skills: [],
     year: 2024,
     featured: true,
-    order: 1,
+    order: 3,
   },
   {
     slug: 'auraglow',
@@ -53,7 +81,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Lead)`,
     skills: [],
     year: 2024,
     featured: true,
-    order: 2,
+    order: 4,
   },
   {
     slug: 'nice-hr40-remote',
@@ -81,7 +109,7 @@ Industrial Design: Annie Pan (Support), Dayne Tanner (Direction), Jaclyn Lowery 
     skills: [],
     year: 2024,
     featured: true,
-    order: 3,
+    order: 5,
   },
   {
     slug: 'whistle',
@@ -106,7 +134,7 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Kiera
     skills: [],
     year: 2024,
     featured: true,
-    order: 4,
+    order: 6,
   },
   {
     slug: 'spansive',
@@ -136,7 +164,7 @@ Industrial Design: August Simmons (ID Support), Dayne Tanner (ID Direction), Jac
     skills: [],
     year: 2024,
     featured: true,
-    order: 5,
+    order: 7,
   },
   {
     slug: 'arlo',
@@ -163,7 +191,7 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Support), Kieran Mor
     skills: [],
     year: 2024,
     featured: true,
-    order: 6,
+    order: 8,
   },
   {
     slug: 'mode',
@@ -189,7 +217,7 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
     skills: [],
     year: 2024,
     featured: true,
-    order: 7,
+    order: 9,
   },
   {
     slug: 'starkey',
@@ -220,7 +248,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Support), Jaclyn Lower
     skills: [],
     year: 2024,
     featured: true,
-    order: 8,
+    order: 10,
   },
   {
     slug: 'jabra-packaging',
@@ -249,7 +277,7 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
     skills: [],
     year: 2024,
     featured: true,
-    order: 9,
+    order: 11,
   },
   {
     slug: 'q-egg',
@@ -272,7 +300,7 @@ I led storytelling and 3D visuals/animation efforts on the project, collaboratin
     skills: [],
     year: 2024,
     featured: true,
-    order: 10,
+    order: 12,
   },
 ];
 
