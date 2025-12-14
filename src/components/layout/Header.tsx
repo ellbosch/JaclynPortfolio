@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md transition-opacity duration-300 ${
+      className={`sticky top-0 z-50 bg-white dark:bg-gray-950 transition-opacity duration-300 ${
         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
