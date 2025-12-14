@@ -31,6 +31,16 @@ const Home = () => {
         >
           JACLYN<br />LOWERY
         </h1>
+        <p
+          className="text-black dark:text-white mt-4"
+          style={{
+            fontFamily: '"adobe-garamond-pro", serif',
+            fontSize: '16px',
+            fontWeight: 400,
+          }}
+        >
+          San Francisco based creative offering Industrial Design, 3D Rendering, and 3D Animation services.
+        </p>
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
