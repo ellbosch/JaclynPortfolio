@@ -20,7 +20,7 @@ const Home = () => {
   const projects = getAllProjects();
 
   return (
-    <div>
+    <div className="max-w-[1400px] mx-auto">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mb-8">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
@@ -32,7 +32,7 @@ const Home = () => {
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
-      <section>
+      <section className="px-4">
         {projects.length > 0 ? (
           <div>
             {projects.map((project, projectIndex) => {
@@ -56,56 +56,58 @@ const Home = () => {
               }
 
               return (
-                <div key={project.slug}>
+                <div key={project.slug} className="mb-16">
+                  {/* Project Header - inline */}
+                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-8">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
+                      {project.shortDescription}
+                    </p>
+                  </div>
+
                   <Link
                     to={`/project/${project.slug}`}
                     className="group block"
                   >
-                    {/* Image Rows */}
-                    {rows.map((row, rowIndex) => (
-                      <div key={rowIndex} className="flex">
-                        {row.images.map((image, imgIdx) => {
-                          const flexValue = row.layout.length === 1
-                            ? 1
-                            : row.layout[imgIdx] || row.layout[0];
-                          return (
-                            <div
-                              key={imgIdx}
-                              className="overflow-hidden"
-                              style={{ flex: `${flexValue} 1 0%` }}
-                            >
-                              <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                              />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ))}
-
-                    {/* Project Info */}
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                      <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-3">
-                        {project.title}
-                      </h3>
-                      <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-                        {project.shortDescription}
-                      </p>
+                    {/* Image Rows with gaps */}
+                    <div className="flex flex-col gap-4">
+                      {rows.map((row, rowIndex) => (
+                        <div key={rowIndex} className="flex gap-4">
+                          {row.images.map((image, imgIdx) => {
+                            const flexValue = row.layout.length === 1
+                              ? 1
+                              : row.layout[imgIdx] || row.layout[0];
+                            return (
+                              <div
+                                key={imgIdx}
+                                className="overflow-hidden"
+                                style={{ flex: `${flexValue} 1 0%` }}
+                              >
+                                <img
+                                  src={image.src}
+                                  alt={image.alt}
+                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ))}
                     </div>
                   </Link>
 
-                  {/* Divider */}
+                  {/* Divider - 2x the gap width (gap-4 = 1rem, so 2rem spacing with border) */}
                   {projectIndex < projects.length - 1 && (
-                    <div className="border-t border-gray-200 dark:border-gray-800" />
+                    <div className="mt-16 border-t border-gray-300 dark:border-gray-700" />
                   )}
                 </div>
               );
             })}
           </div>
         ) : (
-          <div className="max-w-6xl mx-auto px-4 text-center py-20 bg-gray-50 dark:bg-gray-900 rounded-xl">
+          <div className="max-w-6xl mx-auto text-center py-20 bg-gray-50 dark:bg-gray-900 rounded-xl">
             <p className="text-gray-500 dark:text-gray-400 mb-2">
               No projects yet
             </p>
