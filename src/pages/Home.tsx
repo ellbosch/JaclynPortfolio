@@ -80,7 +80,7 @@ const ScrollImage = ({ src, alt, className }: { src: string; alt: string; classN
         ref={imgRef}
         src={src}
         alt={alt}
-        className={className}
+        className={`${className} block`}
         style={{
           transform: `scale(${scale})`,
           transition: 'transform 0.1s ease-out',
@@ -90,8 +90,8 @@ const ScrollImage = ({ src, alt, className }: { src: string; alt: string; classN
   );
 };
 
-// Parallax image that moves slower than scroll
-const ParallaxImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+// Parallax container that moves children slower than scroll
+const ParallaxContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [translateY, setTranslateY] = useState(0);
 
@@ -107,7 +107,7 @@ const ParallaxImage = ({ src, alt, className }: { src: string; alt: string; clas
       const viewportCenter = windowHeight / 2;
       const distanceFromCenter = elementCenter - viewportCenter;
 
-      // Parallax: move image opposite to scroll direction at reduced rate
+      // Parallax: move content opposite to scroll direction at reduced rate
       const parallaxFactor = 0.1;
       const newTranslateY = Math.round(distanceFromCenter * parallaxFactor);
 
@@ -121,16 +121,15 @@ const ParallaxImage = ({ src, alt, className }: { src: string; alt: string; clas
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full">
-      <img
-        src={src}
-        alt={alt}
-        className={className}
+    <div ref={containerRef} className={className}>
+      <div
         style={{
           transform: `translate3d(0, ${translateY}px, 0)`,
           willChange: 'transform',
         }}
-      />
+      >
+        {children}
+      </div>
     </div>
   );
 };
@@ -230,24 +229,26 @@ const Home = () => {
 
                     {/* Image Rows with gaps */}
                     {project.slug === 'arlo' && project.images.length >= 8 ? (
-                      // Custom Arlo layout: left column 2/3 (image 1 with parallax), right column 1/3 (images 4,5,6,7,8)
+                      // Custom Arlo layout: left column 2/3 (images 1,5), right column 1/3 (images 4,6,7,8)
                       <div className="flex gap-4 items-start">
                         <div className="mt-48" style={{ flex: '2 1 0%' }}>
-                          <ParallaxImage
-                            src={project.images[0].src}
-                            alt={project.images[0].alt}
-                            className="w-full h-auto object-cover"
-                          />
+                          <ParallaxContainer className="w-full">
+                            <img
+                              src={project.images[0].src}
+                              alt={project.images[0].alt}
+                              className="w-full h-auto object-cover block"
+                            />
+                            <img
+                              src={project.images[4].src}
+                              alt={project.images[4].alt}
+                              className="w-full h-auto object-cover block"
+                            />
+                          </ParallaxContainer>
                         </div>
                         <div className="flex flex-col mt-32" style={{ flex: '1 1 0%' }}>
                           <ScrollImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
-                            className="w-full h-auto object-cover"
-                          />
-                          <ScrollImage
-                            src={project.images[4].src}
-                            alt={project.images[4].alt}
                             className="w-full h-auto object-cover"
                           />
                           <ScrollImage
