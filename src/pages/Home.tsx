@@ -1,5 +1,50 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 import { getAllProjects } from '../data/projects';
+
+// Scroll-based image component with parallax panning
+const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate how far through the viewport the element is (0 = top, 1 = bottom)
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Scale from 1.0 to 1.05 based on scroll progress
+      const newScale = 1 + clampedProgress * 0.05;
+      setScale(newScale);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={className}
+        style={{
+          transform: `scale(${scale})`,
+          transition: 'transform 0.1s ease-out',
+        }}
+      />
+    </div>
+  );
+};
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -94,13 +139,12 @@ const Home = () => {
                             return (
                               <div
                                 key={imgIdx}
-                                className="overflow-hidden"
                                 style={{ flex: `${flexValue} 1 0%` }}
                               >
-                                <img
+                                <ScrollImage
                                   src={image.src}
                                   alt={image.alt}
-                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
                                 />
                               </div>
                             );
