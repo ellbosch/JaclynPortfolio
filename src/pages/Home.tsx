@@ -1,138 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
 import { getAllProjects } from '../data/projects';
-
-// Scroll-based video component with autoplay on visibility
-const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const container = containerRef.current;
-    if (!video || !container) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Autoplay may be blocked by browser
-            });
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(container);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <video
-        ref={videoRef}
-        src={src}
-        muted
-        loop
-        playsInline
-        className={className}
-      />
-    </div>
-  );
-};
-
-// Scroll-based image component with parallax panning
-const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
-  const imgRef = useRef<HTMLImageElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current || !imgRef.current) return;
-
-      const rect = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Calculate how far through the viewport the element is (0 = top, 1 = bottom)
-      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
-      const clampedProgress = Math.max(0, Math.min(1, progress));
-
-      // Scale from 1.0 to 1.05 based on scroll progress
-      const newScale = 1 + clampedProgress * 0.05;
-      setScale(newScale);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        className={`${className} block`}
-        style={{
-          transform: `scale(${scale})`,
-          transition: 'transform 0.1s ease-out',
-        }}
-      />
-    </div>
-  );
-};
-
-// Parallax container that moves children slower than scroll
-const ParallaxContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [translateY, setTranslateY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-
-      const rect = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Calculate position relative to viewport center
-      const elementCenter = rect.top + rect.height / 2;
-      const viewportCenter = windowHeight / 2;
-      const distanceFromCenter = elementCenter - viewportCenter;
-
-      // Parallax: move content opposite to scroll direction at reduced rate
-      const parallaxFactor = 0.1;
-      const newTranslateY = Math.round(distanceFromCenter * parallaxFactor);
-
-      setTranslateY(newTranslateY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div ref={containerRef} className={className}>
-      <div
-        style={{
-          transform: `translate3d(0, ${translateY}px, 0)`,
-          willChange: 'transform',
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-};
+import { ScrollVideo, ScrollImage } from '../components/scroll/ScrollEffects';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -228,61 +96,29 @@ const Home = () => {
                     )}
 
                     {/* Image Rows with gaps */}
-                    {project.slug === 'arlo' && project.images.length >= 8 ? (
-                      // Custom Arlo layout: left column 2/3 (images 1,5), right column 1/3 (images 4,6,7,8)
-                      <div className="flex gap-4 items-start">
-                        <div className="mt-48" style={{ flex: '2 1 0%' }}>
-                          <ParallaxContainer className="w-full">
-                            <img
-                              src={project.images[0].src}
-                              alt={project.images[0].alt}
-                              className="w-full h-auto object-cover block"
-                            />
-                          </ParallaxContainer>
+                    <div className="flex flex-col gap-4">
+                      {rows.map((row, rowIndex) => (
+                        <div key={rowIndex} className="flex gap-4">
+                          {row.images.map((image, imgIdx) => {
+                            const flexValue = row.layout.length === 1
+                              ? 1
+                              : row.layout[imgIdx] || row.layout[0];
+                            return (
+                              <div
+                                key={imgIdx}
+                                style={{ flex: `${flexValue} 1 0%` }}
+                              >
+                                <ScrollImage
+                                  src={image.src}
+                                  alt={image.alt}
+                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                                />
+                              </div>
+                            );
+                          })}
                         </div>
-                        <div className="flex flex-col mt-32" style={{ flex: '1 1 0%' }}>
-                          <ScrollImage
-                            src={project.images[3].src}
-                            alt={project.images[3].alt}
-                            className="w-full h-auto object-cover"
-                          />
-                          <ScrollImage
-                            src={project.images[5].src}
-                            alt={project.images[5].alt}
-                            className="w-full h-auto object-cover"
-                          />
-                          <ScrollImage
-                            src={project.images[6].src}
-                            alt={project.images[6].alt}
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col gap-4">
-                        {rows.map((row, rowIndex) => (
-                          <div key={rowIndex} className="flex gap-4">
-                            {row.images.map((image, imgIdx) => {
-                              const flexValue = row.layout.length === 1
-                                ? 1
-                                : row.layout[imgIdx] || row.layout[0];
-                              return (
-                                <div
-                                  key={imgIdx}
-                                  style={{ flex: `${flexValue} 1 0%` }}
-                                >
-                                  <ScrollImage
-                                    src={image.src}
-                                    alt={image.alt}
-                                    className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
-                                  />
-                                </div>
-                              );
-                            })}
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                      ))}
+                    </div>
                   </Link>
 
                 </div>
