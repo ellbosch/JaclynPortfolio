@@ -98,10 +98,6 @@ const Home = () => {
                     </div>
                   </Link>
 
-                  {/* Divider - 2x the gap width (gap-4 = 1rem, so 2rem spacing with border) */}
-                  {projectIndex < projects.length - 1 && (
-                    <div className="mt-16 border-t border-gray-300 dark:border-gray-700" />
-                  )}
                 </div>
               );
             })}
