@@ -238,11 +238,6 @@ const Home = () => {
                               alt={project.images[0].alt}
                               className="w-full h-auto object-cover block"
                             />
-                            <img
-                              src={project.images[4].src}
-                              alt={project.images[4].alt}
-                              className="w-full h-auto object-cover block"
-                            />
                           </ParallaxContainer>
                         </div>
                         <div className="flex flex-col mt-32" style={{ flex: '1 1 0%' }}>
@@ -259,11 +254,6 @@ const Home = () => {
                           <ScrollImage
                             src={project.images[6].src}
                             alt={project.images[6].alt}
-                            className="w-full h-auto object-cover"
-                          />
-                          <ScrollImage
-                            src={project.images[7].src}
-                            alt={project.images[7].alt}
                             className="w-full h-auto object-cover"
                           />
                         </div>
