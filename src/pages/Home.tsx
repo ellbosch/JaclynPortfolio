@@ -96,29 +96,58 @@ const Home = () => {
                     )}
 
                     {/* Image Rows with gaps */}
-                    <div className="flex flex-col gap-4">
-                      {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className="flex gap-4">
-                          {row.images.map((image, imgIdx) => {
-                            const flexValue = row.layout.length === 1
-                              ? 1
-                              : row.layout[imgIdx] || row.layout[0];
-                            return (
-                              <div
-                                key={imgIdx}
-                                style={{ flex: `${flexValue} 1 0%` }}
-                              >
-                                <ScrollImage
-                                  src={image.src}
-                                  alt={image.alt}
-                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
-                                />
-                              </div>
-                            );
-                          })}
+                    {project.slug === 'arlo' && project.images.length >= 7 ? (
+                      // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
+                      <div className="flex gap-4 items-stretch" style={{ height: '62vh' }}>
+                        <div style={{ flex: '62 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                      ))}
-                    </div>
+                        <div className="flex flex-col gap-4" style={{ flex: '38 1 0%' }}>
+                          <div className="flex-1">
+                            <ScrollImage
+                              src={project.images[3].src}
+                              alt={project.images[3].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <ScrollImage
+                              src={project.images[6].src}
+                              alt={project.images[6].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-4">
+                        {rows.map((row, rowIndex) => (
+                          <div key={rowIndex} className="flex gap-4">
+                            {row.images.map((image, imgIdx) => {
+                              const flexValue = row.layout.length === 1
+                                ? 1
+                                : row.layout[imgIdx] || row.layout[0];
+                              return (
+                                <div
+                                  key={imgIdx}
+                                  style={{ flex: `${flexValue} 1 0%` }}
+                                >
+                                  <ScrollImage
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                                  />
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </Link>
 
                 </div>
