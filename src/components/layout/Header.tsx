@@ -1,16 +1,19 @@
 import { Link, NavLink } from 'react-router-dom';
-import { personalInfo } from '../../data/personal';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+      <nav className="max-w-[1400px] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link
             to="/"
-            className="text-xl font-semibold text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+            className="font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+            style={{
+              fontSize: '34px',
+              lineHeight: '40.8px',
+            }}
           >
-            {personalInfo.name}
+            JACLYN LOWERY
           </Link>
 
           <div className="flex items-center gap-8">
