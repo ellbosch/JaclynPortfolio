@@ -2,6 +2,50 @@ import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { getAllProjects } from '../data/projects';
 
+// Scroll-based video component with autoplay on visibility
+const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video || !container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {
+              // Autoplay may be blocked by browser
+            });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <video
+        ref={videoRef}
+        src={src}
+        muted
+        loop
+        playsInline
+        className={className}
+      />
+    </div>
+  );
+};
+
 // Scroll-based image component with parallax panning
 const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
@@ -128,6 +172,16 @@ const Home = () => {
                     to={`/project/${project.slug}`}
                     className="group block"
                   >
+                    {/* Video at top if available */}
+                    {project.videos.length > 0 && (
+                      <div className="mb-4">
+                        <ScrollVideo
+                          src={project.videos[0].src}
+                          className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                        />
+                      </div>
+                    )}
+
                     {/* Image Rows with gaps */}
                     <div className="flex flex-col gap-4">
                       {rows.map((row, rowIndex) => (
