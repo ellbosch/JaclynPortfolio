@@ -90,6 +90,51 @@ const ScrollImage = ({ src, alt, className }: { src: string; alt: string; classN
   );
 };
 
+// Parallax image that moves slower than scroll
+const ParallaxImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [translateY, setTranslateY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate position relative to viewport center
+      const elementCenter = rect.top + rect.height / 2;
+      const viewportCenter = windowHeight / 2;
+      const distanceFromCenter = elementCenter - viewportCenter;
+
+      // Parallax: move image opposite to scroll direction at reduced rate
+      const parallaxFactor = 0.1;
+      const newTranslateY = Math.round(distanceFromCenter * parallaxFactor);
+
+      setTranslateY(newTranslateY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="w-full">
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        style={{
+          transform: `translate3d(0, ${translateY}px, 0)`,
+          willChange: 'transform',
+        }}
+      />
+    </div>
+  );
+};
+
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
   [[1], [6, 4]],           // full, then 60/40
@@ -184,29 +229,69 @@ const Home = () => {
                     )}
 
                     {/* Image Rows with gaps */}
-                    <div className="flex flex-col gap-4">
-                      {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className="flex gap-4">
-                          {row.images.map((image, imgIdx) => {
-                            const flexValue = row.layout.length === 1
-                              ? 1
-                              : row.layout[imgIdx] || row.layout[0];
-                            return (
-                              <div
-                                key={imgIdx}
-                                style={{ flex: `${flexValue} 1 0%` }}
-                              >
-                                <ScrollImage
-                                  src={image.src}
-                                  alt={image.alt}
-                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
-                                />
-                              </div>
-                            );
-                          })}
+                    {project.slug === 'arlo' && project.images.length >= 8 ? (
+                      // Custom Arlo layout: left column 2/3 (image 1 with parallax), right column 1/3 (images 4,5,6,7,8)
+                      <div className="flex gap-4 items-start">
+                        <div className="mt-48" style={{ flex: '2 1 0%' }}>
+                          <ParallaxImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-auto object-cover"
+                          />
                         </div>
-                      ))}
-                    </div>
+                        <div className="flex flex-col mt-32" style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
+                            className="w-full h-auto object-cover"
+                          />
+                          <ScrollImage
+                            src={project.images[4].src}
+                            alt={project.images[4].alt}
+                            className="w-full h-auto object-cover"
+                          />
+                          <ScrollImage
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-auto object-cover"
+                          />
+                          <ScrollImage
+                            src={project.images[6].src}
+                            alt={project.images[6].alt}
+                            className="w-full h-auto object-cover"
+                          />
+                          <ScrollImage
+                            src={project.images[7].src}
+                            alt={project.images[7].alt}
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-4">
+                        {rows.map((row, rowIndex) => (
+                          <div key={rowIndex} className="flex gap-4">
+                            {row.images.map((image, imgIdx) => {
+                              const flexValue = row.layout.length === 1
+                                ? 1
+                                : row.layout[imgIdx] || row.layout[0];
+                              return (
+                                <div
+                                  key={imgIdx}
+                                  style={{ flex: `${flexValue} 1 0%` }}
+                                >
+                                  <ScrollImage
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                                  />
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </Link>
 
                 </div>
