@@ -155,11 +155,11 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-left to bottom-right
-      const panRange = 50; // pixels to pan
-      const x = Math.round(25 - clampedProgress * panRange);
-      const y = Math.round(25 - clampedProgress * panRange);
+      const panRange = 80; // pixels to pan
+      const x = Math.round(40 - clampedProgress * panRange);
+      const y = Math.round(40 - clampedProgress * panRange);
 
-      imgRef.current.style.transform = `scale(1.15) translate3d(${x}px, ${y}px, 0)`;
+      imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
