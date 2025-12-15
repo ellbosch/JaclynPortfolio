@@ -304,6 +304,25 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
+                    ) : project.slug === 'starkey' && project.images.length >= 6 ? (
+                      // Custom Starkey layout: images 6 and 1 in one row, 1 takes 2/3
+                      <div className="flex gap-4" style={{ height: '60vh' }}>
+                        <div style={{ flex: '1 1 0%' }} className="overflow-hidden">
+                          <img
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: 'calc(50% + 20px) center' }}
+                          />
+                        </div>
+                        <div style={{ flex: '2 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
                     ) : (
                       <div className="flex flex-col gap-4">
                         {rows.map((row, rowIndex) => (
