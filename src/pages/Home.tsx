@@ -122,11 +122,7 @@ const Home = () => {
                       <div className="mb-4">
                         <ScrollVideo
                           src={project.videos[0].src}
-                          className={`w-full object-cover ${
-                            project.slug === 'auraglow'
-                              ? 'h-[30vh] md:h-[35vh] lg:h-[45vh]'
-                              : 'h-[35vh] md:h-[50vh] lg:h-[70vh]'
-                          }`}
+                          className="w-full object-cover h-[30vh] md:h-[35vh] lg:h-[45vh]"
                         />
                       </div>
                     )}
