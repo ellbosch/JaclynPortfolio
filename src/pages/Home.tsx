@@ -323,6 +323,24 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                    ) : project.slug === 'q-egg' && project.images.length >= 2 ? (
+                      // Custom Q-Egg layout: images 1 and 2 in one row, 1 takes 20%
+                      <div className="flex gap-4" style={{ height: '50vh' }}>
+                        <div style={{ flex: '20 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '80 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[1].src}
+                            alt={project.images[1].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
                     ) : (
                       <div className="flex flex-col gap-4">
                         {rows.map((row, rowIndex) => (
