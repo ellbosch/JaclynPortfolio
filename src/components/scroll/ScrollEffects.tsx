@@ -270,6 +270,59 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
   );
 };
 
+// Scroll-based crossfade between multiple images
+export const ScrollCrossfadeImages = ({
+  images,
+  className,
+}: {
+  images: Array<{ src: string; alt: string }>;
+  className: string;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Progress: 0 when entering viewport, 1 when leaving
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Map progress to image index (divide into N segments)
+      const newIndex = Math.min(
+        Math.floor(clampedProgress * images.length),
+        images.length - 1
+      );
+      setActiveIndex(newIndex);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [images.length]);
+
+  return (
+    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image.src}
+          alt={image.alt}
+          className={`${className} absolute inset-0 transition-opacity duration-300`}
+          style={{
+            opacity: index === activeIndex ? 1 : 0,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 // Parallax container that moves children slower than scroll
 // Note: This component had rendering issues (horizontal lines, masking) when used.
 // Preserved here for future experimentation.

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getAllProjects } from '../data/projects';
-import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -157,6 +157,31 @@ const Home = () => {
                               className="w-full h-full object-cover"
                             />
                           </div>
+                        </div>
+                      </div>
+                    ) : project.slug === 'control4' && project.images.length >= 13 ? (
+                      // Control4 layout: 3 columns, each with crossfade between 4 angles
+                      <div className="flex gap-4" style={{ height: '70vh' }}>
+                        {/* Column 1: Tactile Dark (images 1-4) */}
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(1, 5)}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        {/* Column 2: Touch Dark (images 5-8) */}
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(5, 9)}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        {/* Column 3: Touch Light (images 9-12) */}
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(9, 13)}
+                            className="w-full h-full object-contain"
+                          />
                         </div>
                       </div>
                     ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
