@@ -1,16 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-// Scale factor based on viewport height - smaller viewports get slower panning
-// Uses 4th power for very aggressive reduction on mobile
-// Reference: 900px is "standard" desktop height
-const getViewportScaleFactor = () => {
-  if (typeof window === 'undefined') return 1;
-  const referenceHeight = 900;
-  const ratio = Math.min(1, window.innerHeight / referenceHeight);
-  // 4th power for extremely aggressive scaling on smaller screens
-  // e.g., 700px phone: (700/900)^4 = 0.37
-  // e.g., 600px phone: (600/900)^4 = 0.20
-  return ratio * ratio * ratio * ratio * ratio * ratio;
+// Detect if device is mobile/touch - disable scroll effects on mobile for performance
+const isMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
 };
 
 // Scroll-based video component with autoplay on visibility
@@ -103,38 +96,35 @@ export const ScrollImage = ({ src, alt, className }: { src: string; alt: string;
 
 // Scroll-based image component with pan effect (bottom-left to top-right)
 // Uses object-position to pan without extra zoom
+// Disabled on mobile for performance
 export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [objectPosition, setObjectPosition] = useState('0% 100%'); // bottom-left
 
   useEffect(() => {
+    if (isMobile()) return; // Skip scroll effects on mobile
+
     const handleScroll = () => {
       if (!containerRef.current || !imgRef.current) return;
 
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calculate how far through the viewport the element is (0 = top, 1 = bottom)
       const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from bottom-left to top-right using object-position
-      // Start more centered so the boat is visible initially
-      // Scale pan range based on viewport height for consistent speed across devices
-      const scaleFactor = getViewportScaleFactor();
-      const panRange = 15 * scaleFactor;
-      const startX = 35; // Start at 35% from left (more centered)
-      const startY = 70; // Start at 70% from top (lower portion)
-      // Pan toward top-right as scroll progresses
+      const panRange = 15;
+      const startX = 35;
+      const startY = 70;
       const x = startX + clampedProgress * panRange;
       const y = startY - clampedProgress * panRange;
 
-      setObjectPosition(`${x}% ${y}%`);
+      imgRef.current.style.objectPosition = `${x}% ${y}%`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial call
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -147,7 +137,7 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
         alt={alt}
         className={`${className} block`}
         style={{
-          objectPosition,
+          objectPosition: '50% 50%', // Center on mobile
         }}
       />
     </div>
@@ -155,11 +145,14 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
 };
 
 // Scroll-based image with pan from top-left to bottom-right (with zoom for pan room)
+// Disabled on mobile for performance
 export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isMobile()) return; // Skip scroll effects on mobile
+
     const handleScroll = () => {
       if (!containerRef.current || !imgRef.current) return;
 
@@ -170,11 +163,9 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-left to bottom-right
-      // Scale pan range based on viewport height for consistent speed across devices
-      const scaleFactor = getViewportScaleFactor();
-      const panRange = 80 * scaleFactor; // pixels to pan
-      const x = Math.round(40 * scaleFactor - clampedProgress * panRange);
-      const y = Math.round(40 * scaleFactor - clampedProgress * panRange);
+      const panRange = 80;
+      const x = Math.round(40 - clampedProgress * panRange);
+      const y = Math.round(40 - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
@@ -192,20 +183,20 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
         src={src}
         alt={alt}
         className={`${className} block`}
-        style={{
-          willChange: 'transform',
-        }}
       />
     </div>
   );
 };
 
 // Scroll-based image with pan from top-right to bottom-left (with zoom for pan room)
+// Disabled on mobile for performance
 export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isMobile()) return; // Skip scroll effects on mobile
+
     const handleScroll = () => {
       if (!containerRef.current || !imgRef.current) return;
 
@@ -216,11 +207,9 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-right to bottom-left (start higher)
-      // Scale pan range based on viewport height for consistent speed across devices
-      const scaleFactor = getViewportScaleFactor();
-      const panRange = 100 * scaleFactor; // pixels to pan
-      const x = Math.round(-40 * scaleFactor + clampedProgress * 80 * scaleFactor);
-      const y = Math.round(40 * scaleFactor - clampedProgress * panRange);
+      const panRange = 100;
+      const x = Math.round(-40 + clampedProgress * 80);
+      const y = Math.round(40 - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
@@ -238,20 +227,20 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
         src={src}
         alt={alt}
         className={`${className} block`}
-        style={{
-          willChange: 'transform',
-        }}
       />
     </div>
   );
 };
 
 // Scroll-based image with vertical pan from top to bottom (GPU-accelerated)
+// Disabled on mobile for performance
 export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isMobile()) return; // Skip scroll effects on mobile
+
     const handleScroll = () => {
       if (!containerRef.current || !imgRef.current) return;
 
@@ -261,11 +250,9 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
       const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
-      // Pan vertically from top to bottom (faster animation)
-      // Scale pan range based on viewport height for consistent speed across devices
-      const scaleFactor = getViewportScaleFactor();
-      const panRange = 120 * scaleFactor; // pixels to pan
-      const y = Math.round(60 * scaleFactor - clampedProgress * panRange);
+      // Pan vertically from top to bottom
+      const panRange = 120;
+      const y = Math.round(60 - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.25) translate3d(0, ${y}px, 0)`;
     };
@@ -283,20 +270,20 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
         src={src}
         alt={alt}
         className={`${className} block`}
-        style={{
-          willChange: 'transform',
-        }}
       />
     </div>
   );
 };
 
 // Scroll-based image with horizontal pan from left to right (GPU-accelerated)
+// Disabled on mobile for performance
 export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isMobile()) return; // Skip scroll effects on mobile
+
     const handleScroll = () => {
       if (!containerRef.current || !imgRef.current) return;
 
@@ -307,10 +294,8 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan horizontally from right to left
-      // Scale pan range based on viewport height for consistent speed across devices
-      const scaleFactor = getViewportScaleFactor();
-      const panRange = 100 * scaleFactor; // pixels to pan
-      const x = Math.round(50 * scaleFactor - clampedProgress * panRange);
+      const panRange = 100;
+      const x = Math.round(50 - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, 0, 0)`;
     };
@@ -328,9 +313,6 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
         src={src}
         alt={alt}
         className={`${className} block`}
-        style={{
-          willChange: 'transform',
-        }}
       />
     </div>
   );
