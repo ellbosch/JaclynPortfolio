@@ -278,16 +278,25 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
-                      // Custom Jabra layout: image 3 with pan effect, then image 1 full width
+                      // Custom Jabra layout: top row 33/67 split, then full width pan image
                       <div className="flex flex-col gap-4">
-                        <div className="w-full h-[35vh] md:h-[45vh] lg:h-[60vh] overflow-hidden">
-                          <ScrollPanImageTLBR
-                            src={project.images[2].src}
-                            alt={project.images[2].alt}
-                            className="w-full h-full object-cover"
-                          />
+                        <div className="flex gap-4 h-[35vh] md:h-[35vh]">
+                          <div style={{ flex: '40 1 0%' }} className="overflow-hidden">
+                            <ScrollPanImageTLBR
+                              src={project.images[2].src}
+                              alt={project.images[2].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div style={{ flex: '60 1 0%' }} className="overflow-hidden">
+                            <ScrollImage
+                              src={project.images[3].src}
+                              alt={project.images[3].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                         </div>
-                        <div className="w-full h-[35vh] md:h-[45vh] lg:h-[60vh] overflow-hidden">
+                        <div className="w-full h-[35vh] md:h-[45vh] overflow-hidden">
                           <ScrollPanImageTRBL
                             src={project.images[0].src}
                             alt={project.images[0].alt}
