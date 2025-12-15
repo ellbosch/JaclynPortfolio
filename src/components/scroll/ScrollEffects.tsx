@@ -107,11 +107,13 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from bottom-left to top-right using object-position
-      // Slow movement: pan 15% of the image range
+      // Start more centered so the boat is visible initially
       const panRange = 15;
-      // Start at bottom-left (0%, 100%), end at top-right direction (10%, 90%)
-      const x = clampedProgress * panRange; // 0% to 10% (left to right)
-      const y = 100 - clampedProgress * panRange; // 100% to 90% (bottom to top)
+      const startX = 35; // Start at 35% from left (more centered)
+      const startY = 70; // Start at 70% from top (lower portion)
+      // Pan toward top-right as scroll progresses
+      const x = startX + clampedProgress * panRange; // 30% to 45%
+      const y = startY - clampedProgress * panRange; // 70% to 55%
 
       setObjectPosition(`${x}% ${y}%`);
     };
