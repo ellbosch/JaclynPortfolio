@@ -289,23 +289,23 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'whistle' && project.images.length >= 5 ? (
-                      // Custom Whistle layout: images 5, 1, 4 in one row
-                      <div className="flex gap-4" style={{ height: '50vh' }}>
+                      // Custom Whistle layout: image 5 natural height, image 1 fills space, image 4 clipped
+                      <div className="flex gap-4 items-start">
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollImage
                             src={project.images[4].src}
                             alt={project.images[4].alt}
-                            className="w-full h-full object-cover"
+                            className="w-full h-auto"
                           />
                         </div>
-                        <div style={{ flex: '1 1 0%' }}>
+                        <div style={{ flex: '1 1 0%' }} className="self-stretch">
                           <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div style={{ flex: '1 1 0%' }}>
+                        <div style={{ flex: '1 1 0%' }} className="overflow-hidden self-stretch">
                           <ScrollImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
