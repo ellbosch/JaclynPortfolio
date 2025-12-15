@@ -26,7 +26,7 @@ const ClientLogos = ({ startAnimation = true }: ClientLogosProps) => {
 
   return (
     <section className="mb-16">
-      <div className="flex flex-wrap gap-6 md:gap-8 items-center justify-start">
+      <div className="flex flex-wrap gap-4 md:gap-8 items-center justify-start">
         {clients.map((client, index) => (
           <img
             key={client.name}
