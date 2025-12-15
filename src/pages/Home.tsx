@@ -237,8 +237,9 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'q-egg' && project.images.length >= 2 ? (
                       // Custom Q-Egg layout: images 1 and 2 in one row, 1 takes 20%
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[50vh]">
-                        <div style={{ flex: '20 1 0%' }}>
+                      // First image hidden on mobile
+                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[25vh] lg:h-[45vh]">
+                        <div className="hidden md:block" style={{ flex: '20 1 0%' }}>
                           <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
