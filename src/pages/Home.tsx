@@ -252,6 +252,58 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                    ) : project.slug === 'whistle' && project.images.length >= 5 ? (
+                      // Custom Whistle layout: images 5, 1, 4 in one row
+                      <div className="flex gap-4" style={{ height: '50vh' }}>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[4].src}
+                            alt={project.images[4].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'spansive' && project.images.length >= 5 ? (
+                      // Custom Spansive layout: top image 1, then left 2/3 (image 4), right 1/3 (image 2 cropped)
+                      <div className="flex flex-col gap-4">
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex gap-4" style={{ height: '70vh' }}>
+                          <div style={{ flex: '2 1 0%' }}>
+                            <ScrollImage
+                              src={project.images[3].src}
+                              alt={project.images[3].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div style={{ flex: '1 1 0%' }}>
+                            <ScrollImage
+                              src={project.images[1].src}
+                              alt={project.images[1].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     ) : (
                       <div className="flex flex-col gap-4">
                         {rows.map((row, rowIndex) => (
