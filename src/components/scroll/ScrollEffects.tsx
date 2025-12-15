@@ -270,6 +270,49 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
   );
 };
 
+// Scroll-based image with horizontal pan from left to right (GPU-accelerated)
+export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Pan horizontally from right to left
+      const panRange = 100; // pixels to pan
+      const x = Math.round(50 - clampedProgress * panRange);
+
+      imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, 0, 0)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={`${className} block`}
+        style={{
+          willChange: 'transform',
+        }}
+      />
+    </div>
+  );
+};
+
 // Scroll-based crossfade between multiple images
 export const ScrollCrossfadeImages = ({
   images,

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllProjects, formatCategories } from '../data/projects';
-import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageLR, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
 import { useFilter } from '../context/FilterContext';
 
@@ -289,7 +289,7 @@ const Home = () => {
                             />
                           </div>
                           <div className="h-[35vh] md:h-full overflow-hidden" style={{ flex: '60 1 0%' }}>
-                            <ScrollImage
+                            <ScrollPanImageLR
                               src={project.images[3].src}
                               alt={project.images[3].alt}
                               className="w-full h-full object-cover"
