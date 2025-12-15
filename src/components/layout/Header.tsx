@@ -17,6 +17,17 @@ const Header = () => {
   const { filter, setFilter } = useFilter();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Anti-scraping: construct URLs dynamically on click
+  const handleLinkedInClick = () => {
+    const url = ['https://www.linkedin.com/in', 'jaclyn-lowery-11670590'].join('/');
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleEmailClick = () => {
+    const email = ['jaclynl.inquiries', 'gmail.com'].join('@');
+    window.location.href = `mailto:${email}`;
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -66,42 +77,60 @@ const Header = () => {
             JACLYN LOWERY
           </Link>
 
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="text-sm font-medium transition-colors text-gray-900 dark:text-white flex items-center gap-1"
-            >
-              {filterLabels[filter]}
-              <svg
-                className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <div className="flex items-center gap-4">
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="text-sm font-medium transition-colors text-gray-900 dark:text-white flex items-center gap-1 cursor-pointer"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+                {filterLabels[filter]}
+                <svg
+                  className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {dropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50">
+                  {(Object.keys(filterLabels) as CategoryFilter[]).map((key) => (
+                    <NavLink
+                      key={key}
+                      to="/"
+                      onClick={() => {
+                        setFilter(key);
+                        setDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        filter === key
+                          ? 'text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800'
+                          : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
+                    >
+                      {filterLabels[key]}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* LinkedIn */}
+            <button
+              onClick={handleLinkedInClick}
+              className="text-sm font-medium text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer"
+            >
+              LinkedIn
             </button>
-            {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50">
-                {(Object.keys(filterLabels) as CategoryFilter[]).map((key) => (
-                  <NavLink
-                    key={key}
-                    to="/"
-                    onClick={() => {
-                      setFilter(key);
-                      setDropdownOpen(false);
-                    }}
-                    className={`block px-4 py-2 text-sm transition-colors ${
-                      filter === key
-                        ? 'text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
-                    }`}
-                  >
-                    {filterLabels[key]}
-                  </NavLink>
-                ))}
-              </div>
-            )}
+
+            {/* Email */}
+            <button
+              onClick={handleEmailClick}
+              className="text-sm font-medium text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer"
+            >
+              Email
+            </button>
           </div>
         </div>
       </nav>
