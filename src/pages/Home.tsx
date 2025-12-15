@@ -1,94 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllProjects } from '../data/projects';
-
-// Scroll-based video component with autoplay on visibility
-const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const container = containerRef.current;
-    if (!video || !container) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Autoplay may be blocked by browser
-            });
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(container);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <video
-        ref={videoRef}
-        src={src}
-        muted
-        loop
-        playsInline
-        className={className}
-      />
-    </div>
-  );
-};
-
-// Scroll-based image component with parallax panning
-const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
-  const imgRef = useRef<HTMLImageElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current || !imgRef.current) return;
-
-      const rect = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Calculate how far through the viewport the element is (0 = top, 1 = bottom)
-      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
-      const clampedProgress = Math.max(0, Math.min(1, progress));
-
-      // Scale from 1.0 to 1.05 based on scroll progress
-      const newScale = 1 + clampedProgress * 0.05;
-      setScale(newScale);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        className={className}
-        style={{
-          transform: `scale(${scale})`,
-          transition: 'transform 0.1s ease-out',
-        }}
-      />
-    </div>
-  );
-};
+import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
+import ClientLogos from '../components/ClientLogos';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -106,14 +20,37 @@ const rowPatterns = [
 
 const Home = () => {
   const projects = getAllProjects();
+  const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
+
+  // Cascading fade-in animation state
+  const [fadeStage, setFadeStage] = useState(0);
+
+  useEffect(() => {
+    // Stage 1: Name (after 200ms)
+    const timer1 = setTimeout(() => setFadeStage(1), 200);
+    // Stage 2: About text (after 500ms)
+    const timer2 = setTimeout(() => setFadeStage(2), 500);
+    // Stage 3: Logos (after 800ms) - ClientLogos handles its own cascade
+    const timer3 = setTimeout(() => setFadeStage(3), 800);
+    // Stage 4: Projects (after 2200ms - after logos finish: 800ms start + 16 logos * 75ms + 200ms buffer)
+    const timer4 = setTimeout(() => setFadeStage(4), 1200);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+    };
+  }, []);
 
   return (
     <div className="max-w-[1400px] mx-auto">
       {/* Hero Section */}
       <section className="px-4 py-16 mb-8">
         <h1
-          className="font-bold text-black dark:text-white"
+          className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
+            fontFamily: "'pragmatica', sans-serif",
             fontSize: '34px',
             lineHeight: '40.8px',
           }}
@@ -121,19 +58,20 @@ const Home = () => {
           JACLYN LOWERY
         </h1>
         <p
-          className="text-black dark:text-white mt-4"
+          className={`text-black dark:text-white mt-4 mb-8 transition-opacity duration-500 ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
-            fontSize: '16px',
+            fontSize: '20px',
             fontWeight: 400,
           }}
         >
-          San Francisco based creative offering Industrial Design, 3D Rendering, and 3D Animation services.
+          Jaclyn is an Industrial Designer and 3D Generalist with over {yearsExperience} years of professional experience in the Bay Area. She specializes in Industrial Design, photo-realistic 3D rendering, and animation.
         </p>
+        {fadeStage >= 3 && <ClientLogos />}
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
-      <section className="px-4">
+      <section className={`px-4 transition-opacity duration-500 ${fadeStage >= 4 ? 'opacity-100' : 'opacity-0'}`}>
         {projects.length > 0 ? (
           <div>
             {projects.map((project, projectIndex) => {
@@ -160,10 +98,10 @@ const Home = () => {
                 <div key={project.slug} className="mb-16">
                   {/* Project Header - inline */}
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
-                    <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
+                    <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                       {project.shortDescription}
                     </p>
                   </div>
@@ -183,29 +121,169 @@ const Home = () => {
                     )}
 
                     {/* Image Rows with gaps */}
-                    <div className="flex flex-col gap-4">
-                      {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className="flex gap-4">
-                          {row.images.map((image, imgIdx) => {
-                            const flexValue = row.layout.length === 1
-                              ? 1
-                              : row.layout[imgIdx] || row.layout[0];
-                            return (
-                              <div
-                                key={imgIdx}
-                                style={{ flex: `${flexValue} 1 0%` }}
-                              >
-                                <ScrollImage
-                                  src={image.src}
-                                  alt={image.alt}
-                                  className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
-                                />
-                              </div>
-                            );
-                          })}
+                    {project.slug === 'arcsport' && project.images.length >= 4 ? (
+                      // Custom Arc Sport layout: Asymmetric 70/30 split
+                      <div className="flex gap-4" style={{ height: '65vh' }}>
+                        <div style={{ flex: '70 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                      ))}
-                    </div>
+                        <div style={{ flex: '30 1 0%' }}>
+                          <ScrollPanImage
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'nice-hr40-remote' && project.images.length >= 6 ? (
+                      // Custom Nice HR40 Remote layout: left column 30% (image 5), right column 70% (image 6)
+                      <div className="flex gap-4 items-stretch" style={{ height: '65vh' }}>
+                        <div style={{ flex: '30 1 0%' }} className="overflow-hidden">
+                          <img
+                            src={project.images[4].src}
+                            alt={project.images[4].alt}
+                            className="w-full h-full object-cover object-bottom"
+                          />
+                        </div>
+                        <div style={{ flex: '70 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'arlo' && project.images.length >= 7 ? (
+                      // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
+                      <div className="flex gap-4 items-stretch" style={{ height: '62vh' }}>
+                        <div style={{ flex: '62 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-4" style={{ flex: '38 1 0%' }}>
+                          <div className="flex-1">
+                            <ScrollImage
+                              src={project.images[3].src}
+                              alt={project.images[3].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <ScrollImage
+                              src={project.images[6].src}
+                              alt={project.images[6].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ) : project.slug === 'control4' && project.images.length >= 13 ? (
+                      // Control4 layout: 3 columns, each with crossfade between 4 angles
+                      <div className="flex gap-4" style={{ height: '70vh' }}>
+                        {/* Column 1: Tactile Dark (images 1-4) */}
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(1, 5)}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        {/* Column 2: Touch Dark (images 5-8) */}
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(5, 9)}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        {/* Column 3: Touch Light (images 9-12) */}
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(9, 13)}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
+                      // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
+                      <div className="flex gap-4">
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[6].src}
+                            alt={project.images[6].alt}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[7].src}
+                            alt={project.images[7].alt}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
+                      // Custom Jabra layout: photos 3, 6, 7 stacked full width at 90% height with pan effects
+                      <div className="flex flex-col gap-4">
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollPanImageTLBR
+                            src={project.images[2].src}
+                            alt={project.images[2].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollPanImageTRBL
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollPanImageTB
+                            src={project.images[6].src}
+                            alt={project.images[6].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-4">
+                        {rows.map((row, rowIndex) => (
+                          <div key={rowIndex} className="flex gap-4">
+                            {row.images.map((image, imgIdx) => {
+                              const flexValue = row.layout.length === 1
+                                ? 1
+                                : row.layout[imgIdx] || row.layout[0];
+                              return (
+                                <div
+                                  key={imgIdx}
+                                  style={{ flex: `${flexValue} 1 0%` }}
+                                >
+                                  <ScrollImage
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                                  />
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </Link>
 
                 </div>

@@ -61,11 +61,11 @@ const ProjectPage = () => {
 
       {/* Hero Image */}
       {project.heroImage && (
-        <div className="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden mb-12">
+        <div className="mb-12">
           <img
             src={project.heroImage.src}
             alt={project.heroImage.alt}
-            className="w-full h-full object-cover"
+            className="w-full h-auto"
           />
         </div>
       )}
@@ -101,19 +101,13 @@ const ProjectPage = () => {
       {/* Image Gallery Placeholder */}
       {project.images.length > 0 && (
         <section className="mb-12">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            Gallery
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {project.images.map((image, index) => (
-              <div
-                key={index}
-                className="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
-              >
+              <div key={index}>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
               </div>
             ))}
@@ -121,7 +115,7 @@ const ProjectPage = () => {
         </section>
       )}
 
-      {/* Video Placeholder */}
+      {/* Videos */}
       {project.videos.length > 0 && (
         <section className="mb-12">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -129,11 +123,14 @@ const ProjectPage = () => {
           </h2>
           <div className="space-y-4">
             {project.videos.map((video, index) => (
-              <div
-                key={index}
-                className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center"
-              >
-                <p className="text-gray-500">Video player placeholder</p>
+              <div key={index}>
+                <video
+                  src={video.src}
+                  controls
+                  muted
+                  playsInline
+                  className="w-full h-auto"
+                />
               </div>
             ))}
           </div>
