@@ -218,7 +218,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'mode' && project.images.length >= 2 ? (
                       // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
-                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[60vh]">
+                      <div className="flex flex-col flex-row gap-4 h-auto md:h-[45vh]">
                         <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
                           <ScrollPanImageTLBR
                             src={project.images[0].src}
