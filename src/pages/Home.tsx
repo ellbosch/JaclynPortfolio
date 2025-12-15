@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllProjects } from '../data/projects';
-import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
@@ -235,7 +235,7 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
-                      // Custom Jabra layout: photos 3, 6, 7 stacked full width at 90% height with pan effects
+                      // Custom Jabra layout: image 3 with pan effect, then image 1 full width
                       <div className="flex flex-col gap-4">
                         <div className="w-full h-[60vh] overflow-hidden">
                           <ScrollPanImageTLBR
@@ -246,15 +246,8 @@ const Home = () => {
                         </div>
                         <div className="w-full h-[60vh] overflow-hidden">
                           <ScrollPanImageTRBL
-                            src={project.images[5].src}
-                            alt={project.images[5].alt}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="w-full h-[60vh] overflow-hidden">
-                          <ScrollPanImageTB
-                            src={project.images[6].src}
-                            alt={project.images[6].alt}
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
