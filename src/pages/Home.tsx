@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getAllProjects } from '../data/projects';
-import { ScrollVideo, ScrollImage } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollPanImage } from '../components/scroll/ScrollEffects';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -107,7 +107,7 @@ const Home = () => {
                           />
                         </div>
                         <div style={{ flex: '30 1 0%' }}>
-                          <ScrollImage
+                          <ScrollPanImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
                             className="w-full h-full object-cover"

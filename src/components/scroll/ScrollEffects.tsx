@@ -88,6 +88,55 @@ export const ScrollImage = ({ src, alt, className }: { src: string; alt: string;
   );
 };
 
+// Scroll-based image component with pan effect (bottom-left to top-right)
+// Uses object-position to pan without extra zoom
+export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [objectPosition, setObjectPosition] = useState('0% 100%'); // bottom-left
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate how far through the viewport the element is (0 = top, 1 = bottom)
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Pan diagonally from bottom-left to top-right using object-position
+      // Slow movement: pan 15% of the image range
+      const panRange = 15;
+      // Start at bottom-left (0%, 100%), end at top-right direction (10%, 90%)
+      const x = clampedProgress * panRange; // 0% to 10% (left to right)
+      const y = 100 - clampedProgress * panRange; // 100% to 90% (bottom to top)
+
+      setObjectPosition(`${x}% ${y}%`);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={`${className} block`}
+        style={{
+          objectPosition,
+        }}
+      />
+    </div>
+  );
+};
+
 // Parallax container that moves children slower than scroll
 // Note: This component had rendering issues (horizontal lines, masking) when used.
 // Preserved here for future experimentation.
