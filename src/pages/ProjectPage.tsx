@@ -115,7 +115,7 @@ const ProjectPage = () => {
         </section>
       )}
 
-      {/* Video Placeholder */}
+      {/* Videos */}
       {project.videos.length > 0 && (
         <section className="mb-12">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
@@ -123,11 +123,14 @@ const ProjectPage = () => {
           </h2>
           <div className="space-y-4">
             {project.videos.map((video, index) => (
-              <div
-                key={index}
-                className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center"
-              >
-                <p className="text-gray-500">Video player placeholder</p>
+              <div key={index}>
+                <video
+                  src={video.src}
+                  controls
+                  muted
+                  playsInline
+                  className="w-full h-auto"
+                />
               </div>
             ))}
           </div>
