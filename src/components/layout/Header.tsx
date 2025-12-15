@@ -44,32 +44,18 @@ const Header = () => {
             JACLYN LOWERY
           </Link>
 
-          <div className="flex items-center gap-8">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'text-gray-900 dark:text-white'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                }`
-              }
-            >
-              Work
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'text-gray-900 dark:text-white'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                }`
-              }
-            >
-              About
-            </NavLink>
-          </div>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`
+            }
+          >
+            Work
+          </NavLink>
         </div>
       </nav>
     </header>

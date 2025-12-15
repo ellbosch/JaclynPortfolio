@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { getAllProjects } from '../data/projects';
 import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
+import ClientLogos from '../components/ClientLogos';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -18,6 +19,7 @@ const rowPatterns = [
 
 const Home = () => {
   const projects = getAllProjects();
+  const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
 
   return (
     <div className="max-w-[1400px] mx-auto">
@@ -34,15 +36,16 @@ const Home = () => {
           JACLYN LOWERY
         </h1>
         <p
-          className="text-black dark:text-white mt-4"
+          className="text-black dark:text-white mt-4 mb-8"
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontSize: '20px',
             fontWeight: 400,
           }}
         >
-          San Francisco based creative offering Industrial Design, 3D Rendering, and 3D Animation services.
+          Jaclyn is an Industrial Designer and 3D Generalist with over {yearsExperience} years of professional experience in the Bay Area. She specializes in Industrial Design, photo-realistic 3D rendering, and animation.
         </p>
+        <ClientLogos />
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
