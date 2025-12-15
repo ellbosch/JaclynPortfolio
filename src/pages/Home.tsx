@@ -363,7 +363,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'starkey' && project.images.length >= 6 ? (
                       // Custom Starkey layout: images 6 and 1 in one row, 1 takes 2/3
-                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[60vh]">
+                      <div className="flex flex-col flex-row gap-4 h-auto md:h-[30vh]">
                         <div style={{ flex: '1 1 0%' }} className="overflow-hidden">
                           <img
                             src={project.images[5].src}
