@@ -227,7 +227,7 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
   );
 };
 
-// Scroll-based image with vertical pan from top to bottom (using object-position, no scaling)
+// Scroll-based image with vertical pan from top to bottom (GPU-accelerated)
 export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -242,11 +242,11 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
       const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
-      // Pan vertically using object-position (0% = top, 100% = bottom)
-      // Slower pan: go from 20% to 80% over the scroll
-      const y = Math.round(20 + clampedProgress * 60);
+      // Pan vertically from top to bottom (faster animation)
+      const panRange = 120; // pixels to pan
+      const y = Math.round(60 - clampedProgress * panRange);
 
-      imgRef.current.style.objectPosition = `50% ${y}%`;
+      imgRef.current.style.transform = `scale(1.25) translate3d(0, ${y}px, 0)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -263,7 +263,7 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
         alt={alt}
         className={`${className} block`}
         style={{
-          objectPosition: '50% 0%',
+          willChange: 'transform',
         }}
       />
     </div>
