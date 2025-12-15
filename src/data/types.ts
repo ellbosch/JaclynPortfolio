@@ -15,7 +15,7 @@ export interface ProjectVideo {
 export interface Project {
   slug: string;
   title: string;
-  category: ProjectCategory;
+  categories: ProjectCategory[];
   shortDescription: string;
   fullDescription: string;
   thumbnail: ProjectImage;
@@ -29,12 +29,9 @@ export interface Project {
   order: number;
 }
 
-export type ProjectCategory =
-  | 'industrial-design'
-  | '3d-rendering'
-  | 'product-design'
-  | 'furniture'
-  | 'concept';
+export type ProjectCategory = 'industrial-design' | '3d-visualization';
+
+export type CategoryFilter = 'all' | ProjectCategory;
 
 export interface PersonalInfo {
   name: string;

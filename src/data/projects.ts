@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     slug: 'nocturne',
     title: 'Nocturne',
-    category: '3d-rendering',
+    categories: ['3d-visualization'],
     shortDescription: '',
     fullDescription: '',
     thumbnail: { src: '', alt: 'Nocturne thumbnail' },
@@ -18,7 +18,7 @@ export const projects: Project[] = [
   {
     slug: 'arlo',
     title: 'Arlo',
-    category: 'industrial-design',
+    categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Security camera system design and launch video renders',
     fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.
 
@@ -45,7 +45,7 @@ Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle
   {
     slug: 'control4',
     title: 'Control4',
-    category: 'industrial-design',
+    categories: ['3d-visualization'],
     shortDescription: 'Smart home remote design with multiple SKU variants',
     fullDescription: '',
     thumbnail: {
@@ -80,7 +80,7 @@ Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle
   {
     slug: 'mode',
     title: 'Mode',
-    category: 'industrial-design',
+    categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Refined electric toothbrush design and website visuals',
     fullDescription: `Mode was an exciting opportunity to design a refined electric toothbrush that I now use everyday. My main role was creating a scrolling video for Mode's website to walk through the design details and unique features.
 
@@ -106,7 +106,7 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
   {
     slug: 'nice-hr40-remote',
     title: 'Nice HR40 Remote',
-    category: 'industrial-design',
+    categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Next generation smart home remote design',
     fullDescription: `Our team was tasked with re-imagining the previous generation Nice smart home remote into the next generation HR40. We upgraded the design to match the existing modern aesthetics of the Nice product portfolio, along with enhancing the experience of the extensive control.
 
@@ -130,7 +130,7 @@ Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), Jo
   {
     slug: 'jabra-packaging',
     title: 'Jabra Packaging',
-    category: 'industrial-design',
+    categories: ['industrial-design', '3d-visualization'],
     shortDescription: '3D on-package renders for multiple Jabra product lines',
     fullDescription: `I created 3D on-package renders for multiple Jabra product lines, collaborating with the graphic design team. I sketched render concept ideas, rendered, reviewed and made edits to pre-press color proofs. I served as the primary 3D visualizer for numerous color variations across various products.
 
@@ -159,7 +159,7 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
   {
     slug: 'netgear-nighthawk',
     title: 'Netgear Nighthawk',
-    category: '3d-rendering',
+    categories: ['3d-visualization'],
     shortDescription: '',
     fullDescription: '',
     thumbnail: { src: '', alt: 'Netgear Nighthawk thumbnail' },
@@ -173,7 +173,7 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
   {
     slug: 'arcsport',
     title: 'Arc Sport',
-    category: 'industrial-design',
+    categories: ['3d-visualization'],
     shortDescription: 'Electric boat visualization showcasing speed and versatility',
     fullDescription: `I was tasked with visualizing the Arc Sport, a beautiful electric boat designed by my colleagues. My main role was to demonstrate the speed and versatility of the boat through inspirational context visuals. Below is a sample of the renders Tyler and I created.
 
@@ -197,7 +197,7 @@ Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anders
   {
     slug: 'auraglow',
     title: 'Auraglow',
-    category: 'industrial-design',
+    categories: ['3d-visualization'],
     shortDescription: 'LED Whitener promo videos and product renders',
     fullDescription: `Tyler and I created promo videos and stills to showcase the Auraglow LED Whitener and case designed by our colleagues, along with several other Auraglow products. I also created on-package renders for several of the Auraglow products.
 
@@ -227,7 +227,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Lead)`,
   {
     slug: 'whistle',
     title: 'Whistle Go + Whistle Pro',
-    category: 'industrial-design',
+    categories: ['industrial-design'],
     shortDescription: 'GPS-enabled health and activity trackers for pets',
     fullDescription: `GPS-enabled health and activity trackers for pets with emphasis on durability, removability, material finishes, and color considerations.
 
@@ -252,7 +252,7 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Kiera
   {
     slug: 'spansive',
     title: 'Spansive',
-    category: 'industrial-design',
+    categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Premium multi-device wireless charger',
     fullDescription: `Our team was given the task to re-imagine a standard wireless charger into a premium and multi-device compatible experience.
 
@@ -282,7 +282,7 @@ Industrial Design: August Simmons (ID Support), Dayne Tanner (ID Direction), Jac
   {
     slug: 'starkey',
     title: 'Starkey',
-    category: 'industrial-design',
+    categories: ['industrial-design'],
     shortDescription: 'Hearing aid design developed through user interviews',
     fullDescription: `As someone who grew up going into my parent's office to do hearing tests (for fun? My parents are doctors), it was a very exciting opportunity to help design a Starkey hearing aid.
 
@@ -313,7 +313,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Support), Jaclyn Lower
   {
     slug: 'q-egg',
     title: 'Q-Egg',
-    category: 'industrial-design',
+    categories: ['3d-visualization'],
     shortDescription: 'UVC light contact lens cleaner 3D animation',
     fullDescription: `This was my first 3D animated project. The work showcases technology developed by Q-Egg that kills 99.999% of harmful pathogens with UVC light through their contact lens cleaner/case product.
 
@@ -341,8 +341,16 @@ export const getFeaturedProjects = () =>
 export const getProjectBySlug = (slug: string) =>
   projects.find((p) => p.slug === slug);
 
-export const getProjectsByCategory = (category: Project['category']) =>
-  projects.filter((p) => p.category === category);
+export const getProjectsByCategory = (category: Project['categories'][number]) =>
+  projects.filter((p) => p.categories.includes(category));
 
 export const getAllProjects = () =>
   [...projects].sort((a, b) => a.order - b.order);
+
+export const formatCategories = (categories: Project['categories']) => {
+  const labels: Record<Project['categories'][number], string> = {
+    'industrial-design': 'Industrial Design',
+    '3d-visualization': '3D Visualization',
+  };
+  return categories.map((c) => labels[c]).join(', ');
+};

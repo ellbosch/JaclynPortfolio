@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getAllProjects } from '../data/projects';
+import { getAllProjects, formatCategories } from '../data/projects';
 import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
+import { useFilter } from '../context/FilterContext';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -19,7 +20,11 @@ const rowPatterns = [
 ];
 
 const Home = () => {
-  const projects = getAllProjects();
+  const allProjects = getAllProjects();
+  const { filter } = useFilter();
+  const projects = filter === 'all'
+    ? allProjects
+    : allProjects.filter((p) => p.categories.includes(filter));
   const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
 
   // Cascading fade-in animation state
@@ -95,21 +100,20 @@ const Home = () => {
               }
 
               return (
-                <div key={project.slug} className="mb-16">
+                <Link
+                  key={project.slug}
+                  to={`/project/${project.slug}`}
+                  className="block mb-16 group"
+                >
                   {/* Project Header - inline */}
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
-                      {project.shortDescription}
+                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400">
+                      {formatCategories(project.categories)}
                     </p>
                   </div>
-
-                  <Link
-                    to={`/project/${project.slug}`}
-                    className="group block"
-                  >
                     {/* Video at top if available */}
                     {project.videos.length > 0 && (
                       <div className="mb-4">
@@ -384,9 +388,7 @@ const Home = () => {
                         ))}
                       </div>
                     )}
-                  </Link>
-
-                </div>
+                </Link>
               );
             })}
           </div>
