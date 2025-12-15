@@ -280,14 +280,14 @@ const Home = () => {
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
                       // Custom Jabra layout: image 3 with pan effect, then image 1 full width
                       <div className="flex flex-col gap-4">
-                        <div className="w-full h-[60vh] overflow-hidden">
+                        <div className="w-full h-[35vh] md:h-[45vh] lg:h-[60vh] overflow-hidden">
                           <ScrollPanImageTLBR
                             src={project.images[2].src}
                             alt={project.images[2].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="w-full h-[60vh] overflow-hidden">
+                        <div className="w-full h-[35vh] md:h-[45vh] lg:h-[60vh] overflow-hidden">
                           <ScrollPanImageTRBL
                             src={project.images[0].src}
                             alt={project.images[0].alt}
