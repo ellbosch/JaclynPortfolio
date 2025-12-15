@@ -184,6 +184,25 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                    ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
+                      // Custom Jabra layout: photos 3, 6, 7 stacked full width
+                      <div className="flex flex-col gap-4">
+                        <ScrollImage
+                          src={project.images[2].src}
+                          alt={project.images[2].alt}
+                          className="w-full h-auto"
+                        />
+                        <ScrollImage
+                          src={project.images[5].src}
+                          alt={project.images[5].alt}
+                          className="w-full h-auto"
+                        />
+                        <ScrollImage
+                          src={project.images[6].src}
+                          alt={project.images[6].alt}
+                          className="w-full h-auto"
+                        />
+                      </div>
                     ) : (
                       <div className="flex flex-col gap-4">
                         {rows.map((row, rowIndex) => (
