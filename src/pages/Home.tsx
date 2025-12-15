@@ -100,7 +100,11 @@ const Home = () => {
               }
 
               return (
-                <div key={project.slug} className="mb-16">
+                <Link
+                  key={project.slug}
+                  to={`/project/${project.slug}`}
+                  className="block mb-16 group"
+                >
                   {/* Project Header - inline */}
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
@@ -110,11 +114,6 @@ const Home = () => {
                       {formatCategories(project.categories)}
                     </p>
                   </div>
-
-                  <Link
-                    to={`/project/${project.slug}`}
-                    className="group block"
-                  >
                     {/* Video at top if available */}
                     {project.videos.length > 0 && (
                       <div className="mb-4">
@@ -389,9 +388,7 @@ const Home = () => {
                         ))}
                       </div>
                     )}
-                  </Link>
-
-                </div>
+                </Link>
               );
             })}
           </div>
