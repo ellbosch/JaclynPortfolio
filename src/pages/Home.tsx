@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { getAllProjects } from '../data/projects';
 import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
@@ -21,12 +22,33 @@ const Home = () => {
   const projects = getAllProjects();
   const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
 
+  // Cascading fade-in animation state
+  const [fadeStage, setFadeStage] = useState(0);
+
+  useEffect(() => {
+    // Stage 1: Name (after 200ms)
+    const timer1 = setTimeout(() => setFadeStage(1), 200);
+    // Stage 2: About text (after 500ms)
+    const timer2 = setTimeout(() => setFadeStage(2), 500);
+    // Stage 3: Logos (after 800ms) - ClientLogos handles its own cascade
+    const timer3 = setTimeout(() => setFadeStage(3), 800);
+    // Stage 4: Projects (after 2200ms - after logos finish: 800ms start + 16 logos * 75ms + 200ms buffer)
+    const timer4 = setTimeout(() => setFadeStage(4), 1200);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+    };
+  }, []);
+
   return (
     <div className="max-w-[1400px] mx-auto">
       {/* Hero Section */}
       <section className="px-4 py-16 mb-8">
         <h1
-          className="font-bold text-black dark:text-white"
+          className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: "'pragmatica', sans-serif",
             fontSize: '34px',
@@ -36,7 +58,7 @@ const Home = () => {
           JACLYN LOWERY
         </h1>
         <p
-          className="text-black dark:text-white mt-4 mb-8"
+          className={`text-black dark:text-white mt-4 mb-8 transition-opacity duration-500 ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontSize: '20px',
@@ -45,11 +67,11 @@ const Home = () => {
         >
           Jaclyn is an Industrial Designer and 3D Generalist with over {yearsExperience} years of professional experience in the Bay Area. She specializes in Industrial Design, photo-realistic 3D rendering, and animation.
         </p>
-        <ClientLogos />
+        {fadeStage >= 3 && <ClientLogos />}
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
-      <section className="px-4">
+      <section className={`px-4 transition-opacity duration-500 ${fadeStage >= 4 ? 'opacity-100' : 'opacity-0'}`}>
         {projects.length > 0 ? (
           <div>
             {projects.map((project, projectIndex) => {
