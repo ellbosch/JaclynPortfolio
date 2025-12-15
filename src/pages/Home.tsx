@@ -167,6 +167,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
+                      // Second image in right column hidden on mobile
                       <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[30vh] lg:h-[40vh]">
                         <div style={{ flex: '62 1 0%' }} className="overflow-hidden">
                           <ScrollImage
@@ -183,7 +184,7 @@ const Home = () => {
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
+                          <div className="hidden md:block flex-1 overflow-hidden" style={{ minHeight: 0 }}>
                             <ScrollImage
                               src={project.images[6].src}
                               alt={project.images[6].alt}
@@ -363,8 +364,9 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'starkey' && project.images.length >= 6 ? (
                       // Custom Starkey layout: images 6 and 1 in one row, 1 takes 2/3
-                      <div className="flex flex-col flex-row gap-2 lg:gap-4 h-auto md:h-[30vh]">
-                        <div style={{ flex: '1 1 0%' }} className="overflow-hidden">
+                      // First image hidden on mobile
+                      <div className="flex flex-row gap-2 lg:gap-4 h-auto md:h-[30vh]">
+                        <div style={{ flex: '1 1 0%' }} className="hidden md:block overflow-hidden">
                           <img
                             src={project.images[5].src}
                             alt={project.images[5].alt}
