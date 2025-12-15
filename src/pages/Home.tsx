@@ -50,29 +50,32 @@ const Home = () => {
 
   return (
     <div className="max-w-[1400px] mx-auto">
-      {/* Hero Section */}
-      <section className="px-4 py-16 mb-8">
+      {/* Hero Section - takes up 80vh so projects peek at bottom */}
+      <section className="px-4 h-[80vh] flex flex-col justify-center">
         <h1
           className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: "'pragmatica', sans-serif",
-            fontSize: '34px',
-            lineHeight: '40.8px',
+            fontSize: 'clamp(40px, 8vw, 90px)',
+            lineHeight: '1.1',
           }}
         >
           JACLYN LOWERY
         </h1>
         <p
-          className={`text-black dark:text-white mt-4 mb-8 transition-opacity duration-500 ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-20 md:mb-28 max-w-3xl transition-opacity duration-500 ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
-            fontSize: '20px',
+            fontSize: '28px',
             fontWeight: 400,
+            lineHeight: '1.6',
           }}
         >
-          Jaclyn is an Industrial Designer and 3D Generalist with over {yearsExperience} years of professional experience in the Bay Area. She specializes in Industrial Design, photo-realistic 3D rendering, and animation.
+          Industrial design, 3D Rendering, and 3D Animation.
         </p>
-        {fadeStage >= 3 && <ClientLogos />}
+        <div className={`transition-opacity duration-500 ${fadeStage >= 3 ? 'opacity-100' : 'opacity-0'}`}>
+          <ClientLogos startAnimation={fadeStage >= 3} />
+        </div>
       </section>
 
       {/* Projects - Full Width Vertical Layout */}

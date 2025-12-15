@@ -1,11 +1,17 @@
 import { clients } from '../data/clients';
 import { useEffect, useState } from 'react';
 
-const ClientLogos = () => {
+interface ClientLogosProps {
+  startAnimation?: boolean;
+}
+
+const ClientLogos = ({ startAnimation = true }: ClientLogosProps) => {
   const [visibleCount, setVisibleCount] = useState(0);
 
   useEffect(() => {
-    // Start cascading animation immediately when component mounts
+    if (!startAnimation) return;
+
+    // Start cascading animation when startAnimation becomes true
     let count = 0;
     const interval = setInterval(() => {
       count++;
@@ -16,7 +22,7 @@ const ClientLogos = () => {
     }, 75); // 75ms delay between each logo
 
     return () => clearInterval(interval);
-  }, []);
+  }, [startAnimation]);
 
   return (
     <section className="mb-16">
