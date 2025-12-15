@@ -66,12 +66,12 @@ const Home = () => {
           className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-12 md:mb-16 max-w-3xl transition-opacity duration-500 ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
-            fontSize: 'clamp(18px, 2.5vw, 24px)',
+            fontSize: '28px',
             fontWeight: 400,
             lineHeight: '1.6',
           }}
         >
-          Jaclyn is an Industrial Designer and 3D Generalist with over {yearsExperience} years of professional experience in the Bay Area. She specializes in Industrial Design, photo-realistic 3D rendering, and animation.
+          Industrial design, 3D Rendering, and 3D Animation.
         </p>
         <div className={`transition-opacity duration-500 ${fadeStage >= 3 ? 'opacity-100' : 'opacity-0'}`}>
           {fadeStage >= 3 && <ClientLogos />}
