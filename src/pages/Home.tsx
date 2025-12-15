@@ -218,6 +218,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'mode' && project.images.length >= 2 ? (
                       // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
+                      // Second image hidden on mobile
                       <div className="flex flex-col flex-row gap-2 lg:gap-4 h-auto md:h-[45vh]">
                         <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
                           <ScrollPanImageTLBR
@@ -226,7 +227,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div style={{ flex: '20 1 0%' }}>
+                        <div className="hidden md:block" style={{ flex: '20 1 0%' }}>
                           <ScrollImage
                             src={project.images[1].src}
                             alt={project.images[1].alt}
