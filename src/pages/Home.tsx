@@ -106,7 +106,7 @@ const Home = () => {
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
+                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400">
                       {formatCategories(project.categories)}
                     </p>
                   </div>
