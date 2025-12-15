@@ -148,7 +148,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'nice-hr40-remote' && project.images.length >= 6 ? (
                       // Custom Nice HR40 Remote layout: left column 30% (image 5), right column 70% (image 6)
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 items-stretch h-auto md:h-[65vh]">
+                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 items-stretch h-auto md:h-[35vh] lg:h-[45vh]">
                         <div style={{ flex: '30 1 0%' }} className="overflow-hidden">
                           <img
                             src={project.images[4].src}
