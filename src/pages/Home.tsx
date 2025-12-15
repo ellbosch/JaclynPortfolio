@@ -159,6 +159,31 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
+                    ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
+                      // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
+                      <div className="flex gap-4">
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[6].src}
+                            alt={project.images[6].alt}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[7].src}
+                            alt={project.images[7].alt}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                      </div>
                     ) : (
                       <div className="flex flex-col gap-4">
                         {rows.map((row, rowIndex) => (
