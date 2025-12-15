@@ -26,13 +26,13 @@ const ClientLogos = ({ startAnimation = true }: ClientLogosProps) => {
 
   return (
     <section className="mb-16">
-      <div className="flex flex-wrap gap-8 items-center justify-start">
+      <div className="flex flex-wrap gap-6 md:gap-8 items-center justify-start">
         {clients.map((client, index) => (
           <img
             key={client.name}
             src={client.logo}
             alt={`${client.name} logo`}
-            className="h-6 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
+            className="h-3 md:h-6 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
             style={{
               opacity: index < visibleCount ? 0.7 : 0,
             }}

@@ -63,10 +63,9 @@ const Home = () => {
           JACLYN LOWERY
         </h1>
         <p
-          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-20 md:mb-28 max-w-3xl transition-opacity duration-500 ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-20 md:mb-28 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
-            fontSize: '28px',
             fontWeight: 400,
             lineHeight: '1.6',
           }}
