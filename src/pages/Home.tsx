@@ -344,7 +344,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[70vh]">
+                        <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[40vh]">
                           <div style={{ flex: '2 1 0%' }}>
                             <ScrollImage
                               src={project.images[3].src}
