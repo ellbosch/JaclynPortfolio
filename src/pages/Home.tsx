@@ -109,7 +109,7 @@ const Home = () => {
                   className="block mb-8 lg:mb-16 group"
                 >
                   {/* Project Header - inline */}
-                  <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+                  <div className="flex flex-col md:flex-row md:items-baseline md:gap-6 mb-2">
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
