@@ -4,8 +4,8 @@ export interface Client {
 }
 
 export const clients: Client[] = [
-  { name: 'Amazon', logo: '/images/logos/amazon.png' },
   { name: 'Microsoft', logo: '/images/logos/microsoft.png' },
+  { name: 'Amazon', logo: '/images/logos/amazon.png' },
   { name: 'Samsung', logo: '/images/logos/samsung.png' },
   { name: 'Bose', logo: '/images/logos/bose.png' },
   { name: 'Arlo', logo: '/images/logos/arlo.png' },
@@ -15,9 +15,8 @@ export const clients: Client[] = [
   { name: 'Aura Glow', logo: '/images/logos/auraglow.png' },
   { name: 'Jabra', logo: '/images/logos/jabra.png' },
   { name: 'Mode', logo: '/images/logos/mode.webp' },
-  { name: 'Whistle', logo: '/images/logos/whistle.jpg' },
+  // { name: 'Whistle', logo: '/images/logos/whistle.jpg' },
   { name: 'Modern Sprout', logo: '/images/logos/modern-sprout.png' },
-  { name: 'Moxion', logo: '/images/logos/moxion.jpg' },
   { name: 'Control4', logo: '/images/logos/control4.png' },
   { name: 'Nocturne', logo: '/images/logos/nocturne.webp' },
 ];
