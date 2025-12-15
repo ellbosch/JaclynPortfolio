@@ -1,4 +1,5 @@
 import { personalInfo } from '../data/personal';
+import ClientLogos from '../components/ClientLogos';
 
 const About = () => {
   const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
@@ -34,6 +35,9 @@ const About = () => {
           </p>
         </div>
       </div>
+
+      {/* Client Logos */}
+      <ClientLogos />
 
       {/* Contact Section */}
       <section>
