@@ -114,6 +114,24 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                    ) : project.slug === 'nice-hr40-remote' && project.images.length >= 6 ? (
+                      // Custom Nice HR40 Remote layout: left column 30% (image 5), right column 70% (image 6)
+                      <div className="flex gap-4 items-stretch" style={{ height: '65vh' }}>
+                        <div style={{ flex: '30 1 0%' }} className="overflow-hidden">
+                          <img
+                            src={project.images[4].src}
+                            alt={project.images[4].alt}
+                            className="w-full h-full object-cover object-bottom"
+                          />
+                        </div>
+                        <div style={{ flex: '70 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
                       <div className="flex gap-4 items-stretch" style={{ height: '62vh' }}>
