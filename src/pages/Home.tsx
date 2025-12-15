@@ -130,15 +130,15 @@ const Home = () => {
                     {/* Image Rows with gaps */}
                     {project.slug === 'arcsport' && project.images.length >= 4 ? (
                       // Custom Arc Sport layout: Asymmetric 70/30 split
-                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[65vh]">
-                        <div style={{ flex: '70 1 0%' }}>
+                      <div className="flex flex-col lg:flex-row gap-4 lg:h-[45vh]">
+                        <div className="h-[35vh] lg:h-full" style={{ flex: '70 1 0%' }}>
                           <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div style={{ flex: '30 1 0%' }}>
+                        <div className="h-[35vh] lg:h-full" style={{ flex: '30 1 0%' }}>
                           <ScrollPanImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
@@ -254,23 +254,23 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
                       // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
-                      <div className="flex gap-4">
-                        <div style={{ flex: '1 1 0%' }}>
-                          <ScrollImage
+                      <div className="flex flex-col md:flex-row gap-4">
+                        <div className="overflow-hidden" style={{ flex: '1 1 0%' }}>
+                          <img
                             src={project.images[6].src}
                             alt={project.images[6].alt}
                             className="w-full h-auto object-contain"
                           />
                         </div>
-                        <div style={{ flex: '1 1 0%' }}>
-                          <ScrollImage
+                        <div className="overflow-hidden" style={{ flex: '1 1 0%' }}>
+                          <img
                             src={project.images[7].src}
                             alt={project.images[7].alt}
                             className="w-full h-auto object-contain"
                           />
                         </div>
-                        <div style={{ flex: '1 1 0%' }}>
-                          <ScrollImage
+                        <div className="overflow-hidden" style={{ flex: '1 1 0%' }}>
+                          <img
                             src={project.images[3].src}
                             alt={project.images[3].alt}
                             className="w-full h-auto object-contain"
