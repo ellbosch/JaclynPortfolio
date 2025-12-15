@@ -313,7 +313,7 @@ export const ScrollCrossfadeImages = ({
           key={index}
           src={image.src}
           alt={image.alt}
-          className={`${className} absolute inset-0 transition-opacity duration-300`}
+          className={`${className} absolute inset-0 transition-opacity duration-700`}
           style={{
             opacity: index === activeIndex ? 1 : 0,
           }}
