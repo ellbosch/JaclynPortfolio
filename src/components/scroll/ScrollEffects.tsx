@@ -199,9 +199,9 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-right to bottom-left (start higher)
-      const panRange = 80; // pixels to pan
-      const x = Math.round(-30 + clampedProgress * 60);
-      const y = Math.round(60 - clampedProgress * panRange);
+      const panRange = 100; // pixels to pan
+      const x = Math.round(-40 + clampedProgress * 80);
+      const y = Math.round(40 - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
