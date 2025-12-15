@@ -64,7 +64,7 @@ const Header = () => {
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-2 pr-4 lg:px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-12 md:h-16">
           <Link
             to="/"
             className="font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
