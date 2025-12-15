@@ -122,7 +122,7 @@ const Home = () => {
                       <div className="mb-4">
                         <ScrollVideo
                           src={project.videos[0].src}
-                          className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
+                          className="w-full h-[35vh] md:h-[50vh] lg:h-[70vh] object-cover"
                         />
                       </div>
                     )}
@@ -130,7 +130,7 @@ const Home = () => {
                     {/* Image Rows with gaps */}
                     {project.slug === 'arcsport' && project.images.length >= 4 ? (
                       // Custom Arc Sport layout: Asymmetric 70/30 split
-                      <div className="flex gap-4" style={{ height: '65vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[65vh]">
                         <div style={{ flex: '70 1 0%' }}>
                           <ScrollImage
                             src={project.images[0].src}
@@ -148,7 +148,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'nice-hr40-remote' && project.images.length >= 6 ? (
                       // Custom Nice HR40 Remote layout: left column 30% (image 5), right column 70% (image 6)
-                      <div className="flex gap-4 items-stretch" style={{ height: '65vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 items-stretch h-auto md:h-[65vh]">
                         <div style={{ flex: '30 1 0%' }} className="overflow-hidden">
                           <img
                             src={project.images[4].src}
@@ -166,7 +166,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
-                      <div className="flex gap-4" style={{ height: '62vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[62vh]">
                         <div style={{ flex: '62 1 0%' }} className="overflow-hidden">
                           <ScrollImage
                             src={project.images[0].src}
@@ -193,7 +193,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'control4' && project.images.length >= 13 ? (
                       // Control4 layout: 3 columns, each with crossfade between 4 angles
-                      <div className="flex gap-4" style={{ height: '70vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[70vh]">
                         {/* Column 1: Tactile Dark (images 1-4) */}
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollCrossfadeImages
@@ -218,7 +218,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'mode' && project.images.length >= 2 ? (
                       // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
-                      <div className="flex gap-4" style={{ height: '60vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[60vh]">
                         <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
                           <ScrollPanImageTLBR
                             src={project.images[0].src}
@@ -236,7 +236,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'q-egg' && project.images.length >= 2 ? (
                       // Custom Q-Egg layout: images 1 and 2 in one row, 1 takes 20%
-                      <div className="flex gap-4" style={{ height: '50vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[50vh]">
                         <div style={{ flex: '20 1 0%' }}>
                           <ScrollImage
                             src={project.images[0].src}
@@ -297,7 +297,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'whistle' && project.images.length >= 5 ? (
                       // Custom Whistle layout: image 5 natural height, image 1 fills space, image 4 clipped
-                      <div className="flex gap-4 items-start">
+                      <div className="flex flex-col md:flex-row gap-4 items-start">
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollImage
                             src={project.images[4].src}
@@ -330,7 +330,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex gap-4" style={{ height: '70vh' }}>
+                        <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[70vh]">
                           <div style={{ flex: '2 1 0%' }}>
                             <ScrollImage
                               src={project.images[3].src}
@@ -349,7 +349,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'starkey' && project.images.length >= 6 ? (
                       // Custom Starkey layout: images 6 and 1 in one row, 1 takes 2/3
-                      <div className="flex gap-4" style={{ height: '60vh' }}>
+                      <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[60vh]">
                         <div style={{ flex: '1 1 0%' }} className="overflow-hidden">
                           <img
                             src={project.images[5].src}
@@ -369,7 +369,7 @@ const Home = () => {
                     ) : (
                       <div className="flex flex-col gap-4">
                         {rows.map((row, rowIndex) => (
-                          <div key={rowIndex} className="flex gap-4">
+                          <div key={rowIndex} className="flex flex-col md:flex-row gap-4">
                             {row.images.map((image, imgIdx) => {
                               const flexValue = row.layout.length === 1
                                 ? 1
