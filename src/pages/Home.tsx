@@ -258,8 +258,9 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
                       // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
+                      // First and third images hidden on mobile
                       <div className="flex flex-col md:flex-row gap-4">
-                        <div className="overflow-hidden" style={{ flex: '1 1 0%' }}>
+                        <div className="hidden md:block overflow-hidden" style={{ flex: '1 1 0%' }}>
                           <img
                             src={project.images[6].src}
                             alt={project.images[6].alt}
@@ -273,7 +274,7 @@ const Home = () => {
                             className="w-full h-auto object-contain"
                           />
                         </div>
-                        <div className="overflow-hidden" style={{ flex: '1 1 0%' }}>
+                        <div className="hidden md:block overflow-hidden" style={{ flex: '1 1 0%' }}>
                           <img
                             src={project.images[3].src}
                             alt={project.images[3].alt}
