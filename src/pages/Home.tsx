@@ -159,23 +159,23 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
-                      <div className="flex gap-4 items-stretch" style={{ height: '62vh' }}>
-                        <div style={{ flex: '62 1 0%' }}>
+                      <div className="flex gap-4" style={{ height: '62vh' }}>
+                        <div style={{ flex: '62 1 0%' }} className="overflow-hidden">
                           <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex flex-col gap-4" style={{ flex: '38 1 0%' }}>
-                          <div className="flex-1">
+                        <div className="flex flex-col gap-4 overflow-hidden" style={{ flex: '38 1 0%', height: '100%' }}>
+                          <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
                             <ScrollImage
                               src={project.images[3].src}
                               alt={project.images[3].alt}
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div className="flex-1">
+                          <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
                             <ScrollImage
                               src={project.images[6].src}
                               alt={project.images[6].alt}
