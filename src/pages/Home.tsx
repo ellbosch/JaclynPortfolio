@@ -50,8 +50,8 @@ const Home = () => {
 
   return (
     <div className="max-w-[1400px] mx-auto">
-      {/* Hero Section - takes up 75vh so projects peek at bottom */}
-      <section className="px-4 min-h-[75vh] flex flex-col justify-center">
+      {/* Hero Section - takes up 80vh so projects peek at bottom */}
+      <section className="px-4 min-h-[80vh] flex flex-col justify-center">
         <h1
           className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
