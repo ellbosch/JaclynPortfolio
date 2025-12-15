@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { getProjectBySlug, getAllProjects } from '../data/projects';
+import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
 
 const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -54,7 +54,7 @@ const ProjectPage = () => {
         {/* Meta info */}
         <div className="flex flex-wrap gap-6 text-sm text-gray-500 dark:text-gray-500">
           <span>{project.year}</span>
-          <span className="capitalize">{project.category.replace('-', ' ')}</span>
+          <span>{formatCategories(project.categories)}</span>
           {project.client && <span>Client: {project.client}</span>}
         </div>
       </header>
