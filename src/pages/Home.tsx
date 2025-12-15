@@ -106,7 +106,7 @@ const Home = () => {
                 <Link
                   key={project.slug}
                   to={`/project/${project.slug}`}
-                  className="block mb-16 group"
+                  className="block mb-8 lg:mb-16 group"
                 >
                   {/* Project Header - inline */}
                   <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
