@@ -139,6 +139,137 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
   );
 };
 
+// Scroll-based image with pan from top-left to bottom-right (with zoom for pan room)
+export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Pan diagonally from top-left to bottom-right
+      const panRange = 50; // pixels to pan
+      const x = Math.round(25 - clampedProgress * panRange);
+      const y = Math.round(25 - clampedProgress * panRange);
+
+      imgRef.current.style.transform = `scale(1.15) translate3d(${x}px, ${y}px, 0)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={`${className} block`}
+        style={{
+          willChange: 'transform',
+        }}
+      />
+    </div>
+  );
+};
+
+// Scroll-based image with pan from top-right to bottom-left (with zoom for pan room)
+export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Pan diagonally from top-right to bottom-left (start higher)
+      const panRange = 80; // pixels to pan
+      const x = Math.round(-30 + clampedProgress * 60);
+      const y = Math.round(60 - clampedProgress * panRange);
+
+      imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={`${className} block`}
+        style={{
+          willChange: 'transform',
+        }}
+      />
+    </div>
+  );
+};
+
+// Scroll-based image with vertical pan from top to bottom
+export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imgRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+
+      // Pan vertically from top to bottom (start higher)
+      const panRange = 80; // pixels to pan
+      const y = Math.round(2000 - clampedProgress * panRange);
+
+      imgRef.current.style.transform = `scale(1.15) translate3d(0, ${y}px, 0)`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="overflow-hidden w-full h-full">
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={`${className} block`}
+        style={{
+          willChange: 'transform',
+        }}
+      />
+    </div>
+  );
+};
+
 // Parallax container that moves children slower than scroll
 // Note: This component had rendering issues (horizontal lines, masking) when used.
 // Preserved here for future experimentation.

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getAllProjects } from '../data/projects';
-import { ScrollVideo, ScrollImage, ScrollPanImage } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB } from '../components/scroll/ScrollEffects';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -185,23 +185,29 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
-                      // Custom Jabra layout: photos 3, 6, 7 stacked full width
+                      // Custom Jabra layout: photos 3, 6, 7 stacked full width at 90% height with pan effects
                       <div className="flex flex-col gap-4">
-                        <ScrollImage
-                          src={project.images[2].src}
-                          alt={project.images[2].alt}
-                          className="w-full h-auto"
-                        />
-                        <ScrollImage
-                          src={project.images[5].src}
-                          alt={project.images[5].alt}
-                          className="w-full h-auto"
-                        />
-                        <ScrollImage
-                          src={project.images[6].src}
-                          alt={project.images[6].alt}
-                          className="w-full h-auto"
-                        />
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollPanImageTLBR
+                            src={project.images[2].src}
+                            alt={project.images[2].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollPanImageTRBL
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="w-full h-[60vh] overflow-hidden">
+                          <ScrollPanImageTB
+                            src={project.images[6].src}
+                            alt={project.images[6].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     ) : (
                       <div className="flex flex-col gap-4">
