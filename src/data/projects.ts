@@ -75,7 +75,7 @@ Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle
     skills: [],
     year: 2024,
     featured: true,
-    order: 2.5,
+    order: 4,
   },
   {
     slug: 'mode',
@@ -101,7 +101,7 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
     skills: [],
     year: 2024,
     featured: true,
-    order: 3,
+    order: 5,
   },
   {
     slug: 'nice-hr40-remote',
@@ -125,7 +125,7 @@ Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), Jo
     skills: [],
     year: 2024,
     featured: true,
-    order: 4,
+    order: 7,
   },
   {
     slug: 'jabra-packaging',
@@ -154,7 +154,7 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
     skills: [],
     year: 2024,
     featured: true,
-    order: 5,
+    order: 8,
   },
   {
     slug: 'netgear-nighthawk',
@@ -168,7 +168,7 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
     skills: [],
     year: 2024,
     featured: true,
-    order: 6,
+    order: 3,
   },
   {
     slug: 'arcsport',
@@ -192,7 +192,7 @@ Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anders
     skills: [],
     year: 2024,
     featured: true,
-    order: 3,
+    order: 9,
   },
   {
     slug: 'auraglow',
@@ -222,7 +222,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Lead)`,
     skills: [],
     year: 2024,
     featured: true,
-    order: 4,
+    order: 10,
   },
   {
     slug: 'whistle',
@@ -247,7 +247,7 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Kiera
     skills: [],
     year: 2024,
     featured: true,
-    order: 6,
+    order: 13,
   },
   {
     slug: 'spansive',
@@ -277,7 +277,7 @@ Industrial Design: August Simmons (ID Support), Dayne Tanner (ID Direction), Jac
     skills: [],
     year: 2024,
     featured: true,
-    order: 7,
+    order: 12,
   },
   {
     slug: 'starkey',
@@ -308,7 +308,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Support), Jaclyn Lower
     skills: [],
     year: 2024,
     featured: true,
-    order: 10,
+    order: 14,
   },
   {
     slug: 'q-egg',
@@ -331,7 +331,7 @@ I led storytelling and 3D visuals/animation efforts on the project, collaboratin
     skills: [],
     year: 2024,
     featured: true,
-    order: 12,
+    order: 6,
   },
 ];
 

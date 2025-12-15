@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllProjects } from '../data/projects';
-import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageTB, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
@@ -159,23 +159,23 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
-                      <div className="flex gap-4 items-stretch" style={{ height: '62vh' }}>
-                        <div style={{ flex: '62 1 0%' }}>
+                      <div className="flex gap-4" style={{ height: '62vh' }}>
+                        <div style={{ flex: '62 1 0%' }} className="overflow-hidden">
                           <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex flex-col gap-4" style={{ flex: '38 1 0%' }}>
-                          <div className="flex-1">
+                        <div className="flex flex-col gap-4 overflow-hidden" style={{ flex: '38 1 0%', height: '100%' }}>
+                          <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
                             <ScrollImage
                               src={project.images[3].src}
                               alt={project.images[3].alt}
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div className="flex-1">
+                          <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
                             <ScrollImage
                               src={project.images[6].src}
                               alt={project.images[6].alt}
@@ -209,6 +209,42 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                    ) : project.slug === 'mode' && project.images.length >= 2 ? (
+                      // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
+                      <div className="flex gap-4" style={{ height: '60vh' }}>
+                        <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
+                          <ScrollPanImageTLBR
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '20 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[1].src}
+                            alt={project.images[1].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'q-egg' && project.images.length >= 2 ? (
+                      // Custom Q-Egg layout: images 1 and 2 in one row, 1 takes 20%
+                      <div className="flex gap-4" style={{ height: '50vh' }}>
+                        <div style={{ flex: '20 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '80 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[1].src}
+                            alt={project.images[1].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
                     ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
                       // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
                       <div className="flex gap-4">
@@ -235,7 +271,7 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
-                      // Custom Jabra layout: photos 3, 6, 7 stacked full width at 90% height with pan effects
+                      // Custom Jabra layout: image 3 with pan effect, then image 1 full width
                       <div className="flex flex-col gap-4">
                         <div className="w-full h-[60vh] overflow-hidden">
                           <ScrollPanImageTLBR
@@ -246,15 +282,79 @@ const Home = () => {
                         </div>
                         <div className="w-full h-[60vh] overflow-hidden">
                           <ScrollPanImageTRBL
-                            src={project.images[5].src}
-                            alt={project.images[5].alt}
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
+                      </div>
+                    ) : project.slug === 'whistle' && project.images.length >= 5 ? (
+                      // Custom Whistle layout: image 5 natural height, image 1 fills space, image 4 clipped
+                      <div className="flex gap-4 items-start">
+                        <div style={{ flex: '1 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[4].src}
+                            alt={project.images[4].alt}
+                            className="w-full h-auto"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }} className="self-stretch">
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '1 1 0%' }} className="overflow-hidden self-stretch">
+                          <ScrollImage
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'spansive' && project.images.length >= 5 ? (
+                      // Custom Spansive layout: top image 1, then left 2/3 (image 4), right 1/3 (image 2 cropped)
+                      <div className="flex flex-col gap-4">
                         <div className="w-full h-[60vh] overflow-hidden">
-                          <ScrollPanImageTB
-                            src={project.images[6].src}
-                            alt={project.images[6].alt}
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex gap-4" style={{ height: '70vh' }}>
+                          <div style={{ flex: '2 1 0%' }}>
+                            <ScrollImage
+                              src={project.images[3].src}
+                              alt={project.images[3].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div style={{ flex: '1 1 0%' }}>
+                            <ScrollImage
+                              src={project.images[1].src}
+                              alt={project.images[1].alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ) : project.slug === 'starkey' && project.images.length >= 6 ? (
+                      // Custom Starkey layout: images 6 and 1 in one row, 1 takes 2/3
+                      <div className="flex gap-4" style={{ height: '60vh' }}>
+                        <div style={{ flex: '1 1 0%' }} className="overflow-hidden">
+                          <img
+                            src={project.images[5].src}
+                            alt={project.images[5].alt}
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: 'calc(50% + 20px) center' }}
+                          />
+                        </div>
+                        <div style={{ flex: '2 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
