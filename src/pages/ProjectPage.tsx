@@ -86,7 +86,7 @@ const ProjectPage = () => {
       {/* Description */}
       <section className="mb-12">
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+          <p className="text-lg text-gray-900 dark:text-white whitespace-pre-line">
             {project.fullDescription}
           </p>
         </div>
