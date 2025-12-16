@@ -227,23 +227,40 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'control4' && project.images.length >= 13 ? (
-                      // Control4 layout: 3 columns, each with crossfade between 4 angles
+                      // Control4 layout: cover image + first hstack, single row on large screens
+                      <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-2 lg:gap-4">
+                        <div className="w-[25vh] lg:flex-2 bg-white">
+                          <img
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full lg:w-110 lg:ml-10 h-full object-contain"
+                          />
+                        </div>
+                        <div className="flex items-center lg:flex-3 lg:-ml-68">
+                          {[project.images[4], ...project.images.slice(1, 4)].map((image, index) => (
+                            <img
+                              key={`tactile-dark-${index}`}
+                              src={image.src}
+                              alt={image.alt}
+                              className={`h-auto -mr-[25%] last:mr-0 ${index === 1 || index === 3 ? 'w-[44%]' : 'w-[45%]'}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      /* Original Control4 layout - commented out
                       <div className="flex gap-2 md:gap-2 lg:gap-4 h-[25vh] md:h-[35vh] lg:h-[45vh]">
-                        {/* Column 1: Tactile Dark (images 1-4) */}
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollCrossfadeImages
                             images={project.images.slice(1, 5)}
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        {/* Column 2: Touch Dark (images 5-8) */}
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollCrossfadeImages
                             images={project.images.slice(5, 9)}
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        {/* Column 3: Touch Light (images 9-12) */}
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollCrossfadeImages
                             images={project.images.slice(9, 13)}
@@ -251,6 +268,7 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                      */
                     ) : project.slug === 'mode' && project.images.length >= 2 ? (
                       // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
                       // Second image hidden on mobile
