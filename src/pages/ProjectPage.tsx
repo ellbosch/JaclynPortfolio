@@ -123,7 +123,7 @@ const ProjectPage = () => {
                 key={`image-${index}`}
                 src={image.src}
                 alt={image.alt}
-                className="max-w-full h-auto"
+                className={`max-w-full h-auto ${image.src.includes('02-green-taupe') ? 'bg-white' : ''}`}
               />
             ))}
           </div>
