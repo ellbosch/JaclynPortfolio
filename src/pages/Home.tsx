@@ -63,7 +63,7 @@ const Home = () => {
           JACLYN<br className="md:hidden" /> LOWERY
         </h1>
         <p
-          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-20 md:mb-28 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-4 md:mb-6 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontWeight: 400,
@@ -71,6 +71,40 @@ const Home = () => {
           }}
         >
           Industrial Design, 3D Rendering,<br className="md:hidden" /> and 3D Animation.
+        </p>
+        <p
+          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          style={{
+            fontFamily: '"adobe-garamond-pro", serif',
+            fontWeight: 400,
+            lineHeight: '1.6',
+          }}
+        >
+          Reach out by{' '}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              const url = ['https://www.linkedin.com/in', 'jaclyn-lowery-11670590'].join('/');
+              window.open(url, '_blank', 'noopener,noreferrer');
+            }}
+            className="underline hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            LinkedIn
+          </a>
+          {' '}or{' '}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              const email = ['jaclynl.inquiries', 'gmail.com'].join('@');
+              window.location.href = `mailto:${email}`;
+            }}
+            className="underline hover:text-gray-900 dark:hover:text-white transition-colors"
+          >
+            Email
+          </a>
+          .
         </p>
         <div className={`transition-opacity duration-500 ${fadeStage >= 3 ? 'opacity-100' : 'opacity-0'}`}>
           <ClientLogos startAnimation={fadeStage >= 3} />
