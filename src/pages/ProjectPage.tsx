@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
 
@@ -18,7 +18,6 @@ const FadeInVideo = ({ src, className }: { src: string; className?: string }) =>
 
 const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const project = slug ? getProjectBySlug(slug) : undefined;
   const allProjects = getAllProjects();
 
@@ -51,20 +50,12 @@ const ProjectPage = () => {
   return (
     <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
       {/* Back Link */}
-      <button
-        onClick={() => {
-          // Only use history back if user has visited home page in this session
-          const hasVisitedHome = sessionStorage.getItem('homeAnimated') === 'true';
-          if (hasVisitedHome) {
-            navigate(-1);
-          } else {
-            navigate('/');
-          }
-        }}
-        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors cursor-pointer"
+      <Link
+        to="/"
+        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
       >
         &larr; Back to Work
-      </button>
+      </Link>
 
       {/* Project Header */}
       <header className="mb-12">
