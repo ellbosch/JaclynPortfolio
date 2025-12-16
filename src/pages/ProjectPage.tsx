@@ -1,5 +1,20 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
+
+const FadeInVideo = ({ src, className }: { src: string; className?: string }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <video
+      src={src}
+      controls
+      muted
+      playsInline
+      onLoadedData={() => setLoaded(true)}
+      className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+    />
+  );
+};
 
 const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -109,13 +124,7 @@ const ProjectPage = () => {
           <div className="space-y-4">
             {project.videos.map((video, index) => (
               <div key={index}>
-                <video
-                  src={video.src}
-                  controls
-                  muted
-                  playsInline
-                  className="w-full h-auto"
-                />
+                <FadeInVideo src={video.src} className="w-full h-auto" />
               </div>
             ))}
           </div>
