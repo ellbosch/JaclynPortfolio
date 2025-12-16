@@ -1,8 +1,9 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
 
 const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const project = slug ? getProjectBySlug(slug) : undefined;
   const allProjects = getAllProjects();
 
@@ -35,12 +36,19 @@ const ProjectPage = () => {
   return (
     <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
       {/* Back Link */}
-      <Link
-        to="/"
-        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
+      <button
+        onClick={() => {
+          // Check if there's history to go back to (user came from home page)
+          if (window.history.length > 1) {
+            navigate(-1);
+          } else {
+            navigate('/');
+          }
+        }}
+        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors cursor-pointer"
       >
         &larr; Back to Work
-      </Link>
+      </button>
 
       {/* Project Header */}
       <header className="mb-12">
