@@ -38,8 +38,9 @@ const ProjectPage = () => {
       {/* Back Link */}
       <button
         onClick={() => {
-          // Check if there's history to go back to (user came from home page)
-          if (window.history.length > 1) {
+          // Only use history back if user has visited home page in this session
+          const hasVisitedHome = sessionStorage.getItem('homeAnimated') === 'true';
+          if (hasVisitedHome) {
             navigate(-1);
           } else {
             navigate('/');
