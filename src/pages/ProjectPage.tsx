@@ -10,6 +10,8 @@ const FadeInVideo = ({ src, className }: { src: string; className?: string }) =>
       controls
       muted
       playsInline
+      autoPlay
+      loop
       onLoadedData={() => setLoaded(true)}
       className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
     />
