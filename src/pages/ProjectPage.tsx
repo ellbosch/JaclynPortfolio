@@ -84,13 +84,24 @@ const ProjectPage = () => {
       )}
 
       {/* Description */}
-      <section className="mb-12">
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="text-lg text-gray-900 dark:text-white whitespace-pre-line">
-            {project.fullDescription}
+      {project.fullDescription && (
+        <section className="mb-8">
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <p className="text-lg text-gray-900 dark:text-white whitespace-pre-line">
+              {project.fullDescription}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Credits */}
+      {project.creditsDescription && (
+        <section className="mb-12">
+          <p className="text-sm text-gray-500 dark:text-gray-500 whitespace-pre-line">
+            {project.creditsDescription}
           </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Skills */}
       {project.skills.length > 0 && (
