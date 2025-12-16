@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "jaclyn-portfolio",
+    "site": "jaclyn-portfolio-20d22",
     "public": "dist",
     "ignore": [
       "firebase.json",
