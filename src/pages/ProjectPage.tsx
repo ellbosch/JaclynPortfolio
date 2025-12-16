@@ -135,35 +135,35 @@ const ProjectPage = () => {
                 className="w-full h-auto"
               />
               {/* Tactile Dark - 4 angles side by side */}
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex">
                 {[project.images[4], ...project.images.slice(1, 4)].map((image, index) => (
                   <img
                     key={`tactile-dark-${index}`}
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-auto"
+                    className="w-1/3 h-auto -mr-[15%] last:mr-0"
                   />
                 ))}
               </div>
               {/* Touch Dark - 4 angles side by side */}
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex">
                 {[project.images[8], ...project.images.slice(5, 8)].map((image, index) => (
                   <img
                     key={`touch-dark-${index}`}
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-auto"
+                    className="w-1/3 h-auto -mr-[15%] last:mr-0"
                   />
                 ))}
               </div>
               {/* Touch Light - 4 angles side by side */}
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex">
                 {[project.images[12], ...project.images.slice(9, 12)].map((image, index) => (
                   <img
                     key={`touch-light-${index}`}
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-auto"
+                    className="w-1/3 h-auto -mr-[15%] last:mr-0"
                   />
                 ))}
               </div>
