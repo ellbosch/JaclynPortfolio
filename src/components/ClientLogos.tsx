@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 
 interface ClientLogosProps {
   startAnimation?: boolean;
+  skipAnimation?: boolean;
 }
 
-const ClientLogos = ({ startAnimation = true }: ClientLogosProps) => {
-  const [visibleCount, setVisibleCount] = useState(0);
+const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLogosProps) => {
+  const [visibleCount, setVisibleCount] = useState(skipAnimation ? clients.length : 0);
 
   useEffect(() => {
-    if (!startAnimation) return;
+    if (!startAnimation || skipAnimation) return;
 
     // Start cascading animation when startAnimation becomes true
     let count = 0;

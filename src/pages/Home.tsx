@@ -28,9 +28,13 @@ const Home = () => {
   const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
 
   // Cascading fade-in animation state
-  const [fadeStage, setFadeStage] = useState(0);
+  // Skip animations if user has already seen them (e.g., returning via back button)
+  const hasAnimated = sessionStorage.getItem('homeAnimated') === 'true';
+  const [fadeStage, setFadeStage] = useState(hasAnimated ? 4 : 0);
 
   useEffect(() => {
+    if (hasAnimated) return;
+
     // Stage 1: Name (after 200ms)
     const timer1 = setTimeout(() => setFadeStage(1), 200);
     // Stage 2: About text (after 500ms)
@@ -38,7 +42,10 @@ const Home = () => {
     // Stage 3: Logos (after 800ms) - ClientLogos handles its own cascade
     const timer3 = setTimeout(() => setFadeStage(3), 800);
     // Stage 4: Projects (after 2200ms - after logos finish: 800ms start + 16 logos * 75ms + 200ms buffer)
-    const timer4 = setTimeout(() => setFadeStage(4), 1200);
+    const timer4 = setTimeout(() => {
+      setFadeStage(4);
+      sessionStorage.setItem('homeAnimated', 'true');
+    }, 1200);
 
     return () => {
       clearTimeout(timer1);
@@ -46,7 +53,7 @@ const Home = () => {
       clearTimeout(timer3);
       clearTimeout(timer4);
     };
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <div className="max-w-[1400px] mx-auto">
@@ -107,7 +114,7 @@ const Home = () => {
           .
         </p>
         <div className={`transition-opacity duration-500 ${fadeStage >= 3 ? 'opacity-100' : 'opacity-0'}`}>
-          <ClientLogos startAnimation={fadeStage >= 3} />
+          <ClientLogos startAnimation={fadeStage >= 3} skipAnimation={hasAnimated} />
         </div>
       </section>
 
