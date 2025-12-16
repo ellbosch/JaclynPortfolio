@@ -118,13 +118,12 @@ const ProjectPage = () => {
         <section className="mb-12">
           <div className="flex flex-wrap gap-4">
             {project.images.map((image, index) => (
-              <div key={index} className="w-full">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-auto"
-                />
-              </div>
+              <img
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                className="max-w-full h-auto"
+              />
             ))}
           </div>
         </section>
