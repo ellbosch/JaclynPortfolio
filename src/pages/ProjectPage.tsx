@@ -125,19 +125,64 @@ const ProjectPage = () => {
       {/* Media Gallery (Videos + Images) */}
       {(project.videos.length > 0 || project.images.length > 0) && (
         <section className="mb-12">
-          <div className="flex flex-wrap gap-4">
-            {project.videos.map((video, index) => (
-              <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
-            ))}
-            {project.images.map((image, index) => (
+          {/* Custom layout for Control4 - 3 horizontal stacks */}
+          {slug === 'control4' ? (
+            <div className="space-y-8">
+              {/* Cover image */}
               <img
-                key={`image-${index}`}
-                src={image.src}
-                alt={image.alt}
-                className={`max-w-full h-auto ${image.src.includes('02-green-taupe') ? 'bg-white' : ''}`}
+                src={project.images[0].src}
+                alt={project.images[0].alt}
+                className="w-full h-auto"
               />
-            ))}
-          </div>
+              {/* Tactile Dark - 4 angles side by side */}
+              <div className="grid grid-cols-4 gap-2">
+                {[project.images[4], ...project.images.slice(1, 4)].map((image, index) => (
+                  <img
+                    key={`tactile-dark-${index}`}
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-auto"
+                  />
+                ))}
+              </div>
+              {/* Touch Dark - 4 angles side by side */}
+              <div className="grid grid-cols-4 gap-2">
+                {[project.images[8], ...project.images.slice(5, 8)].map((image, index) => (
+                  <img
+                    key={`touch-dark-${index}`}
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-auto"
+                  />
+                ))}
+              </div>
+              {/* Touch Light - 4 angles side by side */}
+              <div className="grid grid-cols-4 gap-2">
+                {[project.images[12], ...project.images.slice(9, 12)].map((image, index) => (
+                  <img
+                    key={`touch-light-${index}`}
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-auto"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-4">
+              {project.videos.map((video, index) => (
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+              ))}
+              {project.images.map((image, index) => (
+                <img
+                  key={`image-${index}`}
+                  src={image.src}
+                  alt={image.alt}
+                  className={`max-w-full h-auto ${image.src.includes('02-green-taupe') ? 'bg-white' : ''}`}
+                />
+              ))}
+            </div>
+          )}
         </section>
       )}
 
