@@ -63,8 +63,8 @@ const Header = () => {
         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
-      <nav className="max-w-[1400px] mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+      <nav className="max-w-[1400px] mx-auto px-2 pr-4 lg:px-4">
+        <div className="flex justify-between items-center h-12 md:h-16">
           <Link
             to="/"
             className="font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
@@ -74,7 +74,8 @@ const Header = () => {
               lineHeight: '40.8px',
             }}
           >
-            JACLYN LOWERY
+            <span className="hidden md:inline">JACLYN LOWERY</span>
+            <span className="md:hidden">JL</span>
           </Link>
 
           <div className="flex items-center gap-4">
