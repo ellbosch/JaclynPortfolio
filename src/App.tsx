@@ -4,11 +4,13 @@ import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
 import NotFound from './pages/NotFound';
 import { FilterProvider } from './context/FilterContext';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <FilterProvider>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route element={<PageLayout />}>
             <Route path="/" element={<Home />} />

@@ -37,7 +37,7 @@ const Home = () => {
     const timer2 = setTimeout(() => setFadeStage(2), 500);
     // Stage 3: Logos (after 800ms) - ClientLogos handles its own cascade
     const timer3 = setTimeout(() => setFadeStage(3), 800);
-    // Stage 4: Projects (after 2200ms - after logos finish: 800ms start + 16 logos * 75ms + 200ms buffer)
+    // Stage 4: Projects (after 1200ms)
     const timer4 = setTimeout(() => setFadeStage(4), 1200);
 
     return () => {
@@ -107,7 +107,7 @@ const Home = () => {
           .
         </p>
         <div className={`transition-opacity duration-500 ${fadeStage >= 3 ? 'opacity-100' : 'opacity-0'}`}>
-          <ClientLogos startAnimation={fadeStage >= 3} />
+          <ClientLogos startAnimation={fadeStage >= 3} skipAnimation={false} />
         </div>
       </section>
 

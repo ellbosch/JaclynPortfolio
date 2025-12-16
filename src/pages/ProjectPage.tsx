@@ -1,5 +1,22 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
+
+const FadeInVideo = ({ src, className }: { src: string; className?: string }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <video
+      src={src}
+      controls
+      muted
+      playsInline
+      autoPlay
+      loop
+      onLoadedData={() => setLoaded(true)}
+      className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+    />
+  );
+};
 
 const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -8,7 +25,7 @@ const ProjectPage = () => {
 
   if (!project) {
     return (
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
         <div className="text-center py-20">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Project Not Found
@@ -33,7 +50,7 @@ const ProjectPage = () => {
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
       {/* Back Link */}
       <Link
         to="/"
@@ -47,13 +64,9 @@ const ProjectPage = () => {
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           {project.title}
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-          {project.shortDescription}
-        </p>
 
         {/* Meta info */}
         <div className="flex flex-wrap gap-6 text-sm text-gray-500 dark:text-gray-500">
-          <span>{project.year}</span>
           <span>{formatCategories(project.categories)}</span>
           {project.client && <span>Client: {project.client}</span>}
         </div>
@@ -98,40 +111,20 @@ const ProjectPage = () => {
         </section>
       )}
 
-      {/* Image Gallery Placeholder */}
-      {project.images.length > 0 && (
+      {/* Media Gallery (Videos + Images) */}
+      {(project.videos.length > 0 || project.images.length > 0) && (
         <section className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.images.map((image, index) => (
-              <div key={index}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-auto"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Videos */}
-      {project.videos.length > 0 && (
-        <section className="mb-12">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            Videos
-          </h2>
-          <div className="space-y-4">
+          <div className="flex flex-wrap gap-4">
             {project.videos.map((video, index) => (
-              <div key={index}>
-                <video
-                  src={video.src}
-                  controls
-                  muted
-                  playsInline
-                  className="w-full h-auto"
-                />
-              </div>
+              <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+            ))}
+            {project.images.map((image, index) => (
+              <img
+                key={`image-${index}`}
+                src={image.src}
+                alt={image.alt}
+                className={`max-w-full h-auto ${image.src.includes('02-green-taupe') ? 'bg-white' : ''}`}
+              />
             ))}
           </div>
         </section>
