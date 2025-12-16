@@ -109,26 +109,16 @@ const ProjectPage = () => {
         </section>
       )}
 
-      {/* Videos */}
-      {project.videos.length > 0 && (
-        <section className="mb-12">
-          <div className="space-y-4">
-            {project.videos.map((video, index) => (
-              <div key={index}>
-                <FadeInVideo src={video.src} className="w-full h-auto" />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Image Gallery */}
-      {project.images.length > 0 && (
+      {/* Media Gallery (Videos + Images) */}
+      {(project.videos.length > 0 || project.images.length > 0) && (
         <section className="mb-12">
           <div className="flex flex-wrap gap-4">
+            {project.videos.map((video, index) => (
+              <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+            ))}
             {project.images.map((image, index) => (
               <img
-                key={index}
+                key={`image-${index}`}
                 src={image.src}
                 alt={image.alt}
                 className="max-w-full h-auto"
