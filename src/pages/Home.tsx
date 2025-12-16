@@ -56,11 +56,11 @@ const Home = () => {
           className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: "'pragmatica', sans-serif",
-            fontSize: 'clamp(40px, 8vw, 90px)',
+            fontSize: 'clamp(65px, 8vw, 90px)',
             lineHeight: '1.1',
           }}
         >
-          JACLYN LOWERY
+          JACLYN<br className="md:hidden" /> LOWERY
         </h1>
         <p
           className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-20 md:mb-28 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
