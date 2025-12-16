@@ -135,35 +135,35 @@ const ProjectPage = () => {
                 className="w-full h-auto"
               />
               {/* Tactile Dark - 4 angles side by side */}
-              <div className="flex">
+              <div className="flex items-center">
                 {[project.images[4], ...project.images.slice(1, 4)].map((image, index) => (
                   <img
                     key={`tactile-dark-${index}`}
                     src={image.src}
                     alt={image.alt}
-                    className="w-1/3 h-auto -mr-[15%] last:mr-0"
+                    className={`h-auto -mr-[15%] last:mr-0 first:mt-4 first:w-[33.1%] ${index === 2 ?'mt-4' : '' } ${index === 1 || index === 3 ? 'w-[32.8%]' : 'w-1/3'}`}
                   />
                 ))}
               </div>
               {/* Touch Dark - 4 angles side by side */}
-              <div className="flex">
+              <div className="flex items-center">
                 {[project.images[8], ...project.images.slice(5, 8)].map((image, index) => (
                   <img
                     key={`touch-dark-${index}`}
                     src={image.src}
                     alt={image.alt}
-                    className="w-1/3 h-auto -mr-[15%] last:mr-0"
+                    className={`h-auto -mr-[15%] last:mr-0 ${index === 1 || index === 3 ? 'w-[32.2%]' : 'w-1/3'}`}
                   />
                 ))}
               </div>
               {/* Touch Light - 4 angles side by side */}
-              <div className="flex">
+              <div className="flex items-center">
                 {[project.images[12], ...project.images.slice(9, 12)].map((image, index) => (
                   <img
                     key={`touch-light-${index}`}
                     src={image.src}
                     alt={image.alt}
-                    className="w-1/3 h-auto -mr-[15%] last:mr-0"
+                    className={`h-auto -mr-[15%] last:mr-0 ${index === 1 || index === 3 ? 'w-[32.2%]' : 'w-1/3'}`}
                   />
                 ))}
               </div>
