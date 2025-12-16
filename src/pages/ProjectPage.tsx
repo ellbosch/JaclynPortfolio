@@ -8,7 +8,7 @@ const ProjectPage = () => {
 
   if (!project) {
     return (
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
         <div className="text-center py-20">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Project Not Found
@@ -33,7 +33,7 @@ const ProjectPage = () => {
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
       {/* Back Link */}
       <Link
         to="/"
