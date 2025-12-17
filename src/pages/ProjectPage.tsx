@@ -132,7 +132,7 @@ const ProjectPage = () => {
               <img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
-                className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                className="w-full h-auto max-h-[100vh] object-contain bg-white"
               />
               {/* Non-docked images in flex rows - 2 per row on md+ (exclude indices 5, 10, 15) */}
               <div className="flex flex-wrap gap-4">
