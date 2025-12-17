@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const PageLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-black">
       <Header />
       <main className="flex-1">
         <Outlet />
