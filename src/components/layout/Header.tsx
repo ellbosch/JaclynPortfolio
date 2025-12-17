@@ -83,7 +83,7 @@ const Header = () => {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-sm font-medium transition-colors text-gray-900 dark:text-white flex items-center gap-1 cursor-pointer"
+                  className="text-sm font-medium transition-colors text-gray-900 dark:text-white flex items-center gap-1 cursor-pointer focus:outline-none"
                 >
                   {filterLabels[filter]}
                   <svg
