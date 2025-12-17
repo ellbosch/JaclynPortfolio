@@ -134,14 +134,26 @@ const ProjectPage = () => {
                 alt={project.images[0].alt}
                 className="w-full h-auto max-h-[80vh] object-contain bg-white"
               />
-              {/* Remaining images in flex rows - 2 per row on md+ */}
+              {/* Non-docked images in flex rows - 2 per row on md+ (exclude indices 5, 10, 15) */}
               <div className="flex flex-wrap gap-4">
-                {project.images.slice(1).map((image, index) => (
+                {project.images.slice(1).filter((_, i) => ![4, 9, 14].includes(i)).map((image, index) => (
                   <div key={`image-${index + 1}`} className="w-full md:basis-[calc(50%-0.5rem)] md:flex-1">
                     <img
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Docked photos in horizontal stack with single white background */}
+              <div className="flex flex-row items-end gap-4 bg-white p-4">
+                {[project.images[5], project.images[10], project.images[15]].map((image, index) => (
+                  <div key={`docked-${index}`} className="flex-1" style={{ transform: index > 0 ? 'scale(0.91)' : undefined, transformOrigin: 'bottom center' }}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                 ))}
