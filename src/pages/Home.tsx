@@ -226,27 +226,27 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    ) : project.slug === 'control4' && project.images.length >= 10 ? (
-                      // Control4 layout: 3 columns, each with crossfade between 3 angles
-                      <div className="flex justify-center h-[35vh] sm:h-[45vh] md:h-[45vh] lg:h-[85vh] bg-white">
-                        {/* Column 2: Touch Dark (images 4-6) */}
-                        <div className="flex-1 ml-5 md:ml-10 lg:ml-10">
+                    ) : project.slug === 'control4' && project.images.length >= 16 ? (
+                      // Control4 layout: 3 columns, each with crossfade between 4 angles (no docked)
+                      <div className="flex justify-center items-center h-[35vh] sm:h-[45vh] md:h-[45vh] lg:h-[85vh] bg-white">
+                        {/* Column 1: Tactile Dark (images 1-4) - leading */}
+                        <div className="flex-1 h-full ml-5 md:ml-10 lg:ml-10">
                           <ScrollCrossfadeImages
-                            images={project.images.slice(4, 7)}
+                            images={project.images.slice(1, 5)}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        {/* Column 1: Tactile Dark (images 1-3) */}
-                        <div className="flex-1">
+                        {/* Column 2: Touch Dark (images 6-9) - middle, scaled 85% */}
+                        <div className="flex-1 h-[85%]">
                           <ScrollCrossfadeImages
-                            images={project.images.slice(1, 4)}
+                            images={project.images.slice(6, 10)}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        {/* Column 3: Touch Light (images 7-9) */}
-                        <div className="flex-1 mr-5 md:mr-10 lg:mr-10">
+                        {/* Column 3: Touch Light (images 11-14) - trailing, scaled 85% */}
+                        <div className="flex-1 h-[85%] mr-5 md:mr-10 lg:mr-10">
                           <ScrollCrossfadeImages
-                            images={project.images.slice(7, 10)}
+                            images={project.images.slice(11, 15)}
                             className="w-full h-full object-cover"
                           />
                         </div>

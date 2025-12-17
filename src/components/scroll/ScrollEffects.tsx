@@ -336,8 +336,13 @@ export const ScrollCrossfadeImages = ({
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Progress: 0 when entering viewport, 1 when leaving
-      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      // Extended scroll range: starts when top enters, ends when bottom leaves
+      // This gives more scroll distance for each image transition
+      const scrollStart = windowHeight; // element top at bottom of viewport
+      const scrollEnd = -rect.height; // element bottom at top of viewport
+      const scrollRange = scrollStart - scrollEnd;
+      const currentPosition = rect.top;
+      const progress = (scrollStart - currentPosition) / scrollRange;
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Map progress to image index (divide into N segments)
