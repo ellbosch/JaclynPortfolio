@@ -110,7 +110,6 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
       { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote outro' },
       { src: '/images/projects/nice-hr40-remote/02-prototypes.jpg', alt: 'Nice HR40 Remote prototypes' },
       { src: '/images/projects/nice-hr40-remote/03-button-layout.png', alt: 'Nice HR40 Remote button layout' },
-      { src: '/images/projects/nice-hr40-remote/04-elan-remote.png', alt: 'Elan remote previous generation' },
       { src: '/images/projects/nice-hr40-remote/05-remote-float.png', alt: 'Nice HR40 Remote floating' },
       { src: '/images/projects/nice-hr40-remote/06-buttons-closeup.png', alt: 'Nice HR40 Remote buttons closeup' },
       { src: '/images/projects/nice-hr40-remote/07-docked-closeup.jpg', alt: 'Nice HR40 Remote docked closeup' },

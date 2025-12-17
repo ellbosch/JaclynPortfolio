@@ -179,21 +179,21 @@ const Home = () => {
                           />
                         </div>
                       </div>
-                    ) : project.slug === 'nice-hr40-remote' && project.images.length >= 6 ? (
-                      // Custom Nice HR40 Remote layout: left column 30% (image 5), right column 70% (image 6)
+                    ) : project.slug === 'nice-hr40-remote' && project.images.length >= 5 ? (
+                      // Custom Nice HR40 Remote layout: left column 30% (image 4), right column 70% (image 5)
                       // First image hidden on mobile
                       <div className="flex flex-col md:flex-row gap-2 lg:gap-4 items-stretch h-auto md:h-[35vh] lg:h-[45vh]">
                         <div className="hidden md:block overflow-hidden" style={{ flex: '30 1 0%' }}>
                           <img
-                            src={project.images[4].src}
-                            alt={project.images[4].alt}
+                            src={project.images[3].src}
+                            alt={project.images[3].alt}
                             className="w-full h-full object-cover object-bottom"
                           />
                         </div>
                         <div style={{ flex: '70 1 0%' }}>
                           <ScrollImage
-                            src={project.images[5].src}
-                            alt={project.images[5].alt}
+                            src={project.images[4].src}
+                            alt={project.images[4].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
