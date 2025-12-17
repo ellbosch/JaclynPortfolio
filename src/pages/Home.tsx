@@ -201,7 +201,7 @@ const Home = () => {
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
                       // Second image in right column hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[30vh] lg:h-[40vh]">
+                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 lg:h-[45vh] md:h-[35vh]">
                         <div style={{ flex: '62 1 0%' }} className="overflow-hidden">
                           <ScrollImage
                             src={project.images[0].src}
