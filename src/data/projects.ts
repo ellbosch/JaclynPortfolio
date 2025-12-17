@@ -54,21 +54,18 @@ Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle
     images: [
       // Cover image
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg', alt: 'Control4 remotes cover' },
-      // Tactile Dark angles: DR -> Front -> DL -> Ortho
+      // Tactile Dark: DR -> Front -> Docked
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png', alt: 'Tactile Dark DR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png', alt: 'Tactile Dark front' },
-      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png', alt: 'Tactile Dark DL' },
-      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png', alt: 'Tactile Dark right' },
-      // Touch Dark angles: DR -> Front -> LR -> Right
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png', alt: 'Tactile Dark docked' },
+      // Touch Dark: DR -> Front -> Docked
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png', alt: 'Touch Dark DR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png', alt: 'Touch Dark front' },
-      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png', alt: 'Touch Dark LR' },
-      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png', alt: 'Touch Dark right' },
-      // Touch Light angles: DR -> Front -> DL -> Right Ortho
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png', alt: 'Touch Dark docked' },
+      // Touch Light: DR -> Front -> Docked
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png', alt: 'Touch Light DR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png', alt: 'Touch Light front' },
-      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png', alt: 'Touch Light DL' },
-      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png', alt: 'Touch Light right' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png', alt: 'Touch Light docked' },
     ],
     videos: [],
     skills: [],

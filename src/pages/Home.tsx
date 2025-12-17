@@ -226,27 +226,27 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                    ) : project.slug === 'control4' && project.images.length >= 13 ? (
-                      // Control4 layout: 3 columns, each with crossfade between 4 angles
+                    ) : project.slug === 'control4' && project.images.length >= 10 ? (
+                      // Control4 layout: 3 columns, each with crossfade between 3 angles
                       <div className="flex justify-center h-[35vh] sm:h-[45vh] md:h-[45vh] lg:h-[85vh] bg-white">
-                        {/* Column 2: Touch Dark (images 5-8) */}
+                        {/* Column 2: Touch Dark (images 4-6) */}
                         <div className="flex-1 ml-5 md:ml-10 lg:ml-10">
                           <ScrollCrossfadeImages
-                            images={project.images.slice(5, 9)}
+                            images={project.images.slice(4, 7)}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        {/* Column 1: Tactile Dark (images 1-4) */}
+                        {/* Column 1: Tactile Dark (images 1-3) */}
                         <div className="flex-1">
                           <ScrollCrossfadeImages
-                            images={project.images.slice(1, 5)}
+                            images={project.images.slice(1, 4)}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        {/* Column 3: Touch Light (images 9-12) */}
+                        {/* Column 3: Touch Light (images 7-9) */}
                         <div className="flex-1 mr-5 md:mr-10 lg:mr-10">
                           <ScrollCrossfadeImages
-                            images={project.images.slice(9, 13)}
+                            images={project.images.slice(7, 10)}
                             className="w-full h-full object-cover"
                           />
                         </div>
