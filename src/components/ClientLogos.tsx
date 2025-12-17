@@ -33,7 +33,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
             <img
               src={client.logo}
               alt={`${client.name} logo`}
-              className="h-4 sm:h-5 md:h-6 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
+              className="h-6 sm:h-7 md:h-8 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
               style={{
                 opacity: index < visibleCount ? 0.7 : 0,
               }}
