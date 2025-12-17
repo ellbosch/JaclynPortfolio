@@ -235,6 +235,7 @@ const Home = () => {
                           <ScrollCrossfadeImages
                             images={project.images.slice(1, 5)}
                             className="w-full h-full object-cover"
+                            useParentScroll
                           />
                         </div>
                         {/* Column 2: Touch Dark (images 6-9) - middle, scaled 85% */}
@@ -242,6 +243,7 @@ const Home = () => {
                           <ScrollCrossfadeImages
                             images={project.images.slice(6, 10)}
                             className="w-full h-full object-cover"
+                            useParentScroll
                           />
                         </div>
                         {/* Column 3: Touch Light (images 11-14) - trailing, scaled 85% */}
@@ -249,6 +251,7 @@ const Home = () => {
                           <ScrollCrossfadeImages
                             images={project.images.slice(11, 15)}
                             className="w-full h-full object-cover"
+                            useParentScroll
                           />
                         </div>
                       </div>

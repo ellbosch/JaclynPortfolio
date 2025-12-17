@@ -323,9 +323,11 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
 export const ScrollCrossfadeImages = ({
   images,
   className,
+  useParentScroll = false,
 }: {
   images: Array<{ src: string; alt: string }>;
   className: string;
+  useParentScroll?: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -334,7 +336,14 @@ export const ScrollCrossfadeImages = ({
     const handleScroll = () => {
       if (!containerRef.current) return;
 
-      const rect = containerRef.current.getBoundingClientRect();
+      // If useParentScroll is true, find the parent container and use its scroll position
+      const scrollElement = useParentScroll
+        ? containerRef.current.parentElement?.parentElement
+        : containerRef.current;
+
+      if (!scrollElement) return;
+
+      const rect = scrollElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       // Extended scroll range: starts when top enters, ends when bottom leaves
@@ -358,7 +367,7 @@ export const ScrollCrossfadeImages = ({
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [images.length]);
+  }, [images.length, useParentScroll]);
 
   return (
     <div ref={containerRef} className="relative w-full h-full overflow-hidden">
