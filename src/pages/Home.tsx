@@ -264,6 +264,7 @@ const Home = () => {
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
+                            panSpeed={0.92}
                           />
                         </div>
                         <div className="hidden md:block" style={{ flex: '20 1 0%' }}>
