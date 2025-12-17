@@ -344,7 +344,7 @@ const Home = () => {
                         </div>
                       </div>
                     ) : project.slug === 'whistle' && project.images.length >= 5 ? (
-                      // Custom Whistle layout: image 5 natural height, image 1 fills space, image 4 clipped
+                      // Custom Whistle layout: image 5 natural height, image 1 fills space, image 4 hidden on mobile
                       <div className="flex flex-col md:flex-row gap-2 lg:gap-4 items-start">
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollImage
@@ -360,7 +360,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div style={{ flex: '1 1 0%' }} className="overflow-hidden self-stretch">
+                        <div style={{ flex: '1 1 0%' }} className="hidden md:block overflow-hidden self-stretch">
                           <ScrollImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
