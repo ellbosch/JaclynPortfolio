@@ -127,15 +127,25 @@ const ProjectPage = () => {
         <section className="mb-12">
           {/* Custom layout for Control4 - simple gallery with max height for portrait shots */}
           {slug === 'control4' ? (
-            <div className="flex flex-wrap gap-4">
-              {project.images.map((image, index) => (
-                <img
-                  key={`image-${index}`}
-                  src={image.src}
-                  alt={image.alt}
-                  className="max-w-full h-auto max-h-[80vh]"
-                />
-              ))}
+            <div className="space-y-4">
+              {/* First image full width */}
+              <img
+                src={project.images[0].src}
+                alt={project.images[0].alt}
+                className="w-full h-auto max-h-[80vh] object-contain bg-white"
+              />
+              {/* Remaining images in flex rows - 2 per row on md+ */}
+              <div className="flex flex-wrap gap-4">
+                {project.images.slice(1).map((image, index) => (
+                  <div key={`image-${index + 1}`} className="w-full md:basis-[calc(50%-0.5rem)] md:flex-1">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
             <div className="flex flex-wrap gap-4">

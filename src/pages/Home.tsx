@@ -228,7 +228,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'control4' && project.images.length >= 13 ? (
                       // Control4 layout: 3 columns, each with crossfade between 4 angles
-                      <div className="flex justify-center gap-2 md:gap-2 lg:gap-4 h-[30vh] md:h-[45vh] lg:h-[85vh]">
+                      <div className="flex justify-center gap-2 md:gap-2 lg:gap-4 h-[30vh] md:h-[45vh] lg:h-[85vh] bg-white">
                         {/* Column 1: Tactile Dark (images 1-4) */}
                         <div style={{ flex: '1 1 0%', maxWidth: '30%' }}>
                           <ScrollCrossfadeImages
