@@ -51,7 +51,7 @@ const Home = () => {
   return (
     <div className="max-w-[1400px] mx-auto">
       {/* Hero Section - takes up 80vh so projects peek at bottom */}
-      <section className="mt-15 md:mt-auto px-2 lg:px-4 h-[70vh] md:h-[80vh] flex flex-col justify-center">
+      <section className="mt-15 md:mt-auto px-2 lg:px-4 h-auto md:h-[80vh] flex flex-col justify-center">
         <h1
           className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
@@ -138,6 +138,7 @@ const Home = () => {
               return (
                 <Link
                   key={project.slug}
+                  id={project.slug}
                   to={`/project/${project.slug}`}
                   className="block mb-8 lg:mb-16 group"
                 >
