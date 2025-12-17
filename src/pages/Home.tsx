@@ -228,23 +228,23 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'control4' && project.images.length >= 13 ? (
                       // Control4 layout: 3 columns, each with crossfade between 4 angles
-                      <div className="flex justify-center gap-2 md:gap-2 lg:gap-4 h-[30vh] md:h-[45vh] lg:h-[85vh] bg-white">
-                        {/* Column 1: Tactile Dark (images 1-4) */}
-                        <div style={{ flex: '1 1 0%', maxWidth: '30%' }}>
-                          <ScrollCrossfadeImages
-                            images={project.images.slice(1, 5)}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
+                      <div className="flex justify-center h-[35vh] sm:h-[45vh] md:h-[45vh] lg:h-[85vh] bg-white">
                         {/* Column 2: Touch Dark (images 5-8) */}
-                        <div style={{ flex: '1 1 0%', maxWidth: '40%' }}>
+                        <div className="flex-1 ml-5 md:ml-10 lg:ml-10">
                           <ScrollCrossfadeImages
                             images={project.images.slice(5, 9)}
                             className="w-full h-full object-cover"
                           />
                         </div>
+                        {/* Column 1: Tactile Dark (images 1-4) */}
+                        <div className="flex-1">
+                          <ScrollCrossfadeImages
+                            images={project.images.slice(1, 5)}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                         {/* Column 3: Touch Light (images 9-12) */}
-                        <div style={{ flex: '1 1 0%', maxWidth: '30%' }}>
+                        <div className="flex-1 mr-5 md:mr-10 lg:mr-10">
                           <ScrollCrossfadeImages
                             images={project.images.slice(9, 13)}
                             className="w-full h-full object-cover"
