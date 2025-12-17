@@ -50,7 +50,7 @@ const ProjectPage = () => {
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
 
   return (
-    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
+    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-8">
       {/* Back Link */}
       <Link
         to="/"
