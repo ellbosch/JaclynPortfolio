@@ -147,7 +147,7 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
 
 // Scroll-based image with pan from top-left to bottom-right (with zoom for pan room)
 // Disabled on mobile for performance
-export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollPanImageTLBR = ({ src, alt, className, panSpeed = 1 }: { src: string; alt: string; className: string; panSpeed?: number }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -164,9 +164,9 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-left to bottom-right
-      const panRange = 80;
-      const x = Math.round(40 - clampedProgress * panRange);
-      const y = Math.round(40 - clampedProgress * panRange);
+      const panRange = 80 * panSpeed;
+      const x = Math.round((40 * panSpeed) - clampedProgress * panRange);
+      const y = Math.round((40 * panSpeed) - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
@@ -175,7 +175,7 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [panSpeed]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
@@ -191,7 +191,7 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
 
 // Scroll-based image with pan from top-right to bottom-left (with zoom for pan room)
 // Disabled on mobile for performance
-export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollPanImageTRBL = ({ src, alt, className, panSpeed = 1 }: { src: string; alt: string; className: string; panSpeed?: number }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -208,9 +208,9 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-right to bottom-left (start higher)
-      const panRange = 100;
-      const x = Math.round(-40 + clampedProgress * 80);
-      const y = Math.round(40 - clampedProgress * panRange);
+      const panRange = 100 * panSpeed;
+      const x = Math.round((-40 * panSpeed) + clampedProgress * (80 * panSpeed));
+      const y = Math.round((40 * panSpeed) - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
@@ -219,7 +219,7 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [panSpeed]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
@@ -278,7 +278,7 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
 
 // Scroll-based image with horizontal pan from left to right (GPU-accelerated)
 // Disabled on mobile for performance
-export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollPanImageLR = ({ src, alt, className, panSpeed = 1 }: { src: string; alt: string; className: string; panSpeed?: number }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -295,8 +295,8 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan horizontally from right to left
-      const panRange = 100;
-      const x = Math.round(50 - clampedProgress * panRange);
+      const panRange = 100 * panSpeed;
+      const x = Math.round((50 * panSpeed) - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, 0, 0)`;
     };
@@ -305,7 +305,7 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [panSpeed]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">

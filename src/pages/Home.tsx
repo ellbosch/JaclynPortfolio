@@ -329,6 +329,7 @@ const Home = () => {
                               src={project.images[2].src}
                               alt={project.images[2].alt}
                               className="w-full h-full object-cover"
+                              panSpeed={0.15}
                             />
                           </div>
                           <div className="h-[35vh] md:h-full overflow-hidden" style={{ flex: '60 1 0%' }}>
@@ -336,6 +337,7 @@ const Home = () => {
                               src={project.images[3].src}
                               alt={project.images[3].alt}
                               className="w-full h-full object-cover"
+                              panSpeed={0.15}
                             />
                           </div>
                         </div>
@@ -344,6 +346,7 @@ const Home = () => {
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
+                            panSpeed={0.15}
                           />
                         </div>
                       </div>
