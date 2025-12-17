@@ -453,7 +453,7 @@ const Home = () => {
             })}
           </div>
         ) : (
-          <div className="max-w-6xl mx-auto text-center py-20 bg-gray-50 dark:bg-gray-900 rounded-xl">
+          <div className="max-w-6xl mx-auto text-center py-20 bg-gray-50 dark:bg-black rounded-xl">
             <p className="text-gray-500 dark:text-gray-400 mb-2">
               No projects yet
             </p>
