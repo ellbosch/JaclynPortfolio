@@ -385,7 +385,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[40vh]">
+                        <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[50vh]">
                           <div style={{ flex: '2 1 0%' }}>
                             <ScrollImage
                               src={project.images[3].src}
@@ -393,7 +393,7 @@ const Home = () => {
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div style={{ flex: '1 1 0%' }}>
+                          <div style={{ flex: '1 1 0%' }} className="hidden md:block">
                             <ScrollImage
                               src={project.images[1].src}
                               alt={project.images[1].alt}
