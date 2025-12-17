@@ -16,7 +16,7 @@ export const clients: Client[] = [
   { name: 'Aura Glow', logo: '/images/logos/auraglow.png' },
   { name: 'Jabra', logo: '/images/logos/jabra.png' },
   { name: 'Mode', logo: '/images/logos/mode.webp' },
-  // { name: 'Whistle', logo: '/images/logos/whistle.jpg' },
+  { name: 'Whistle', logo: '/images/logos/whistle.png' },
   { name: 'Modern Sprout', logo: '/images/logos/modernsprout.webp' },
   { name: 'Control4', logo: '/images/logos/control4.png' },
   { name: 'Nocturne', logo: '/images/logos/nocturne.webp' },
