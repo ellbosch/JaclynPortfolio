@@ -155,7 +155,7 @@ const Home = () => {
                       <div className="mb-2 lg:mb-4">
                         <ScrollVideo
                           src={project.videos[0].src}
-                          className="w-full object-cover h-[30vh] md:h-[35vh] lg:h-[45vh]"
+                          className="w-full h-auto"
                         />
                       </div>
                     )}
