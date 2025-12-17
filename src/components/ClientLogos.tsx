@@ -18,6 +18,7 @@ const logoStyles: Record<string, React.CSSProperties> = {
   'Arlo': { transform: 'scale(1.2) translateY(-3px)' },
   'Whistle': { transform: 'scale(0.9)' },
   'Jabra': { transform: 'scale(0.85)' },
+  'Nocturne': { transform: 'scale(0.9)' },
 };
 
 // Map client names to project slugs
@@ -85,7 +86,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
   };
 
   return (
-    <section className="mb-16">
+    <section className="mb-16 overflow-hidden">
       <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-6 items-center">
         {clients.map((client, index) => {
           const hasWork = hasProject(client.name);
