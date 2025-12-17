@@ -125,48 +125,17 @@ const ProjectPage = () => {
       {/* Media Gallery (Videos + Images) */}
       {(project.videos.length > 0 || project.images.length > 0) && (
         <section className="mb-12">
-          {/* Custom layout for Control4 - 3 horizontal stacks */}
+          {/* Custom layout for Control4 - simple gallery with max height for portrait shots */}
           {slug === 'control4' ? (
-            <div className="space-y-8">
-              {/* Cover image */}
-              <img
-                src={project.images[0].src}
-                alt={project.images[0].alt}
-                className="w-full h-auto"
-              />
-              {/* Tactile Dark - 4 angles side by side */}
-              <div className="flex items-center">
-                {[project.images[4], ...project.images.slice(1, 4)].map((image, index) => (
-                  <img
-                    key={`tactile-dark-${index}`}
-                    src={image.src}
-                    alt={image.alt}
-                    className={`h-auto -mr-[15%] last:mr-0 first:mt-4 first:w-[33.1%] ${index === 2 ?'mt-4' : '' } ${index === 1 || index === 3 ? 'w-[32.8%]' : 'w-1/3'}`}
-                  />
-                ))}
-              </div>
-              {/* Touch Dark - 4 angles side by side */}
-              <div className="flex items-center">
-                {[project.images[8], ...project.images.slice(5, 8)].map((image, index) => (
-                  <img
-                    key={`touch-dark-${index}`}
-                    src={image.src}
-                    alt={image.alt}
-                    className={`h-auto -mr-[15%] last:mr-0 ${index === 1 || index === 3 ? 'w-[32.2%]' : 'w-1/3'}`}
-                  />
-                ))}
-              </div>
-              {/* Touch Light - 4 angles side by side */}
-              <div className="flex items-center">
-                {[project.images[12], ...project.images.slice(9, 12)].map((image, index) => (
-                  <img
-                    key={`touch-light-${index}`}
-                    src={image.src}
-                    alt={image.alt}
-                    className={`h-auto -mr-[15%] last:mr-0 ${index === 1 || index === 3 ? 'w-[32.2%]' : 'w-1/3'}`}
-                  />
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-4">
+              {project.images.map((image, index) => (
+                <img
+                  key={`image-${index}`}
+                  src={image.src}
+                  alt={image.alt}
+                  className="max-w-full h-auto max-h-[80vh]"
+                />
+              ))}
             </div>
           ) : (
             <div className="flex flex-wrap gap-4">
