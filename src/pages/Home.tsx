@@ -164,14 +164,14 @@ const Home = () => {
                     {project.slug === 'arcsport' && project.images.length >= 4 ? (
                       // Custom Arc Sport layout: Asymmetric 70/30 split
                       <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 lg:h-[45vh]">
-                        <div className="h-[35vh] lg:h-full" style={{ flex: '70 1 0%' }}>
+                        <div className="h-[40vh] md:h-[54vh] lg:h-full" style={{ flex: '70 1 0%' }}>
                           <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="h-[35vh] lg:h-full" style={{ flex: '30 1 0%' }}>
+                        <div className="h-[40vh] md:h-[54vh] lg:h-full" style={{ flex: '30 1 0%' }}>
                           <ScrollPanImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
