@@ -50,17 +50,17 @@ const ProjectPage = () => {
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
 
   return (
-    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-8">
+    <div className="max-w-[1400px] mx-auto px-0 sm:px-2 lg:px-4 py-8">
       {/* Back Link */}
       <Link
         to="/"
-        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
+        className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors px-2 sm:px-0"
       >
         &larr; Back to Work
       </Link>
 
       {/* Project Header */}
-      <header className="mb-12">
+      <header className="mb-12 px-2 sm:px-0">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           {project.title}
         </h1>
@@ -85,7 +85,7 @@ const ProjectPage = () => {
 
       {/* Description */}
       {project.fullDescription && (
-        <section className="mb-8">
+        <section className="mb-8 px-2 sm:px-0">
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-lg text-gray-900 dark:text-white whitespace-pre-line">
               {project.fullDescription}
@@ -96,7 +96,7 @@ const ProjectPage = () => {
 
       {/* Credits */}
       {project.creditsDescription && (
-        <section className="mb-12">
+        <section className="mb-12 px-2 sm:px-0">
           <p className="text-sm text-gray-500 dark:text-gray-500 whitespace-pre-line">
             {project.creditsDescription}
           </p>
@@ -105,7 +105,7 @@ const ProjectPage = () => {
 
       {/* Skills */}
       {project.skills.length > 0 && (
-        <section className="mb-12">
+        <section className="mb-12 px-2 sm:px-0">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Tools & Skills
           </h2>
@@ -127,7 +127,7 @@ const ProjectPage = () => {
         <section className="mb-12">
           {/* Custom layout for Control4 - simple gallery with max height for portrait shots */}
           {slug === 'control4' ? (
-            <div className="space-y-4">
+            <div className="space-y-1 sm:space-y-2 lg:space-y-4">
               {/* First image full width */}
               <img
                 src={project.images[0].src}
@@ -135,7 +135,7 @@ const ProjectPage = () => {
                 className="w-full h-auto max-h-[100vh] object-contain bg-white"
               />
               {/* Non-docked images in flex rows - 2 per row on md+ (exclude indices 5, 10, 15) */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
                 {project.images.slice(1).filter((_, i) => ![4, 9, 14].includes(i)).map((image, index) => (
                   <div key={`image-${index + 1}`} className="w-full md:basis-[calc(50%-0.5rem)] md:flex-1">
                     <img
@@ -147,7 +147,7 @@ const ProjectPage = () => {
                 ))}
               </div>
               {/* Docked photos in horizontal stack with single white background */}
-              <div className="flex flex-row items-end gap-4 bg-white p-4">
+              <div className="flex flex-row items-end gap-1 sm:gap-2 lg:gap-4 bg-white p-2 sm:p-4">
                 {[project.images[5], project.images[10], project.images[15]].map((image, index) => (
                   <div key={`docked-${index}`} className="flex-1" style={{ transform: index > 0 ? 'scale(0.91)' : undefined, transformOrigin: 'bottom center' }}>
                     <img
@@ -160,7 +160,7 @@ const ProjectPage = () => {
               </div>
             </div>
           ) : slug === 'mode' ? (
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
                 <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
@@ -171,7 +171,7 @@ const ProjectPage = () => {
                 className="max-w-full h-auto"
               />
               {/* 2nd and 3rd images side by side on md+ */}
-              <div className="w-full flex flex-col md:flex-row gap-4">
+              <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div className="flex-1">
                   <img
                     src={project.images[1].src}
@@ -198,7 +198,7 @@ const ProjectPage = () => {
               ))}
             </div>
           ) : (
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
                 <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
@@ -216,7 +216,7 @@ const ProjectPage = () => {
       )}
 
       {/* Project Navigation */}
-      <nav className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-16">
+      <nav className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-16 px-2 sm:px-0">
         <div className="flex justify-between">
           {prevProject ? (
             <Link

@@ -51,7 +51,7 @@ const Home = () => {
   return (
     <div className="max-w-[1400px] mx-auto">
       {/* Hero Section - takes up 80vh so projects peek at bottom */}
-      <section className="mt-15 md:mt-auto px-2 lg:px-4 h-[65vh] md:h-[80vh] flex flex-col justify-center">
+      <section className="mt-15 md:mt-auto px-2 lg:px-4 h-[70vh] md:h-[80vh] flex flex-col justify-center">
         <h1
           className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
@@ -60,7 +60,7 @@ const Home = () => {
             lineHeight: '1.1',
           }}
         >
-          JACLYN<br className="md:hidden" /> LOWERY
+          JACLYN LOWERY
         </h1>
         <p
           className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-4 md:mb-6 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
@@ -70,7 +70,7 @@ const Home = () => {
             lineHeight: '1.6',
           }}
         >
-          Industrial Design, 3D Rendering,<br className="md:hidden" /> and 3D Animation.
+          Industrial Design, 3D Rendering,<br className="hidden sm:auto" /> and 3D Animation.
         </p>
         <p
           className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
@@ -112,7 +112,7 @@ const Home = () => {
       </section>
 
       {/* Projects - Full Width Vertical Layout */}
-      <section className={`px-2 lg:px-4 transition-opacity duration-500 ${fadeStage >= 4 ? 'opacity-100' : 'opacity-0'}`}>
+      <section className={`px-0 sm:px-2 lg:px-4 transition-opacity duration-500 ${fadeStage >= 4 ? 'opacity-100' : 'opacity-0'}`}>
         {projects.length > 0 ? (
           <div>
             {projects.map((project, projectIndex) => {
@@ -142,7 +142,7 @@ const Home = () => {
                   className="block mb-8 lg:mb-16 group"
                 >
                   {/* Project Header - inline */}
-                  <div className="flex flex-col md:flex-row md:items-baseline md:gap-6 mb-2">
+                  <div className="flex flex-col md:flex-row md:items-baseline md:gap-6 mb-1 sm:mb-2 px-2 sm:px-0">
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
@@ -152,7 +152,7 @@ const Home = () => {
                   </div>
                     {/* Video at top if available */}
                     {project.videos.length > 0 && (
-                      <div className="mb-2 lg:mb-4">
+                      <div className="mb-1 sm:mb-2 lg:mb-4">
                         <ScrollVideo
                           src={project.videos[0].src}
                           className="w-full h-auto"
@@ -163,7 +163,7 @@ const Home = () => {
                     {/* Image Rows with gaps */}
                     {project.slug === 'arcsport' && project.images.length >= 4 ? (
                       // Custom Arc Sport layout: Asymmetric 70/30 split
-                      <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 lg:h-[45vh]">
+                      <div className="flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 lg:h-[45vh]">
                         <div className="h-[40vh] md:h-[54vh] lg:h-full" style={{ flex: '70 1 0%' }}>
                           <ScrollImage
                             src={project.images[0].src}
@@ -182,7 +182,7 @@ const Home = () => {
                     ) : project.slug === 'nice-hr40-remote' && project.images.length >= 5 ? (
                       // Custom Nice HR40 Remote layout: left column 30% (image 4), right column 70% (image 5)
                       // First image hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 items-stretch h-auto md:h-[35vh] lg:h-[45vh]">
+                      <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 items-stretch h-auto md:h-[35vh] lg:h-[45vh]">
                         <div className="hidden md:block overflow-hidden" style={{ flex: '30 1 0%' }}>
                           <img
                             src={project.images[3].src}
@@ -202,7 +202,7 @@ const Home = () => {
                     ) : project.slug === 'arlo' && project.images.length >= 7 ? (
                       // Custom Arlo layout: left column 62% (image 1), right column 38% (images 4, 7)
                       // Second image in right column hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 lg:h-[55vh] md:h-[40vh]">
+                      <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 lg:h-[55vh] md:h-[40vh]">
                         <div style={{ flex: '62 1 0%' }} className="overflow-hidden">
                           <ScrollImage
                             src={project.images[0].src}
@@ -210,7 +210,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex flex-col gap-2 lg:gap-4 overflow-hidden" style={{ flex: '38 1 0%', height: '100%' }}>
+                        <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4 overflow-hidden" style={{ flex: '38 1 0%', height: '100%' }}>
                           <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
                             <ScrollImage
                               src={project.images[3].src}
@@ -258,7 +258,7 @@ const Home = () => {
                     ) : project.slug === 'mode' && project.images.length >= 2 ? (
                       // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
                       // Second image hidden on mobile
-                      <div className="flex flex-col flex-row gap-2 lg:gap-4 h-auto md:h-[45vh]">
+                      <div className="flex flex-col flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[45vh]">
                         <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
                           <ScrollPanImageTLBR
                             src={project.images[0].src}
@@ -278,7 +278,7 @@ const Home = () => {
                     ) : project.slug === 'q-egg' && project.images.length >= 2 ? (
                       // Custom Q-Egg layout: images 1 and 2 in one row, 1 takes 20%
                       // First image hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[25vh] lg:h-[45vh]">
+                      <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[25vh] lg:h-[45vh]">
                         <div className="hidden md:block overflow-hidden" style={{ flex: '20 1 0%' }}>
                           <img
                             src={project.images[0].src}
@@ -298,7 +298,7 @@ const Home = () => {
                     ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
                       // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
                       // First and third images hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4">
+                      <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                         <div className="hidden md:block overflow-hidden" style={{ flex: '1 1 0%' }}>
                           <img
                             src={project.images[6].src}
@@ -323,8 +323,8 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
                       // Custom Jabra layout: top row 33/67 split, then full width pan image
-                      <div className="flex flex-col gap-2 lg:gap-4">
-                        <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[35vh]">
+                      <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
+                        <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[35vh]">
                           <div className="h-[35vh] md:h-full overflow-hidden" style={{ flex: '40 1 0%' }}>
                             <ScrollPanImageTLBR
                               src={project.images[2].src}
@@ -353,7 +353,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'whistle' && project.images.length >= 5 ? (
                       // Custom Whistle layout: image 5 natural height, image 1 fills space, image 4 hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-2 lg:gap-4 items-start">
+                      <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 items-start">
                         <div style={{ flex: '1 1 0%' }}>
                           <ScrollImage
                             src={project.images[4].src}
@@ -378,7 +378,7 @@ const Home = () => {
                       </div>
                     ) : project.slug === 'spansive' && project.images.length >= 5 ? (
                       // Custom Spansive layout: top image 1, then left 2/3 (image 4), right 1/3 (image 2 cropped)
-                      <div className="flex flex-col gap-2 lg:gap-4">
+                      <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
                         <div className="w-full h-[60vh] overflow-hidden">
                           <ScrollImage
                             src={project.images[0].src}
@@ -386,7 +386,7 @@ const Home = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex flex-col md:flex-row gap-2 lg:gap-4 h-auto md:h-[50vh]">
+                        <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[50vh]">
                           <div style={{ flex: '2 1 0%' }}>
                             <ScrollImage
                               src={project.images[3].src}
@@ -406,7 +406,7 @@ const Home = () => {
                     ) : project.slug === 'starkey' && project.images.length >= 6 ? (
                       // Custom Starkey layout: images 6 and 1 in one row, 1 takes 2/3
                       // First image hidden on mobile
-                      <div className="flex flex-row gap-2 lg:gap-4 h-auto md:h-[30vh]">
+                      <div className="flex flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[30vh]">
                         <div style={{ flex: '1 1 0%' }} className="hidden md:block overflow-hidden">
                           <img
                             src={project.images[5].src}
@@ -424,9 +424,9 @@ const Home = () => {
                         </div>
                       </div>
                     ) : (
-                      <div className="flex flex-col gap-2 lg:gap-4">
+                      <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
                         {rows.map((row, rowIndex) => (
-                          <div key={rowIndex} className="flex flex-col md:flex-row gap-2 lg:gap-4">
+                          <div key={rowIndex} className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                             {row.images.map((image, imgIdx) => {
                               const flexValue = row.layout.length === 1
                                 ? 1
