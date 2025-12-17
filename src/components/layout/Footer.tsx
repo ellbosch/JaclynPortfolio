@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <p className="text-gray-600 dark:text-gray-400">
             &copy; {currentYear} {personalInfo.name}. All rights reserved.
           </p>
