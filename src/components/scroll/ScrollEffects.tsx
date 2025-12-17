@@ -51,7 +51,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
 };
 
 // Scroll-based image component with scale effect
-export const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollImage = ({ src, alt, className, style }: { src: string; alt: string; className: string; style?: React.CSSProperties }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -88,6 +88,7 @@ export const ScrollImage = ({ src, alt, className }: { src: string; alt: string;
         style={{
           transform: `scale(${scale})`,
           transition: 'transform 0.1s ease-out',
+          ...style,
         }}
       />
     </div>

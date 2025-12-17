@@ -195,6 +195,7 @@ const Home = () => {
                             src={project.images[4].src}
                             alt={project.images[4].alt}
                             className="w-full h-full object-cover"
+                            style={{ objectPosition: 'center 80%' }}
                           />
                         </div>
                       </div>
