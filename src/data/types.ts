@@ -18,6 +18,7 @@ export interface Project {
   categories: ProjectCategory[];
   shortDescription: string;
   fullDescription: string;
+  creditsDescription?: string;
   thumbnail: ProjectImage;
   heroImage?: ProjectImage;
   images: ProjectImage[];

@@ -20,9 +20,8 @@ export const projects: Project[] = [
     title: 'Arlo',
     categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Security camera system design and launch video renders',
-    fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.
-
-3D Visualization: Jaclyn Lowery (Arlo Pro video renders)
+    fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Arlo Pro video renders)
 
 Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle Savarese (Support), Jaclyn Lowery (Support)`,
     thumbnail: { src: '/images/projects/arlo/01-cover.png', alt: 'Arlo thumbnail' },
@@ -55,21 +54,24 @@ Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle
     images: [
       // Cover image
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg', alt: 'Control4 remotes cover' },
-      // Tactile Dark angles: DR -> Front -> DL -> Ortho
+      // Tactile Dark: DR -> Front -> DL -> Ortho Right -> Docked (5 images, indices 1-5)
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png', alt: 'Tactile Dark DR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png', alt: 'Tactile Dark front' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png', alt: 'Tactile Dark DL' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png', alt: 'Tactile Dark right' },
-      // Touch Dark angles: DR -> Front -> LR -> Right
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png', alt: 'Tactile Dark docked' },
+      // Touch Dark: DR -> Front -> DL -> Right -> Docked (5 images, indices 6-10)
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png', alt: 'Touch Dark DR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png', alt: 'Touch Dark front' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png', alt: 'Touch Dark LR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png', alt: 'Touch Dark right' },
-      // Touch Light angles: DR -> Front -> DL -> Right Ortho
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png', alt: 'Touch Dark docked' },
+      // Touch Light: DR -> Front -> DL -> Right Ortho -> Docked (5 images, indices 11-15)
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png', alt: 'Touch Light DR' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png', alt: 'Touch Light front' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png', alt: 'Touch Light DL' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png', alt: 'Touch Light right' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png', alt: 'Touch Light docked' },
     ],
     videos: [],
     skills: [],
@@ -82,19 +84,18 @@ Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle
     title: 'Mode',
     categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Refined electric toothbrush design and website visuals',
-    fullDescription: `Mode was an exciting opportunity to design a refined electric toothbrush that I now use everyday. My main role was creating a scrolling video for Mode's website to walk through the design details and unique features.
-
-3D Visualization: Jaclyn Lowery (3D Lead, Video Editor), Kieran Moriarty (Direction)
+    fullDescription: `Mode was an exciting opportunity to design a refined electric toothbrush that I now use everyday. My main role was creating a scrolling video for Mode's website to walk through the design details and unique features.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (3D Lead, Video Editor), Kieran Moriarty (Direction)
 
 Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Nam (Support), Tyler Anderson (Support)`,
     thumbnail: { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode thumbnail' },
     images: [
       { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode landscape' },
       { src: '/images/projects/mode/02-brush-full.jpg', alt: 'Mode brush full' },
+      { src: '/images/projects/mode/06-scroll.jpg', alt: 'Mode scroll' },
       { src: '/images/projects/mode/03-brushhead.png', alt: 'Mode brushhead' },
       { src: '/images/projects/mode/04-mode-01.jpg', alt: 'Mode product' },
       { src: '/images/projects/mode/05-website-visual.png', alt: 'Mode website visual' },
-      { src: '/images/projects/mode/06-scroll.jpg', alt: 'Mode scroll' },
       { src: '/images/projects/mode/07-charger.png', alt: 'Mode charger' },
     ],
     videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/MODE_Website_Scroll_optimized.mp4', alt: 'Mode website scroll video' }],
@@ -108,15 +109,13 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
     title: 'Nice HR40 Remote',
     categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Next generation smart home remote design',
-    fullDescription: `Our team was tasked with re-imagining the previous generation Nice smart home remote into the next generation HR40. We upgraded the design to match the existing modern aesthetics of the Nice product portfolio, along with enhancing the experience of the extensive control.
-
-Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), John Nam (Support)`,
+    fullDescription: `Our team was tasked with re-imagining the previous generation Nice smart home remote into the next generation HR40. We upgraded the design to match the existing modern aesthetics of the Nice product portfolio, along with enhancing the experience of the extensive control.`,
+    creditsDescription: `Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), John Nam (Support)`,
     thumbnail: { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote thumbnail' },
     images: [
       { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote outro' },
       { src: '/images/projects/nice-hr40-remote/02-prototypes.jpg', alt: 'Nice HR40 Remote prototypes' },
       { src: '/images/projects/nice-hr40-remote/03-button-layout.png', alt: 'Nice HR40 Remote button layout' },
-      { src: '/images/projects/nice-hr40-remote/04-elan-remote.png', alt: 'Elan remote previous generation' },
       { src: '/images/projects/nice-hr40-remote/05-remote-float.png', alt: 'Nice HR40 Remote floating' },
       { src: '/images/projects/nice-hr40-remote/06-buttons-closeup.png', alt: 'Nice HR40 Remote buttons closeup' },
       { src: '/images/projects/nice-hr40-remote/07-docked-closeup.jpg', alt: 'Nice HR40 Remote docked closeup' },
@@ -134,9 +133,8 @@ Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), Jo
     shortDescription: '3D on-package renders for multiple Jabra product lines',
     fullDescription: `I created 3D on-package renders for multiple Jabra product lines, collaborating with the graphic design team. I sketched render concept ideas, rendered, reviewed and made edits to pre-press color proofs. I served as the primary 3D visualizer for numerous color variations across various products.
 
-Products Featured: Evolve 2 85, Evolve 2 65, Elite 85t, Elite Active 75t, Elite 2, Elite 3, Elite 4, Elite 4 Active, Elite 5, and Elite 7.
-
-3D Visualization: Jaclyn Lowery (Lead on-package renders), Jasmine Schubert (Support), Kieran Moriarty (Panacast renders), Matt Hanzly (Support), Tyler Anderson (Package context renders)
+Products Featured: Evolve 2 85, Evolve 2 65, Elite 85t, Elite Active 75t, Elite 2, Elite 3, Elite 4, Elite 4 Active, Elite 5, and Elite 7.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead on-package renders), Jasmine Schubert (Support), Kieran Moriarty (Panacast renders), Matt Hanzly (Support), Tyler Anderson (Package context renders)
 
 Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
     thumbnail: { src: '/images/projects/jabra-packaging/01-elite7-active.jpg', alt: 'Jabra Packaging thumbnail' },
@@ -175,9 +173,8 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
     title: 'Arc Sport',
     categories: ['3d-visualization'],
     shortDescription: 'Electric boat visualization showcasing speed and versatility',
-    fullDescription: `I was tasked with visualizing the Arc Sport, a beautiful electric boat designed by my colleagues. My main role was to demonstrate the speed and versatility of the boat through inspirational context visuals. Below is a sample of the renders Tyler and I created.
-
-3D Visualization: Jaclyn Lowery (Lead Context Shots) + Tyler Anderson (Lead Studio/Context Shots)
+    fullDescription: `I was tasked with visualizing the Arc Sport, a beautiful electric boat designed by my colleagues. My main role was to demonstrate the speed and versatility of the boat through inspirational context visuals. Below is a sample of the renders Tyler and I created.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead Context Shots) + Tyler Anderson (Lead Studio/Context Shots)
 
 Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anderson (Support), Jack Marple (Direction) + Tyler Anderson (Support)`,
     thumbnail: { src: '/images/projects/arcsport/01-boat-at-speed.jpg', alt: 'Arc Sport thumbnail' },
@@ -199,9 +196,8 @@ Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anders
     title: 'Auraglow',
     categories: ['3d-visualization'],
     shortDescription: 'LED Whitener promo videos and product renders',
-    fullDescription: `Tyler and I created promo videos and stills to showcase the Auraglow LED Whitener and case designed by our colleagues, along with several other Auraglow products. I also created on-package renders for several of the Auraglow products.
-
-3D Visualization: Jaclyn Lowery (3D Support, 2D animator, Video Editor), Kieran Moriarty (Direction), Tyler Anderson (3D Support)
+    fullDescription: `Tyler and I created promo videos and stills to showcase the Auraglow LED Whitener and case designed by our colleagues, along with several other Auraglow products. I also created on-package renders for several of the Auraglow products.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (3D Support, 2D animator, Video Editor), Kieran Moriarty (Direction), Tyler Anderson (3D Support)
 
 Industrial Design: Dayne Tanner (Direction), Jack Marple (Lead)`,
     thumbnail: { src: '/images/projects/auraglow/01-led-whitener.png', alt: 'Auraglow thumbnail' },
@@ -229,9 +225,8 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Lead)`,
     title: 'Whistle Go + Whistle Pro',
     categories: ['industrial-design'],
     shortDescription: 'GPS-enabled health and activity trackers for pets',
-    fullDescription: `GPS-enabled health and activity trackers for pets with emphasis on durability, removability, material finishes, and color considerations.
-
-3D Visualization: Dayne Tanner (Lead)
+    fullDescription: `GPS-enabled health and activity trackers for pets with emphasis on durability, removability, material finishes, and color considerations.`,
+    creditsDescription: `3D Visualization: Dayne Tanner (Lead)
 
 Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Kieran Moriarty (Support)`,
     thumbnail: { src: '/images/projects/whistle/01-collars.jpg', alt: 'Whistle thumbnail' },
@@ -256,9 +251,8 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Kiera
     shortDescription: 'Premium multi-device wireless charger',
     fullDescription: `Our team was given the task to re-imagine a standard wireless charger into a premium and multi-device compatible experience.
 
-Jaclyn Lowery also directed the packaging design (OBX), with emphasis on device protection and the unboxing experience.
-
-3D Visualization: Jaclyn Lowery (Lead Studio Shots), John Nam (Lead In-Context Packaging Renders)
+Jaclyn Lowery also directed the packaging design (OBX), with emphasis on device protection and the unboxing experience.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead Studio Shots), John Nam (Lead In-Context Packaging Renders)
 
 Photography: Enlisted
 
@@ -286,9 +280,8 @@ Industrial Design: August Simmons (ID Support), Dayne Tanner (ID Direction), Jac
     shortDescription: 'Hearing aid design developed through user interviews',
     fullDescription: `As someone who grew up going into my parent's office to do hearing tests (for fun? My parents are doctors), it was a very exciting opportunity to help design a Starkey hearing aid.
 
-The team designed hearing aids and their cases through user interviews and close collaboration with Starkey's engineering department to develop the most considered solution.
-
-3D Visualization: Tyler Anderson (Lead)
+The team designed hearing aids and their cases through user interviews and close collaboration with Starkey's engineering department to develop the most considered solution.`,
+    creditsDescription: `3D Visualization: Tyler Anderson (Lead)
 
 Photography: Starkey
 
@@ -317,9 +310,8 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Support), Jaclyn Lower
     shortDescription: 'UVC light contact lens cleaner 3D animation',
     fullDescription: `This was my first 3D animated project. The work showcases technology developed by Q-Egg that kills 99.999% of harmful pathogens with UVC light through their contact lens cleaner/case product.
 
-I led storytelling and 3D visuals/animation efforts on the project, collaborating with a copywriter, voice actor, and motion designer.
-
-3D Visualization: Jaclyn Lowery (3D Vis. Lead) + Lauren Konig (3D Vis. Support, 2D Animator + Video Editor)`,
+I led storytelling and 3D visuals/animation efforts on the project, collaborating with a copywriter, voice actor, and motion designer.`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (3D Vis. Lead) + Lauren Konig (3D Vis. Support, 2D Animator + Video Editor)`,
     thumbnail: { src: '/images/projects/q-egg/01-exploded.jpg', alt: 'Q-Egg thumbnail' },
     images: [
       { src: '/images/projects/q-egg/01-exploded.jpg', alt: 'Q-Egg exploded view' },

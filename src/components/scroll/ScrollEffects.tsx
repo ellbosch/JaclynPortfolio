@@ -51,7 +51,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
 };
 
 // Scroll-based image component with scale effect
-export const ScrollImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollImage = ({ src, alt, className, style }: { src: string; alt: string; className: string; style?: React.CSSProperties }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -88,6 +88,7 @@ export const ScrollImage = ({ src, alt, className }: { src: string; alt: string;
         style={{
           transform: `scale(${scale})`,
           transition: 'transform 0.1s ease-out',
+          ...style,
         }}
       />
     </div>
@@ -146,7 +147,7 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
 
 // Scroll-based image with pan from top-left to bottom-right (with zoom for pan room)
 // Disabled on mobile for performance
-export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollPanImageTLBR = ({ src, alt, className, panSpeed = 1 }: { src: string; alt: string; className: string; panSpeed?: number }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -163,9 +164,9 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-left to bottom-right
-      const panRange = 80;
-      const x = Math.round(40 - clampedProgress * panRange);
-      const y = Math.round(40 - clampedProgress * panRange);
+      const panRange = 80 * panSpeed;
+      const x = Math.round((40 * panSpeed) - clampedProgress * panRange);
+      const y = Math.round((40 * panSpeed) - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
@@ -174,7 +175,7 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [panSpeed]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
@@ -190,7 +191,7 @@ export const ScrollPanImageTLBR = ({ src, alt, className }: { src: string; alt: 
 
 // Scroll-based image with pan from top-right to bottom-left (with zoom for pan room)
 // Disabled on mobile for performance
-export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollPanImageTRBL = ({ src, alt, className, panSpeed = 1 }: { src: string; alt: string; className: string; panSpeed?: number }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -207,9 +208,9 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan diagonally from top-right to bottom-left (start higher)
-      const panRange = 100;
-      const x = Math.round(-40 + clampedProgress * 80);
-      const y = Math.round(40 - clampedProgress * panRange);
+      const panRange = 100 * panSpeed;
+      const x = Math.round((-40 * panSpeed) + clampedProgress * (80 * panSpeed));
+      const y = Math.round((40 * panSpeed) - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, ${y}px, 0)`;
     };
@@ -218,7 +219,7 @@ export const ScrollPanImageTRBL = ({ src, alt, className }: { src: string; alt: 
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [panSpeed]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
@@ -277,7 +278,7 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
 
 // Scroll-based image with horizontal pan from left to right (GPU-accelerated)
 // Disabled on mobile for performance
-export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+export const ScrollPanImageLR = ({ src, alt, className, panSpeed = 1 }: { src: string; alt: string; className: string; panSpeed?: number }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -294,8 +295,8 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Pan horizontally from right to left
-      const panRange = 100;
-      const x = Math.round(50 - clampedProgress * panRange);
+      const panRange = 100 * panSpeed;
+      const x = Math.round((50 * panSpeed) - clampedProgress * panRange);
 
       imgRef.current.style.transform = `scale(1.2) translate3d(${x}px, 0, 0)`;
     };
@@ -304,7 +305,7 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [panSpeed]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
@@ -322,9 +323,11 @@ export const ScrollPanImageLR = ({ src, alt, className }: { src: string; alt: st
 export const ScrollCrossfadeImages = ({
   images,
   className,
+  useParentScroll = false,
 }: {
   images: Array<{ src: string; alt: string }>;
   className: string;
+  useParentScroll?: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -333,11 +336,23 @@ export const ScrollCrossfadeImages = ({
     const handleScroll = () => {
       if (!containerRef.current) return;
 
-      const rect = containerRef.current.getBoundingClientRect();
+      // If useParentScroll is true, find the parent container and use its scroll position
+      const scrollElement = useParentScroll
+        ? containerRef.current.parentElement?.parentElement
+        : containerRef.current;
+
+      if (!scrollElement) return;
+
+      const rect = scrollElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Progress: 0 when entering viewport, 1 when leaving
-      const progress = 1 - (rect.top + rect.height) / (windowHeight + rect.height);
+      // Extended scroll range: starts when top enters, ends when bottom leaves
+      // This gives more scroll distance for each image transition
+      const scrollStart = windowHeight; // element top at bottom of viewport
+      const scrollEnd = -rect.height; // element bottom at top of viewport
+      const scrollRange = scrollStart - scrollEnd;
+      const currentPosition = rect.top;
+      const progress = (scrollStart - currentPosition) / scrollRange;
       const clampedProgress = Math.max(0, Math.min(1, progress));
 
       // Map progress to image index (divide into N segments)
@@ -352,7 +367,7 @@ export const ScrollCrossfadeImages = ({
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [images.length]);
+  }, [images.length, useParentScroll]);
 
   return (
     <div ref={containerRef} className="relative w-full h-full overflow-hidden">

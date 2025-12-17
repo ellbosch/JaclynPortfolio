@@ -50,7 +50,7 @@ const ProjectPage = () => {
   const nextProject = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
 
   return (
-    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-16">
+    <div className="max-w-[1400px] mx-auto px-2 lg:px-4 py-8">
       {/* Back Link */}
       <Link
         to="/"
@@ -84,13 +84,24 @@ const ProjectPage = () => {
       )}
 
       {/* Description */}
-      <section className="mb-12">
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
-            {project.fullDescription}
+      {project.fullDescription && (
+        <section className="mb-8">
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <p className="text-lg text-gray-900 dark:text-white whitespace-pre-line">
+              {project.fullDescription}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Credits */}
+      {project.creditsDescription && (
+        <section className="mb-12">
+          <p className="text-sm text-gray-500 dark:text-gray-500 whitespace-pre-line">
+            {project.creditsDescription}
           </p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Skills */}
       {project.skills.length > 0 && (
@@ -114,19 +125,93 @@ const ProjectPage = () => {
       {/* Media Gallery (Videos + Images) */}
       {(project.videos.length > 0 || project.images.length > 0) && (
         <section className="mb-12">
-          <div className="flex flex-wrap gap-4">
-            {project.videos.map((video, index) => (
-              <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
-            ))}
-            {project.images.map((image, index) => (
+          {/* Custom layout for Control4 - simple gallery with max height for portrait shots */}
+          {slug === 'control4' ? (
+            <div className="space-y-4">
+              {/* First image full width */}
               <img
-                key={`image-${index}`}
-                src={image.src}
-                alt={image.alt}
-                className={`max-w-full h-auto ${image.src.includes('02-green-taupe') ? 'bg-white' : ''}`}
+                src={project.images[0].src}
+                alt={project.images[0].alt}
+                className="w-full h-auto max-h-[100vh] object-contain bg-white"
               />
-            ))}
-          </div>
+              {/* Non-docked images in flex rows - 2 per row on md+ (exclude indices 5, 10, 15) */}
+              <div className="flex flex-wrap gap-4">
+                {project.images.slice(1).filter((_, i) => ![4, 9, 14].includes(i)).map((image, index) => (
+                  <div key={`image-${index + 1}`} className="w-full md:basis-[calc(50%-0.5rem)] md:flex-1">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Docked photos in horizontal stack with single white background */}
+              <div className="flex flex-row items-end gap-4 bg-white p-4">
+                {[project.images[5], project.images[10], project.images[15]].map((image, index) => (
+                  <div key={`docked-${index}`} className="flex-1" style={{ transform: index > 0 ? 'scale(0.91)' : undefined, transformOrigin: 'bottom center' }}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : slug === 'mode' ? (
+            <div className="flex flex-wrap gap-4">
+              {project.videos.map((video, index) => (
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+              ))}
+              {/* First image full width */}
+              <img
+                src={project.images[0].src}
+                alt={project.images[0].alt}
+                className="max-w-full h-auto"
+              />
+              {/* 2nd and 3rd images side by side on md+ */}
+              <div className="w-full flex flex-col md:flex-row gap-4">
+                <div className="flex-1">
+                  <img
+                    src={project.images[1].src}
+                    alt={project.images[1].alt}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="flex-1">
+                  <img
+                    src={project.images[2].src}
+                    alt={project.images[2].alt}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              {/* Remaining images */}
+              {project.images.slice(3).map((image, index) => (
+                <img
+                  key={`image-${index + 3}`}
+                  src={image.src}
+                  alt={image.alt}
+                  className="max-w-full h-auto"
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-4">
+              {project.videos.map((video, index) => (
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+              ))}
+              {project.images.map((image, index) => (
+                <img
+                  key={`image-${index}`}
+                  src={image.src}
+                  alt={image.alt}
+                  className={`max-w-full h-auto ${image.src.includes('02-green-taupe') ? 'bg-white' : ''}`}
+                />
+              ))}
+            </div>
+          )}
         </section>
       )}
 

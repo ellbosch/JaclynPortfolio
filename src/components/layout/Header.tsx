@@ -59,7 +59,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white dark:bg-gray-950 transition-opacity duration-300 ${
+      className={`sticky top-0 z-50 bg-white dark:bg-black transition-opacity duration-300 ${
         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
@@ -83,7 +83,7 @@ const Header = () => {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-sm font-medium transition-colors text-gray-900 dark:text-white flex items-center gap-1 cursor-pointer"
+                  className="text-sm font-medium transition-colors text-gray-900 dark:text-white flex items-center gap-1 cursor-pointer focus:outline-none"
                 >
                   {filterLabels[filter]}
                   <svg
