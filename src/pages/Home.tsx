@@ -138,6 +138,7 @@ const Home = () => {
               return (
                 <Link
                   key={project.slug}
+                  id={project.slug}
                   to={`/project/${project.slug}`}
                   className="block mb-8 lg:mb-16 group"
                 >

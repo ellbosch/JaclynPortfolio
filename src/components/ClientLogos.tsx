@@ -61,12 +61,17 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
     const projectSlug = clientToProject[clientName];
     if (!projectSlug) return;
 
-    // Find the project element in the DOM by looking for the link to that project
-    const projectLink = document.querySelector(`a[href="/project/${projectSlug}"]`);
-    if (projectLink) {
+    // Find the project element by its id
+    const projectElement = document.getElementById(projectSlug);
+    if (projectElement) {
       // Get header height for offset (h-12 = 48px on mobile, h-16 = 64px on md+, plus padding on lg+)
       const headerOffset = window.innerWidth >= 1024 ? 96 : window.innerWidth >= 768 ? 64 : 48;
-      const elementPosition = projectLink.getBoundingClientRect().top + window.scrollY;
+      const elementPosition = projectElement.getBoundingClientRect().top + window.scrollY;
+
+      // Update URL hash without triggering default scroll
+      window.history.pushState(null, '', `#${projectSlug}`);
+
+      // Smooth scroll with offset
       window.scrollTo({
         top: elementPosition - headerOffset,
         behavior: 'smooth',
