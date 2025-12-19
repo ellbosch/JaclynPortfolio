@@ -70,8 +70,9 @@ const Home = () => {
             lineHeight: '1.6',
           }}
         >
+{/* Desktop version - single line, hidden on small screens */}
           <span
-            className={`relative inline px-2 py-1 ${fadeStage >= 2 ? 'visible' : 'invisible'}`}
+            className={`relative inline px-2 py-1 max-[568px]:hidden ${fadeStage >= 2 ? 'visible' : 'invisible'}`}
             style={{
               backgroundColor: 'rgba(107, 114, 128, 0.3)',
               borderRadius: '0.2em',
@@ -88,6 +89,50 @@ const Home = () => {
             />
             <span className="relative text-gray-500 dark:text-gray-400">
               Industrial Design, 3D Rendering, and 3D Animation.
+            </span>
+          </span>
+          {/* Mobile version - two lines, hidden on larger screens */}
+          <span className={`hidden max-[568px]:block ${fadeStage >= 2 ? 'visible' : 'invisible'}`}>
+            <span
+              className="relative inline px-2 py-1"
+              style={{
+                backgroundColor: 'rgba(107, 114, 128, 0.3)',
+                borderRadius: '0.2em',
+              }}
+            >
+              <span
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  borderRadius: '0.2em',
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                  mixBlendMode: 'overlay',
+                  opacity: 0.4,
+                }}
+              />
+              <span className="relative text-gray-500 dark:text-gray-400">
+                Industrial Design, 3D Rendering,
+              </span>
+            </span>
+            <span className="block h-2" />
+            <span
+              className="relative inline px-2 py-1"
+              style={{
+                backgroundColor: 'rgba(107, 114, 128, 0.3)',
+                borderRadius: '0.2em',
+              }}
+            >
+              <span
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  borderRadius: '0.2em',
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                  mixBlendMode: 'overlay',
+                  opacity: 0.4,
+                }}
+              />
+              <span className="relative text-gray-500 dark:text-gray-400">
+                and 3D Animation.
+              </span>
             </span>
           </span>
         </p>
