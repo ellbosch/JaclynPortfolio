@@ -70,7 +70,23 @@ const Home = () => {
             lineHeight: '1.6',
           }}
         >
-          <span className="bg-gray-500 text-white dark:bg-gray-400 dark:text-gray-900 px-2 py-1">Industrial Design, 3D Rendering, and 3D Animation.</span>
+          <span
+            className="relative inline text-gray-500 dark:text-gray-400 px-2 py-1"
+            style={{
+              backgroundColor: 'rgba(107, 114, 128, 0.3)',
+              borderRadius: '0.2em',
+            }}
+          >
+            Industrial Design, 3D Rendering, and 3D Animation.
+            <span
+              className="absolute inset-0 pointer-events-none opacity-40 dark:opacity-30"
+              style={{
+                borderRadius: '0.2em',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                mixBlendMode: 'overlay',
+              }}
+            />
+          </span>
         </p>
         <p
           className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-2xl md:text-[32px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
