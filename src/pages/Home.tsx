@@ -63,7 +63,7 @@ const Home = () => {
           JACLYN LOWERY
         </h1>
         <p
-          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-4 md:mb-6 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-4 md:mb-6 max-w-3xl transition-opacity duration-500 text-2xl md:text-[32px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontWeight: 400,
@@ -73,7 +73,7 @@ const Home = () => {
           Industrial Design, 3D Rendering,<br className="hidden sm:auto" /> and 3D Animation.
         </p>
         <p
-          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-2xl md:text-[32px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontWeight: 400,

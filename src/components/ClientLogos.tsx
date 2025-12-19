@@ -112,7 +112,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
                 onClick={() => hasWork && handleLogoClick(client.name)}
                 className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  opacity: index < visibleCount ? 0.58 : 0,
+                  opacity: index < visibleCount ? 0.35 : 0,
                   ...logoStyles[client.name],
                 }}
               />
