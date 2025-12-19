@@ -92,9 +92,9 @@ const Home = () => {
             </span>
           </span>
           {/* Mobile version - two lines, hidden on larger screens */}
-          <span className={`hidden max-[568px]:block -ml-2 ${fadeStage >= 2 ? 'visible' : 'invisible'}`}>
+          <span className={`hidden max-[568px]:block -ml-1 ${fadeStage >= 2 ? 'visible' : 'invisible'}`}>
             <span
-              className="relative inline px-2 py-1"
+              className="relative inline px-1 py-0"
               style={{
                 backgroundColor: 'rgba(107, 114, 128, 0.3)',
                 borderRadius: '0.2em',
@@ -115,7 +115,7 @@ const Home = () => {
             </span>
             <span className="block h-2" />
             <span
-              className="relative inline px-2 py-1"
+              className="relative inline px-1 py-0"
               style={{
                 backgroundColor: 'rgba(107, 114, 128, 0.3)',
                 borderRadius: '0.2em',
