@@ -87,7 +87,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
 
   return (
     <section className="mb-16 overflow-hidden">
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 items-center">
+      <div className="grid grid-cols-6 gap-4 md:gap-6 items-center">
         {clients.map((client, index) => {
           const hasWork = hasProject(client.name);
           return (
