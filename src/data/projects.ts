@@ -170,8 +170,14 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
     creditsDescription: `3D Animation: Jaclyn Lowery (Lead)
 
 Industrial Design: Dayne Tanner (Direction + Renders), Jaclyn Lowery (Support), Kieran Moriarty (Support)`,
-    thumbnail: { src: '', alt: 'Netgear Nighthawk thumbnail' },
-    images: [],
+    thumbnail: { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Nighthawk_R80_Hero-scaled.jpg', alt: 'Netgear Nighthawk thumbnail' },
+    images: [
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Nighthawk_R80_Top-scaled.jpg', alt: 'Nighthawk R80 Top' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Nighthawk_Vision_Board.jpg', alt: 'Nighthawk Vision Board' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nighthawk_famshot04-scaled.jpg', alt: 'Nighthawk Family Shot' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nighthawk_front02_cropped.jpg', alt: 'Nighthawk Front' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nighthawk_vertical_vertical-scaled.jpg', alt: 'Nighthawk Vertical' },
+    ],
     videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Netgear/Night-Hawk_optimized.mp4', alt: 'Netgear Nighthawk video' }],
     skills: [],
     year: 2024,

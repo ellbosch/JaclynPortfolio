@@ -426,8 +426,8 @@ const Home = () => {
                           />
                         </div>
                       </div>
-                    ) : project.slug === 'nocturne' ? (
-                      // Nocturne: video only on home page, images only on subpage
+                    ) : project.slug === 'nocturne' || project.slug === 'netgear-nighthawk' ? (
+                      // Video only on home page, images only on subpage
                       null
                     ) : (
                       <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
