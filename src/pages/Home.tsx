@@ -63,17 +63,81 @@ const Home = () => {
           JACLYN LOWERY
         </h1>
         <p
-          className={`text-gray-500 dark:text-gray-400 mt-8 md:mt-12 mb-4 md:mb-6 max-w-3xl transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className="mt-8 md:mt-12 mb-4 md:mb-6 max-w-3xl text-2xl md:text-[32px]"
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontWeight: 400,
             lineHeight: '1.6',
           }}
         >
-          Industrial Design, 3D Rendering,<br className="hidden sm:auto" /> and 3D Animation.
+{/* Desktop version - single line, hidden on small screens */}
+          <span
+            className={`relative inline px-2 py-1 max-[568px]:hidden ${fadeStage >= 2 ? 'visible' : 'invisible'}`}
+            style={{
+              backgroundColor: 'rgba(107, 114, 128, 0.3)',
+              borderRadius: '0.2em',
+            }}
+          >
+            <span
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                borderRadius: '0.2em',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                mixBlendMode: 'overlay',
+                opacity: 0.4,
+              }}
+            />
+            <span className="relative text-gray-500 dark:text-gray-400">
+              Industrial Design, 3D Rendering, and 3D Animation.
+            </span>
+          </span>
+          {/* Mobile version - two lines, hidden on larger screens */}
+          <span className={`hidden max-[568px]:block ${fadeStage >= 2 ? 'visible' : 'invisible'}`}>
+            <span
+              className="relative inline px-2 py-1"
+              style={{
+                backgroundColor: 'rgba(107, 114, 128, 0.3)',
+                borderRadius: '0.2em',
+              }}
+            >
+              <span
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  borderRadius: '0.2em',
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                  mixBlendMode: 'overlay',
+                  opacity: 0.4,
+                }}
+              />
+              <span className="relative text-gray-500 dark:text-gray-400">
+                Industrial Design, 3D Rendering,
+              </span>
+            </span>
+            <span className="block h-2" />
+            <span
+              className="relative inline px-2 py-1"
+              style={{
+                backgroundColor: 'rgba(107, 114, 128, 0.3)',
+                borderRadius: '0.2em',
+              }}
+            >
+              <span
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  borderRadius: '0.2em',
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                  mixBlendMode: 'overlay',
+                  opacity: 0.4,
+                }}
+              />
+              <span className="relative text-gray-500 dark:text-gray-400">
+                and 3D Animation.
+              </span>
+            </span>
+          </span>
         </p>
         <p
-          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-xl md:text-[28px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-2xl md:text-[32px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontWeight: 400,
@@ -296,31 +360,14 @@ const Home = () => {
                           />
                         </div>
                       </div>
-                    ) : project.slug === 'auraglow' && project.images.length >= 8 ? (
-                      // Custom AuraGlow layout: single row with images 7, 8, 4 equal width, no cropping
-                      // First and third images hidden on mobile
-                      <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
-                        <div className="hidden md:block overflow-hidden" style={{ flex: '1 1 0%' }}>
-                          <img
-                            src={project.images[6].src}
-                            alt={project.images[6].alt}
-                            className="w-full h-auto object-contain"
-                          />
-                        </div>
-                        <div className="overflow-hidden" style={{ flex: '1 1 0%' }}>
-                          <img
-                            src={project.images[7].src}
-                            alt={project.images[7].alt}
-                            className="w-full h-auto object-contain"
-                          />
-                        </div>
-                        <div className="hidden md:block overflow-hidden" style={{ flex: '1 1 0%' }}>
-                          <img
-                            src={project.images[3].src}
-                            alt={project.images[3].alt}
-                            className="w-full h-auto object-contain"
-                          />
-                        </div>
+                    ) : project.slug === 'auraglow' && project.images.length >= 3 ? (
+                      // Custom AuraGlow layout: single image (3rd from subpage)
+                      <div className="overflow-hidden h-[25vh] sm:h-[30vh] lg:h-[50vh]">
+                        <img
+                          src={project.images[2].src}
+                          alt={project.images[2].alt}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     ) : project.slug === 'jabra-packaging' && project.images.length >= 7 ? (
                       // Custom Jabra layout: top row 33/67 split, then full width pan image
@@ -424,6 +471,28 @@ const Home = () => {
                           />
                         </div>
                       </div>
+                    ) : project.slug === 'nocturne' && project.images.length >= 3 ? (
+                      // Nocturne: 2nd and 3rd images side by side (70/30 split)
+                      <div className="flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto lg:h-[55vh]">
+                        <div className="hidden lg:block" style={{ flex: '40 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[1].src}
+                            alt={project.images[1].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '60 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[2].src}
+                            alt={project.images[2].alt}
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: 'left center' }}
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'netgear-nighthawk' ? (
+                      // Netgear: video only on home page, images only on subpage
+                      null
                     ) : (
                       <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
                         {rows.map((row, rowIndex) => (
