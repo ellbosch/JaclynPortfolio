@@ -87,9 +87,10 @@ const ProjectPage = () => {
       {project.fullDescription && (
         <section className="mb-8 px-2 sm:px-0">
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-lg text-gray-900 dark:text-white whitespace-pre-line">
-              {project.fullDescription}
-            </p>
+            <p
+              className="text-lg text-gray-900 dark:text-white whitespace-pre-line [&_a]:underline [&_a]:text-gray-900 dark:[&_a]:text-white"
+              dangerouslySetInnerHTML={{ __html: project.fullDescription }}
+            />
           </div>
         </section>
       )}
