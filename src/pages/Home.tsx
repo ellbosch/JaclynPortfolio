@@ -426,8 +426,27 @@ const Home = () => {
                           />
                         </div>
                       </div>
-                    ) : project.slug === 'nocturne' || project.slug === 'netgear-nighthawk' ? (
-                      // Video only on home page, images only on subpage
+                    ) : project.slug === 'nocturne' && project.images.length >= 3 ? (
+                      // Nocturne: 2nd and 3rd images side by side (70/30 split)
+                      <div className="flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto lg:h-[55vh]">
+                        <div style={{ flex: '40 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[1].src}
+                            alt={project.images[1].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div style={{ flex: '60 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[2].src}
+                            alt={project.images[2].alt}
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: 'left center' }}
+                          />
+                        </div>
+                      </div>
+                    ) : project.slug === 'netgear-nighthawk' ? (
+                      // Netgear: video only on home page, images only on subpage
                       null
                     ) : (
                       <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
