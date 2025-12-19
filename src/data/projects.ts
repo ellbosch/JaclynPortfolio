@@ -10,7 +10,7 @@ export const projects: Project[] = [
     creditsDescription: `3D Visualization: Jaclyn Lowery (Lead)`,
     thumbnail: { src: '', alt: 'Nocturne thumbnail' },
     images: [],
-    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nocturne_optimized.mp4', alt: 'Nocturne video' }],
+    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/nocturne-4k.mp4', alt: 'Nocturne video' }],
     skills: [],
     year: 2024,
     featured: true,
