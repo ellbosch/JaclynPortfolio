@@ -236,6 +236,38 @@ const ProjectPage = () => {
                 />
               ))}
             </div>
+          ) : slug === 'netgear-nighthawk' ? (
+            <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
+              {project.videos.map((video, index) => (
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+              ))}
+              {/* All images except last two */}
+              {project.images.slice(0, -2).map((image, index) => (
+                <img
+                  key={`image-${index}`}
+                  src={image.src}
+                  alt={image.alt}
+                  className="max-w-full h-auto"
+                />
+              ))}
+              {/* Last two images side by side - 33/67 split */}
+              <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
+                <div style={{ flex: '1 1 33%' }}>
+                  <img
+                    src={project.images[project.images.length - 2].src}
+                    alt={project.images[project.images.length - 2].alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div style={{ flex: '2 1 67%' }}>
+                  <img
+                    src={project.images[project.images.length - 1].src}
+                    alt={project.images[project.images.length - 1].alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           ) : (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
