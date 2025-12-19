@@ -30,7 +30,7 @@ export const projects: Project[] = [
     fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.`,
     creditsDescription: `3D Visualization: Jaclyn Lowery (Lead)
 
-Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Support), Kieran Moriarty (Support) + Luis Velazquez (Support)`,
+Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Support), Kieran Moriarty (Support), Luis Velazquez (Support)`,
     thumbnail: { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Arlo/cover%2Bshot%2Bredo.jpg', alt: 'Arlo thumbnail' },
     images: [
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Arlo/cover%2Bshot%2Bredo.jpg', alt: 'Arlo cover' },
@@ -119,7 +119,9 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
     categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Next generation smart home remote design',
     fullDescription: `Our team was tasked with re-imagining the previous generation Nice smart home remote into the next generation HR40. We upgraded the design to match the existing modern aesthetics of the Nice product portfolio, along with enhancing the experience of the extensive control.`,
-    creditsDescription: `Industrial Design: Jaclyn Lowery (Project Lead), Kieran Moriarty (Direction), John Nam (Support)`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead, Video Editor), Nathanael Gonzalez (Support)
+
+    Industrial Design: Annie Pan (Support), Dayne Tanner (Direction), Jaclyn Lowery (Lead/Support), Nathanael Gonzalez (Lead/Support)`,
     thumbnail: { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote thumbnail' },
     images: [
       { src: '/images/projects/nice-hr40-remote/01-remote-outro.png', alt: 'Nice HR40 Remote outro' },
@@ -192,9 +194,9 @@ Industrial Design: Dayne Tanner (Direction + Renders), Jaclyn Lowery (Support), 
     categories: ['3d-visualization'],
     shortDescription: 'Electric boat visualization showcasing speed and versatility',
     fullDescription: `I was tasked with visualizing the Arc Sport, a beautiful electric boat designed by my colleagues. My main role was to demonstrate the speed and versatility of the boat through inspirational context visuals. Below is a sample of the renders Tyler and I created.`,
-    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead Context Shots) + Tyler Anderson (Lead Studio/Context Shots)
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead Context Shots), Tyler Anderson (Lead Studio/Context Shots)
 
-Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anderson (Support), Jack Marple (Direction) + Tyler Anderson (Support)`,
+Industrial Design: Anders Flem (Support), Dayne Tanner (Direction), Dylan Anderson (Support), Jack Marple (Direction), Tyler Anderson (Support)`,
     thumbnail: { src: '/images/projects/arcsport/01-boat-at-speed.jpg', alt: 'Arc Sport thumbnail' },
     images: [
       { src: '/images/projects/arcsport/01-boat-at-speed.jpg', alt: 'Arc Sport boat at speed' },
@@ -332,7 +334,7 @@ Industrial Design: Dayne Tanner (Direction), Jack Marple (Support), Jaclyn Lower
     fullDescription: `This was my first 3D animated project. The work showcases technology developed by Q-Egg that kills 99.999% of harmful pathogens with UVC light through their contact lens cleaner/case product.
 
 I led storytelling and 3D visuals/animation efforts on the project, collaborating with a copywriter, voice actor, and motion designer.`,
-    creditsDescription: `3D Visualization: Jaclyn Lowery (3D Vis. Lead) + Lauren Konig (3D Vis. Support, 2D Animator + Video Editor)`,
+    creditsDescription: `3D Visualization: Jaclyn Lowery (3D Vis. Lead), Lauren Konig (3D Vis. Support, 2D Animator + Video Editor)`,
     thumbnail: { src: '/images/projects/q-egg/01-exploded.jpg', alt: 'Q-Egg thumbnail' },
     images: [
       { src: '/images/projects/q-egg/01-exploded.jpg', alt: 'Q-Egg exploded view' },
