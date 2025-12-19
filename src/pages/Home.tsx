@@ -429,7 +429,7 @@ const Home = () => {
                     ) : project.slug === 'nocturne' && project.images.length >= 3 ? (
                       // Nocturne: 2nd and 3rd images side by side (70/30 split)
                       <div className="flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto lg:h-[55vh]">
-                        <div style={{ flex: '40 1 0%' }}>
+                        <div className="hidden lg:block" style={{ flex: '40 1 0%' }}>
                           <ScrollImage
                             src={project.images[1].src}
                             alt={project.images[1].alt}
