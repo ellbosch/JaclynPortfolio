@@ -18,7 +18,7 @@ const logoStyles: Record<string, React.CSSProperties> = {
   'Arlo': { transform: 'scale(1.2) translateY(-3px)' },
   'Whistle': { transform: 'scale(0.9)' },
   'Jabra': { transform: 'scale(0.85)' },
-  'Nocturne': { transform: 'scale(0.9)' },
+  'Nocturne': { transform: 'scale(0.8)' },
 };
 
 // Map client names to project slugs
