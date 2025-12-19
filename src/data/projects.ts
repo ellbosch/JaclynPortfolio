@@ -28,9 +28,9 @@ export const projects: Project[] = [
     categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'Security camera system design and launch video renders',
     fullDescription: `I worked alongside my colleagues to design the Arlo Go, Arlo Ultra, Arlo Pro, and the Arlo Pro Floodlight. I created the following renders and animations for a launch video of the Arlo Pro.`,
-    creditsDescription: `3D Visualization: Jaclyn Lowery (Arlo Pro video renders)
+    creditsDescription: `3D Visualization: Jaclyn Lowery (Lead)
 
-Industrial Design: Dayne Tanner (Direction), Tyler Anderson (Project Lead), Kyle Savarese (Support), Jaclyn Lowery (Support)`,
+Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Support), Kieran Moriarty (Support) + Luis Velazquez (Support)`,
     thumbnail: { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Arlo/cover%2Bshot%2Bredo.jpg', alt: 'Arlo thumbnail' },
     images: [
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/Arlo/cover%2Bshot%2Bredo.jpg', alt: 'Arlo cover' },
