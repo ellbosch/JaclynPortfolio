@@ -79,7 +79,7 @@ const Header = () => {
           </Link>
 
           <div className="flex items-center gap-4">
-            {isHome && (
+            {isHome && isVisible && (
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}

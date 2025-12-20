@@ -18,7 +18,8 @@ const logoStyles: Record<string, React.CSSProperties> = {
   'Arlo': { transform: 'scale(1.2) translateY(-3px)' },
   'Whistle': { transform: 'scale(0.9)' },
   'Jabra': { transform: 'scale(0.85)' },
-  'Nocturne': { transform: 'scale(0.9)' },
+  'Nocturne': { transform: 'scale(0.8)' },
+  'Arc Boats': { transform: 'scale(0.9)' },
 };
 
 // Map client names to project slugs
@@ -34,6 +35,7 @@ const clientToProject: Record<string, string> = {
   'Spansive': 'spansive',
   'Starkey': 'starkey',
   'Nocturne': 'nocturne',
+  'Arc Boats': 'arc',
 };
 
 const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLogosProps) => {
@@ -86,8 +88,8 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
   };
 
   return (
-    <section className="mb-16 overflow-hidden">
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-6 items-center">
+    <section className="mb-16 pt-4 pb-10 overflow-hidden">
+      <div className="grid grid-cols-6 gap-4 md:gap-6 items-center">
         {clients.map((client, index) => {
           const hasWork = hasProject(client.name);
           return (
@@ -112,13 +114,15 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
                 onClick={() => hasWork && handleLogoClick(client.name)}
                 className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  opacity: index < visibleCount ? 0.7 : 0,
+                  opacity: index < visibleCount ? 0.35 : 0,
                   ...logoStyles[client.name],
                 }}
               />
               {/* Tooltip */}
               <div
-                className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-white/90 text-gray-900 text-xs rounded whitespace-nowrap z-10 pointer-events-none backdrop-blur-sm shadow-md transition-opacity duration-200 ${visibleTooltip === client.name ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute -bottom-8 px-2 py-1 bg-white/90 text-gray-900 text-xs rounded whitespace-nowrap z-10 pointer-events-none backdrop-blur-sm shadow-md transition-opacity duration-200 ${
+                  index % 6 === 0 ? 'left-0 sm:left-1/2 sm:-translate-x-1/2' : index % 6 === 5 ? 'right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2' : 'left-1/2 -translate-x-1/2'
+                } ${visibleTooltip === client.name ? 'opacity-100' : 'opacity-0'}`}
               >
                 {hasWork ? <span>View Work</span> : 'Confidential Work'}
               </div>

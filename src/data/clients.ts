@@ -21,4 +21,5 @@ export const clients: Client[] = [
   { name: 'Control4', logo: '/images/logos/control4.png' },
   { name: 'Nocturne', logo: '/images/logos/nocturne.webp' },
   { name: 'Sports Research', logo: '/images/logos/sports-research.png' },
+  { name: 'Arc Boats', logo: '/images/logos/arcboats.png' },
 ];
