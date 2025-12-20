@@ -72,7 +72,7 @@ const Home = () => {
         >
 {/* Desktop version - single line, hidden on small screens */}
           <span
-            className={`relative inline px-2 py-1 -ml-2 max-[568px]:hidden ${fadeStage >= 2 ? 'visible' : 'invisible'}`}
+            className={`relative inline px-1 lg:px-2 py-1 -ml-1 lg:-ml-2 max-[568px]:hidden ${fadeStage >= 2 ? 'visible' : 'invisible'}`}
             style={{
               backgroundColor: 'rgba(107, 114, 128, 0.3)',
               borderRadius: '0.2em',
