@@ -168,7 +168,7 @@ Industrial Design: Jaclyn Lowery (Panacast 50 Packaging)`,
   {
     slug: 'netgear-nighthawk',
     title: 'Netgear Nighthawk',
-    categories: ['3d-visualization'],
+    categories: ['industrial-design', '3d-visualization'],
     shortDescription: 'High performance Wifi router line with particle VFX animation',
     fullDescription: `Nighthawk is the high performance line of Wifi products offered by Netgear. I was tasked with a team to design the next line of Nighthawk routers, emphasizing the high-speed capabilities and enhanced technologies. I also created my first particle VFX animation in a short marketing clip to emphasize Nighthawk's soaring speeds.`,
     creditsDescription: `3D Animation: Jaclyn Lowery (Lead)
