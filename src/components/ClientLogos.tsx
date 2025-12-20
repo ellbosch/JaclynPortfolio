@@ -19,6 +19,7 @@ const logoStyles: Record<string, React.CSSProperties> = {
   'Whistle': { transform: 'scale(0.9)' },
   'Jabra': { transform: 'scale(0.85)' },
   'Nocturne': { transform: 'scale(0.8)' },
+  'Arc Boats': { transform: 'scale(0.9)' },
 };
 
 // Map client names to project slugs
@@ -34,6 +35,7 @@ const clientToProject: Record<string, string> = {
   'Spansive': 'spansive',
   'Starkey': 'starkey',
   'Nocturne': 'nocturne',
+  'Arc Boats': 'arc',
 };
 
 const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLogosProps) => {
