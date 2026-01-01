@@ -2,8 +2,6 @@ import { clients } from '../data/clients';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects } from '../data/projects';
 
-type AnimationMode = 'sequential' | 'stagger' | 'row-by-row' | 'all-at-once' | 'random';
-
 interface ClientLogosProps {
   startAnimation?: boolean;
   skipAnimation?: boolean;
@@ -40,89 +38,34 @@ const clientToProject: Record<string, string> = {
   'Arc Boats': 'arc',
 };
 
+// Generate a shuffled array of indices
+const generateRandomOrder = (length: number): number[] => {
+  const indices = Array.from({ length }, (_, i) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  return indices;
+};
+
 const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLogosProps) => {
   const [visibleCount, setVisibleCount] = useState(skipAnimation ? clients.length : 0);
   const [visibleTooltip, setVisibleTooltip] = useState<string | null>(null);
-  const [animationMode, setAnimationMode] = useState<AnimationMode>('sequential');
-  const [randomOrder, setRandomOrder] = useState<number[]>([]);
+  const [randomOrder] = useState<number[]>(() => generateRandomOrder(clients.length));
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const allProjects = getAllProjects();
-
-  const resetAnimation = () => {
-    setVisibleCount(0);
-    // Generate new random order when resetting
-    const indices = Array.from({ length: clients.length }, (_, i) => i);
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
-    setRandomOrder(indices);
-  };
 
   useEffect(() => {
     if (!startAnimation || skipAnimation) return;
     if (visibleCount >= clients.length) return;
 
-    if (animationMode === 'all-at-once') {
-      // All logos appear at once - wait for them to be hidden first, then show all
-      if (visibleCount === 0) {
-        const timeout = setTimeout(() => {
-          setVisibleCount(clients.length);
-        }, 500);
-        return () => clearTimeout(timeout);
-      }
-      return;
-    }
+    const delay = 75;
+    const timeout = setTimeout(() => {
+      setVisibleCount((prev) => prev + 1);
+    }, delay);
 
-    if (animationMode === 'stagger') {
-      // Stagger: animate by column (mod 6), showing columns 0, 1, 2, 3, 4, 5 sequentially
-      const numColumns = 6;
-      const delay = 100; // ms between columns
-
-      const timeout = setTimeout(() => {
-        setVisibleCount((prev) => Math.min(prev + 1, numColumns));
-      }, delay);
-
-      return () => clearTimeout(timeout);
-    }
-
-    if (animationMode === 'row-by-row') {
-      // Row by row: animate each row sequentially
-      const numColumns = 6;
-      const numRows = Math.ceil(clients.length / numColumns);
-      const delay = 150; // ms between rows
-
-      const timeout = setTimeout(() => {
-        setVisibleCount((prev) => Math.min(prev + 1, numRows));
-      }, delay);
-
-      return () => clearTimeout(timeout);
-    }
-
-    if (animationMode === 'random') {
-      // Random: show logos in random order
-      const delay = 75;
-
-      const timeout = setTimeout(() => {
-        setVisibleCount((prev) => prev + 1);
-      }, delay);
-
-      return () => clearTimeout(timeout);
-    }
-
-    // Sequential: one by one
-    const interval = setInterval(() => {
-      setVisibleCount((prev) => {
-        if (prev >= clients.length) {
-          clearInterval(interval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 75);
-
-    return () => clearInterval(interval);
-  }, [startAnimation, skipAnimation, animationMode, visibleCount]);
+    return () => clearTimeout(timeout);
+  }, [startAnimation, skipAnimation, visibleCount]);
 
   const handleLogoClick = (clientName: string) => {
     const projectSlug = clientToProject[clientName];
@@ -151,29 +94,9 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
     return projectSlug && allProjects.some((p) => p.slug === projectSlug);
   };
 
-  const handleModeChange = (mode: AnimationMode) => {
-    setAnimationMode(mode);
-    resetAnimation();
-  };
-
   const isLogoVisible = (index: number) => {
-    if (animationMode === 'stagger') {
-      // In stagger mode, visibleCount represents number of columns visible (0-6)
-      const column = index % 6;
-      return column < visibleCount;
-    }
-    if (animationMode === 'row-by-row') {
-      // In row-by-row mode, visibleCount represents number of rows visible
-      const row = Math.floor(index / 6);
-      return row < visibleCount;
-    }
-    if (animationMode === 'random') {
-      // In random mode, check if this index appears in the first visibleCount items of randomOrder
-      const position = randomOrder.indexOf(index);
-      return position !== -1 && position < visibleCount;
-    }
-    // Sequential and all-at-once use simple index comparison
-    return index < visibleCount;
+    const position = randomOrder.indexOf(index);
+    return position !== -1 && position < visibleCount;
   };
 
   return (
@@ -218,19 +141,6 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
             </div>
           );
         })}
-      </div>
-
-      {/* Animation Test Buttons */}
-      <div className="flex items-center justify-center gap-2 mt-8">
-        {(['sequential', 'stagger', 'row-by-row', 'all-at-once', 'random'] as const).map((mode) => (
-          <button
-            key={mode}
-            onClick={() => handleModeChange(mode)}
-            className="px-3 py-1 text-xs rounded-full transition-colors bg-gray-200 text-gray-600 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
-          >
-            {mode === 'all-at-once' ? 'All at Once' : mode === 'row-by-row' ? 'Row by Row' : mode.charAt(0).toUpperCase() + mode.slice(1)}
-          </button>
-        ))}
       </div>
     </section>
   );
