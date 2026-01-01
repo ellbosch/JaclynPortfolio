@@ -2,7 +2,7 @@ import { clients } from '../data/clients';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects } from '../data/projects';
 
-type AnimationMode = 'sequential' | 'stagger' | 'all-at-once' | 'random';
+type AnimationMode = 'sequential' | 'stagger' | 'row-by-row' | 'all-at-once' | 'random';
 
 interface ClientLogosProps {
   startAnimation?: boolean;
@@ -86,6 +86,19 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
       return () => clearTimeout(timeout);
     }
 
+    if (animationMode === 'row-by-row') {
+      // Row by row: animate each row sequentially
+      const numColumns = 6;
+      const numRows = Math.ceil(clients.length / numColumns);
+      const delay = 150; // ms between rows
+
+      const timeout = setTimeout(() => {
+        setVisibleCount((prev) => Math.min(prev + 1, numRows));
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+
     if (animationMode === 'random') {
       // Random: show logos in random order
       const delay = 75;
@@ -149,6 +162,11 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
       const column = index % 6;
       return column < visibleCount;
     }
+    if (animationMode === 'row-by-row') {
+      // In row-by-row mode, visibleCount represents number of rows visible
+      const row = Math.floor(index / 6);
+      return row < visibleCount;
+    }
     if (animationMode === 'random') {
       // In random mode, check if this index appears in the first visibleCount items of randomOrder
       const position = randomOrder.indexOf(index);
@@ -204,13 +222,13 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
 
       {/* Animation Test Buttons */}
       <div className="flex items-center justify-center gap-2 mt-8">
-        {(['sequential', 'stagger', 'all-at-once', 'random'] as const).map((mode) => (
+        {(['sequential', 'stagger', 'row-by-row', 'all-at-once', 'random'] as const).map((mode) => (
           <button
             key={mode}
             onClick={() => handleModeChange(mode)}
             className="px-3 py-1 text-xs rounded-full transition-colors bg-gray-200 text-gray-600 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
           >
-            {mode === 'all-at-once' ? 'All at Once' : mode.charAt(0).toUpperCase() + mode.slice(1)}
+            {mode === 'all-at-once' ? 'All at Once' : mode === 'row-by-row' ? 'Row by Row' : mode.charAt(0).toUpperCase() + mode.slice(1)}
           </button>
         ))}
       </div>
