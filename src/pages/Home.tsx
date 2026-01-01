@@ -226,7 +226,7 @@ const Home = () => {
                     )}
 
                     {/* Image Rows with gaps */}
-                    {project.slug === 'arcsport' && project.images.length >= 4 ? (
+                    {project.slug === 'arc' && project.images.length >= 4 ? (
                       // Custom Arc Sport layout: Asymmetric 70/30 split
                       <div className="flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 lg:h-[45vh]">
                         <div className="h-[40vh] md:h-[54vh] lg:h-full" style={{ flex: '70 1 0%' }}>

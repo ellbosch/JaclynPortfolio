@@ -20,7 +20,7 @@ export const projects: Project[] = [
     skills: [],
     year: 2024,
     featured: true,
-    order: 1,
+    order: 2,
   },
   {
     slug: 'arlo',
@@ -48,7 +48,7 @@ Industrial Design: Dayne Tanner (Direction), Jaclyn Lowery (Support), Kieran Mor
     skills: [],
     year: 2024,
     featured: true,
-    order: 2,
+    order: 1,
   },
   {
     slug: 'control4',
