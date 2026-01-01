@@ -2,7 +2,7 @@ import { clients } from '../data/clients';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects } from '../data/projects';
 
-type AnimationMode = 'sequential' | 'stagger' | 'all-at-once';
+type AnimationMode = 'sequential' | 'stagger' | 'all-at-once' | 'random';
 
 interface ClientLogosProps {
   startAnimation?: boolean;
@@ -44,11 +44,19 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
   const [visibleCount, setVisibleCount] = useState(skipAnimation ? clients.length : 0);
   const [visibleTooltip, setVisibleTooltip] = useState<string | null>(null);
   const [animationMode, setAnimationMode] = useState<AnimationMode>('sequential');
+  const [randomOrder, setRandomOrder] = useState<number[]>([]);
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const allProjects = getAllProjects();
 
   const resetAnimation = () => {
     setVisibleCount(0);
+    // Generate new random order when resetting
+    const indices = Array.from({ length: clients.length }, (_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    setRandomOrder(indices);
   };
 
   useEffect(() => {
@@ -68,6 +76,17 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
 
       const timeout = setTimeout(() => {
         setVisibleCount((prev) => Math.min(prev + 1, numColumns));
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+
+    if (animationMode === 'random') {
+      // Random: show logos in random order
+      const delay = 75;
+
+      const timeout = setTimeout(() => {
+        setVisibleCount((prev) => prev + 1);
       }, delay);
 
       return () => clearTimeout(timeout);
@@ -125,6 +144,11 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
       const column = index % 6;
       return column < visibleCount;
     }
+    if (animationMode === 'random') {
+      // In random mode, check if this index appears in the first visibleCount items of randomOrder
+      const position = randomOrder.indexOf(index);
+      return position !== -1 && position < visibleCount;
+    }
     // Sequential and all-at-once use simple index comparison
     return index < visibleCount;
   };
@@ -175,7 +199,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
 
       {/* Animation Test Buttons */}
       <div className="flex items-center justify-center gap-2 mt-8">
-        {(['sequential', 'stagger', 'all-at-once'] as const).map((mode) => (
+        {(['sequential', 'stagger', 'all-at-once', 'random'] as const).map((mode) => (
           <button
             key={mode}
             onClick={() => handleModeChange(mode)}
