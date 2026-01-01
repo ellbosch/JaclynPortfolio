@@ -164,47 +164,36 @@ const ProjectPage = () => {
             </div>
           ) : slug === 'mode' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
-              {/* Ambient video at top */}
-              {project.videos[0] && (
-                <FadeInVideo src={project.videos[0].src} className="w-full h-auto" />
-              )}
+              {project.videos.map((video, index) => (
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+              ))}
               {/* First image full width */}
               <img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 className="max-w-full h-auto"
               />
-              {/* 2nd and 3rd images side by side on md+ */}
+              {/* 5th and 3rd images side by side on md+ (swapped 2nd with 5th) */}
               <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div className="flex-1">
                   <img
-                    src={project.images[1].src}
-                    alt={project.images[1].alt}
+                    src={project.images[4].src}
+                    alt={project.images[4].alt}
                     className="w-full h-auto"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 overflow-hidden">
                   <img
                     src={project.images[2].src}
                     alt={project.images[2].alt}
-                    className="w-full h-auto"
+                    className="w-full h-full object-cover object-bottom"
                   />
                 </div>
               </div>
-              {/* 4th image */}
-              <img
-                src={project.images[3].src}
-                alt={project.images[3].alt}
-                className="max-w-full h-auto"
-              />
-              {/* Scroll video after 4 images */}
-              {project.videos[1] && (
-                <FadeInVideo src={project.videos[1].src} className="w-full h-auto" />
-              )}
-              {/* Remaining images */}
-              {project.images.slice(4).map((image, index) => (
+              {/* Remaining images (excluding index 4 which is now above, include index 1 instead) */}
+              {[project.images[1], project.images[3], project.images[5], project.images[6]].map((image, index) => (
                 <img
-                  key={`image-${index + 4}`}
+                  key={`image-${index}`}
                   src={image.src}
                   alt={image.alt}
                   className="max-w-full h-auto"
