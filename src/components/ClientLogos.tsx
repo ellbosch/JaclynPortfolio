@@ -1,6 +1,7 @@
 import { clients } from '../data/clients';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects } from '../data/projects';
+import { trackEvent } from '../utils/analytics';
 
 interface ClientLogosProps {
   startAnimation?: boolean;
@@ -70,6 +71,8 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
   const handleLogoClick = (clientName: string) => {
     const projectSlug = clientToProject[clientName];
     if (!projectSlug) return;
+
+    trackEvent('click_client_logo', { client_name: clientName, project_slug: projectSlug });
 
     // Find the project element by its id
     const projectElement = document.getElementById(projectSlug);

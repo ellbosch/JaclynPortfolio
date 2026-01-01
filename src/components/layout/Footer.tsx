@@ -1,4 +1,5 @@
 import { personalInfo } from '../../data/personal';
+import { trackEvent } from '../../utils/analytics';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,6 +19,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400"
+                onClick={() => trackEvent('click_external_link', { link_type: 'linkedin', location: 'footer' })}
               >
                 LinkedIn
               </a>
@@ -28,6 +30,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400"
+                onClick={() => trackEvent('click_external_link', { link_type: 'behance', location: 'footer' })}
               >
                 Behance
               </a>
@@ -38,6 +41,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400"
+                onClick={() => trackEvent('click_external_link', { link_type: 'instagram', location: 'footer' })}
               >
                 Instagram
               </a>

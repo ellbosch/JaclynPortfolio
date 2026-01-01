@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { useFilter } from '../../context/FilterContext';
 import type { CategoryFilter } from '../../data/types';
+import { trackEvent } from '../../utils/analytics';
 
 const filterLabels: Record<CategoryFilter, string> = {
   all: 'All Work',
@@ -19,11 +20,13 @@ const Header = () => {
 
   // Anti-scraping: construct URLs dynamically on click
   const handleLinkedInClick = () => {
+    trackEvent('click_external_link', { link_type: 'linkedin', location: 'header' });
     const url = ['https://www.linkedin.com/in', 'jaclyn-lowery-11670590'].join('/');
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const handleEmailClick = () => {
+    trackEvent('click_external_link', { link_type: 'email', location: 'header' });
     const email = ['jaclynl.inquiries', 'gmail.com'].join('@');
     window.location.href = `mailto:${email}`;
   };
@@ -102,6 +105,7 @@ const Header = () => {
                         key={key}
                         to="/"
                         onClick={() => {
+                          trackEvent('filter_change', { filter_value: key });
                           setFilter(key);
                           setDropdownOpen(false);
                         }}

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { getAllProjects, formatCategories } from '../data/projects';
 import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageLR, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
 import { useFilter } from '../context/FilterContext';
+import { trackEvent } from '../utils/analytics';
 
 // Layout patterns: each row is either [1] for full width or [flex1, flex2] for two images
 const rowPatterns = [
@@ -25,10 +26,12 @@ const Home = () => {
   const projects = filter === 'all'
     ? allProjects
     : allProjects.filter((p) => p.categories.includes(filter));
-  const yearsExperience = Math.floor((Date.now() - new Date('2015-11-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
 
   // Cascading fade-in animation state
   const [fadeStage, setFadeStage] = useState(0);
+
+  // Track which projects have been viewed (to avoid duplicate events)
+  const viewedProjects = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     // Stage 1: Name (after 200ms)
@@ -47,6 +50,38 @@ const Home = () => {
       clearTimeout(timer4);
     };
   }, []);
+
+  // Track project views when they scroll into view (50% visibility)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const slug = entry.target.id;
+            if (slug && !viewedProjects.current.has(slug)) {
+              viewedProjects.current.add(slug);
+              const project = allProjects.find((p) => p.slug === slug);
+              trackEvent('view_project', {
+                project_slug: slug,
+                project_name: project?.title || slug,
+              });
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observe all project links
+    const projectElements = document.querySelectorAll('[id]');
+    projectElements.forEach((el) => {
+      if (allProjects.some((p) => p.slug === el.id)) {
+        observer.observe(el);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [allProjects]);
 
   return (
     <div className="max-w-[1400px] mx-auto">
@@ -149,6 +184,7 @@ const Home = () => {
             href="#"
             onClick={(e) => {
               e.preventDefault();
+              trackEvent('click_external_link', { link_type: 'linkedin', location: 'hero' });
               const url = ['https://www.linkedin.com/in', 'jaclyn-lowery-11670590'].join('/');
               window.open(url, '_blank', 'noopener,noreferrer');
             }}
@@ -161,6 +197,7 @@ const Home = () => {
             href="#"
             onClick={(e) => {
               e.preventDefault();
+              trackEvent('click_external_link', { link_type: 'email', location: 'hero' });
               const email = ['jaclynl.inquiries', 'gmail.com'].join('@');
               window.location.href = `mailto:${email}`;
             }}
@@ -205,6 +242,7 @@ const Home = () => {
                   id={project.slug}
                   to={`/project/${project.slug}`}
                   className="block mb-8 lg:mb-16 group"
+                  onClick={() => trackEvent('click_project', { project_slug: project.slug })}
                 >
                   {/* Project Header - inline */}
                   <div className="flex flex-col md:flex-row md:items-baseline md:gap-6 mb-1 sm:mb-2 px-2 sm:px-0">

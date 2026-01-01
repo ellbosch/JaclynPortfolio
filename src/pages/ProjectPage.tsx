@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
+import { trackEvent } from '../utils/analytics';
 
 const FadeInVideo = ({ src, className }: { src: string; className?: string }) => {
   const [loaded, setLoaded] = useState(false);
@@ -55,6 +56,7 @@ const ProjectPage = () => {
       <Link
         to="/"
         className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors px-2 sm:px-0"
+        onClick={() => trackEvent('click_navigation', { action: 'back_to_work', project_slug: slug || '' })}
       >
         &larr; Back to Work
       </Link>
@@ -349,6 +351,7 @@ const ProjectPage = () => {
             <Link
               to={`/project/${prevProject.slug}`}
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              onClick={() => trackEvent('click_navigation', { action: 'prev_project', project_slug: prevProject.slug })}
             >
               &larr; {prevProject.title}
             </Link>
@@ -359,6 +362,7 @@ const ProjectPage = () => {
             <Link
               to={`/project/${nextProject.slug}`}
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              onClick={() => trackEvent('click_navigation', { action: 'next_project', project_slug: nextProject.slug })}
             >
               {nextProject.title} &rarr;
             </Link>
