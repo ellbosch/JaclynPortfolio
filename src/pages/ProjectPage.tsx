@@ -192,19 +192,28 @@ const ProjectPage = () => {
                   />
                 </div>
               </div>
-              {/* Water brush video with constrained height */}
-              <div className="w-full bg-black flex justify-center" style={{ maxHeight: '70vh' }}>
-                <video
-                  src={project.videos[2].src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="h-full max-h-[70vh] w-auto object-contain"
-                />
+              {/* Water brush video (33%) + brushhead image (67%) inline on lg+ */}
+              <div className="w-full flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 px-2 sm:px-0">
+                <div className="lg:w-1/3 bg-black flex justify-center items-center lg:h-[70vh]">
+                  <video
+                    src={project.videos[2].src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="max-h-[70vh] w-auto object-contain"
+                  />
+                </div>
+                <div className="lg:w-2/3">
+                  <img
+                    src={project.images[2].src}
+                    alt={project.images[2].alt}
+                    className="w-full lg:h-[70vh] object-cover"
+                  />
+                </div>
               </div>
               {/* Remaining images */}
-              {[project.images[2], project.images[4], project.images[5]].map((image, index) => (
+              {[project.images[4], project.images[5]].map((image, index) => (
                 <img
                   key={`image-${index}`}
                   src={image.src}
