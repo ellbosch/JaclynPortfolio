@@ -28,7 +28,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
           }
         });
       },
-      { threshold: 0.01 }
+      { threshold: 0.01, rootMargin: '200px 0px' }
     );
 
     observer.observe(container);
