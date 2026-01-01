@@ -2,6 +2,8 @@ import { clients } from '../data/clients';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects } from '../data/projects';
 
+type AnimationMode = 'sequential' | 'stagger' | 'all-at-once';
+
 interface ClientLogosProps {
   startAnimation?: boolean;
   skipAnimation?: boolean;
@@ -41,24 +43,51 @@ const clientToProject: Record<string, string> = {
 const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLogosProps) => {
   const [visibleCount, setVisibleCount] = useState(skipAnimation ? clients.length : 0);
   const [visibleTooltip, setVisibleTooltip] = useState<string | null>(null);
+  const [animationMode, setAnimationMode] = useState<AnimationMode>('sequential');
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const allProjects = getAllProjects();
 
+  const resetAnimation = () => {
+    setVisibleCount(0);
+  };
+
   useEffect(() => {
     if (!startAnimation || skipAnimation) return;
+    if (visibleCount >= clients.length) return;
 
-    // Start cascading animation when startAnimation becomes true
-    let count = 0;
+    if (animationMode === 'all-at-once') {
+      // All logos appear at once
+      setVisibleCount(clients.length);
+      return;
+    }
+
+    if (animationMode === 'stagger') {
+      // Stagger: animate in groups of 3 with overlap
+      const groupSize = 3;
+      const delay = 120; // ms between groups
+      let currentGroup = Math.floor(visibleCount / groupSize);
+
+      const timeout = setTimeout(() => {
+        const nextCount = Math.min((currentGroup + 1) * groupSize, clients.length);
+        setVisibleCount(nextCount);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+
+    // Sequential: one by one
     const interval = setInterval(() => {
-      count++;
-      setVisibleCount(count);
-      if (count >= clients.length) {
-        clearInterval(interval);
-      }
-    }, 75); // 75ms delay between each logo
+      setVisibleCount((prev) => {
+        if (prev >= clients.length) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 75);
 
     return () => clearInterval(interval);
-  }, [startAnimation]);
+  }, [startAnimation, skipAnimation, animationMode, visibleCount]);
 
   const handleLogoClick = (clientName: string) => {
     const projectSlug = clientToProject[clientName];
@@ -85,6 +114,11 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
   const hasProject = (clientName: string) => {
     const projectSlug = clientToProject[clientName];
     return projectSlug && allProjects.some((p) => p.slug === projectSlug);
+  };
+
+  const handleModeChange = (mode: AnimationMode) => {
+    setAnimationMode(mode);
+    resetAnimation();
   };
 
   return (
@@ -129,6 +163,19 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
             </div>
           );
         })}
+      </div>
+
+      {/* Animation Test Buttons */}
+      <div className="flex items-center justify-center gap-2 mt-8">
+        {(['sequential', 'stagger', 'all-at-once'] as const).map((mode) => (
+          <button
+            key={mode}
+            onClick={() => handleModeChange(mode)}
+            className="px-3 py-1 text-xs rounded-full transition-colors bg-gray-200 text-gray-600 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+          >
+            {mode === 'all-at-once' ? 'All at Once' : mode.charAt(0).toUpperCase() + mode.slice(1)}
+          </button>
+        ))}
       </div>
     </section>
   );
