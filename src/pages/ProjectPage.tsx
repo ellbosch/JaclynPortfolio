@@ -186,7 +186,8 @@ const ProjectPage = () => {
                   <img
                     src={project.images[2].src}
                     alt={project.images[2].alt}
-                    className="w-full h-full object-cover object-bottom"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: '58% bottom' }}
                   />
                 </div>
               </div>
