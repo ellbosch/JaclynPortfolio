@@ -164,7 +164,8 @@ const ProjectPage = () => {
             </div>
           ) : slug === 'mode' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
-              {project.videos.map((video, index) => (
+              {/* First two videos at top */}
+              {project.videos.slice(0, 2).map((video, index) => (
                 <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* First image full width */}
@@ -190,6 +191,17 @@ const ProjectPage = () => {
                     style={{ objectPosition: '58% bottom' }}
                   />
                 </div>
+              </div>
+              {/* Water brush video with constrained height */}
+              <div className="w-full bg-black flex justify-center" style={{ maxHeight: '70vh' }}>
+                <video
+                  src={project.videos[2].src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full max-h-[70vh] w-auto object-contain"
+                />
               </div>
               {/* Remaining images */}
               {[project.images[2], project.images[4], project.images[5]].map((image, index) => (
