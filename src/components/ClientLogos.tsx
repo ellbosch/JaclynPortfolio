@@ -62,14 +62,12 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
     }
 
     if (animationMode === 'stagger') {
-      // Stagger: animate in groups of 3 with overlap
-      const groupSize = 3;
-      const delay = 120; // ms between groups
-      let currentGroup = Math.floor(visibleCount / groupSize);
+      // Stagger: animate by column (mod 6), showing columns 0, 1, 2, 3, 4, 5 sequentially
+      const numColumns = 6;
+      const delay = 100; // ms between columns
 
       const timeout = setTimeout(() => {
-        const nextCount = Math.min((currentGroup + 1) * groupSize, clients.length);
-        setVisibleCount(nextCount);
+        setVisibleCount((prev) => Math.min(prev + 1, numColumns));
       }, delay);
 
       return () => clearTimeout(timeout);
@@ -121,6 +119,16 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
     resetAnimation();
   };
 
+  const isLogoVisible = (index: number) => {
+    if (animationMode === 'stagger') {
+      // In stagger mode, visibleCount represents number of columns visible (0-6)
+      const column = index % 6;
+      return column < visibleCount;
+    }
+    // Sequential and all-at-once use simple index comparison
+    return index < visibleCount;
+  };
+
   return (
     <section className="mb-16 pt-4 pb-10 overflow-hidden">
       <div className="grid grid-cols-6 gap-4 md:gap-6 items-center">
@@ -148,7 +156,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
                 onClick={() => hasWork && handleLogoClick(client.name)}
                 className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  opacity: index < visibleCount ? 0.35 : 0,
+                  opacity: isLogoVisible(index) ? 0.35 : 0,
                   ...logoStyles[client.name],
                 }}
               />
