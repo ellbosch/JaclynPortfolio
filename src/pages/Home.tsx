@@ -358,13 +358,25 @@ const Home = () => {
                           />
                         </div>
                       </div>
-                    ) : project.slug === 'mode' && project.videos.length >= 1 ? (
-                      // Custom Mode layout: ambient video
-                      <div className="overflow-hidden h-[25vh] sm:h-[30vh] lg:h-[50vh]">
-                        <ScrollVideo
-                          src={project.videos[0].src}
-                          className="w-full h-full object-cover"
-                        />
+                    ) : project.slug === 'mode' && project.images.length >= 2 ? (
+                      // Custom Mode layout: images 1 and 2 side by side, 1 takes 80% with diagonal pan
+                      // Second image hidden on mobile
+                      <div className="flex flex-col flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[45vh]">
+                        <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
+                          <ScrollPanImageTLBR
+                            src={project.images[0].src}
+                            alt={project.images[0].alt}
+                            className="w-full h-full object-cover"
+                            panSpeed={0.92}
+                          />
+                        </div>
+                        <div className="hidden md:block" style={{ flex: '20 1 0%' }}>
+                          <ScrollImage
+                            src={project.images[1].src}
+                            alt={project.images[1].alt}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     ) : project.slug === 'q-egg' && project.images.length >= 2 ? (
                       // Custom Q-Egg layout: images 1 and 2 in one row, 1 takes 20%
