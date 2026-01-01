@@ -38,27 +38,34 @@ const clientToProject: Record<string, string> = {
   'Arc Boats': 'arc',
 };
 
+// Generate a shuffled array of indices
+const generateRandomOrder = (length: number): number[] => {
+  const indices = Array.from({ length }, (_, i) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  return indices;
+};
+
 const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLogosProps) => {
   const [visibleCount, setVisibleCount] = useState(skipAnimation ? clients.length : 0);
   const [visibleTooltip, setVisibleTooltip] = useState<string | null>(null);
+  const [randomOrder] = useState<number[]>(() => generateRandomOrder(clients.length));
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const allProjects = getAllProjects();
 
   useEffect(() => {
     if (!startAnimation || skipAnimation) return;
+    if (visibleCount >= clients.length) return;
 
-    // Start cascading animation when startAnimation becomes true
-    let count = 0;
-    const interval = setInterval(() => {
-      count++;
-      setVisibleCount(count);
-      if (count >= clients.length) {
-        clearInterval(interval);
-      }
-    }, 75); // 75ms delay between each logo
+    const delay = 75;
+    const timeout = setTimeout(() => {
+      setVisibleCount((prev) => prev + 1);
+    }, delay);
 
-    return () => clearInterval(interval);
-  }, [startAnimation]);
+    return () => clearTimeout(timeout);
+  }, [startAnimation, skipAnimation, visibleCount]);
 
   const handleLogoClick = (clientName: string) => {
     const projectSlug = clientToProject[clientName];
@@ -85,6 +92,11 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
   const hasProject = (clientName: string) => {
     const projectSlug = clientToProject[clientName];
     return projectSlug && allProjects.some((p) => p.slug === projectSlug);
+  };
+
+  const isLogoVisible = (index: number) => {
+    const position = randomOrder.indexOf(index);
+    return position !== -1 && position < visibleCount;
   };
 
   return (
@@ -114,7 +126,7 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
                 onClick={() => hasWork && handleLogoClick(client.name)}
                 className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  opacity: index < visibleCount ? 0.35 : 0,
+                  opacity: isLogoVisible(index) ? 0.35 : 0,
                   ...logoStyles[client.name],
                 }}
               />
