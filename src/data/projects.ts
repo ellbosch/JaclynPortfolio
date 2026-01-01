@@ -107,7 +107,10 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
       { src: '/images/projects/mode/05-website-visual.png', alt: 'Mode website visual' },
       { src: '/images/projects/mode/07-charger.png', alt: 'Mode charger' },
     ],
-    videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/MODE_Website_Scroll_optimized.mp4', alt: 'Mode website scroll video' }],
+    videos: [
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/Mode_ambient_optimized.mp4', alt: 'Mode ambient video' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/MODE_Website_Scroll_optimized.mp4', alt: 'Mode website scroll video' },
+    ],
     skills: [],
     year: 2024,
     featured: true,
