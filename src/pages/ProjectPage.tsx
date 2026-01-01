@@ -164,47 +164,58 @@ const ProjectPage = () => {
             </div>
           ) : slug === 'mode' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
-              {/* Ambient video at top */}
-              {project.videos[0] && (
-                <FadeInVideo src={project.videos[0].src} className="w-full h-auto" />
-              )}
+              {/* First two videos at top */}
+              {project.videos.slice(0, 2).map((video, index) => (
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
+              ))}
               {/* First image full width */}
               <img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 className="max-w-full h-auto"
               />
-              {/* 2nd and 3rd images side by side on md+ */}
+              {/* 4th and 2nd images side by side on md+ */}
               <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div className="flex-1">
                   <img
-                    src={project.images[1].src}
-                    alt={project.images[1].alt}
+                    src={project.images[3].src}
+                    alt={project.images[3].alt}
                     className="w-full h-auto"
                   />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 overflow-hidden">
                   <img
-                    src={project.images[2].src}
-                    alt={project.images[2].alt}
-                    className="w-full h-auto"
+                    src={project.images[1].src}
+                    alt={project.images[1].alt}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: '58% bottom' }}
                   />
                 </div>
               </div>
-              {/* 4th image */}
-              <img
-                src={project.images[3].src}
-                alt={project.images[3].alt}
-                className="max-w-full h-auto"
-              />
-              {/* Scroll video after 4 images */}
-              {project.videos[1] && (
-                <FadeInVideo src={project.videos[1].src} className="w-full h-auto" />
-              )}
+              {/* Water brush video (33%) + brushhead image (67%) inline on lg+ */}
+              <div className="w-full flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 px-2 sm:px-0">
+                <div className="lg:w-1/3 bg-black flex justify-center items-center lg:h-[70vh]">
+                  <video
+                    src={project.videos[2].src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="max-h-[70vh] w-auto object-contain"
+                  />
+                </div>
+                <div className="lg:w-2/3">
+                  <img
+                    src={project.images[2].src}
+                    alt={project.images[2].alt}
+                    className="w-full lg:h-[70vh] object-cover"
+                  />
+                </div>
+              </div>
               {/* Remaining images */}
-              {project.images.slice(4).map((image, index) => (
+              {[project.images[4], project.images[5]].map((image, index) => (
                 <img
-                  key={`image-${index + 4}`}
+                  key={`image-${index}`}
                   src={image.src}
                   alt={image.alt}
                   className="max-w-full h-auto"

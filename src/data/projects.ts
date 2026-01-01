@@ -100,8 +100,7 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
     thumbnail: { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode thumbnail' },
     images: [
       { src: '/images/projects/mode/01-landscape.jpg', alt: 'Mode landscape' },
-      { src: '/images/projects/mode/02-brush-full.jpg', alt: 'Mode brush full' },
-      { src: '/images/projects/mode/06-scroll.jpg', alt: 'Mode scroll' },
+      { src: '/images/projects/mode/06-scroll.png', alt: 'Mode scroll' },
       { src: '/images/projects/mode/03-brushhead.png', alt: 'Mode brushhead' },
       { src: '/images/projects/mode/04-mode-01.jpg', alt: 'Mode product' },
       { src: '/images/projects/mode/05-website-visual.png', alt: 'Mode website visual' },
@@ -110,6 +109,7 @@ Industrial Design: Kieran Moriarty (Direction), Jaclyn Lowery (Support), John Na
     videos: [
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/Mode_ambient_optimized.mp4', alt: 'Mode ambient video' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/MODE_Website_Scroll_optimized.mp4', alt: 'Mode website scroll video' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-media/MODE/water_brush_optimized.mp4', alt: 'Mode water brush video' },
     ],
     skills: [],
     year: 2024,
