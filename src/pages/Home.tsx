@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects, formatCategories } from '../data/projects';
-import { ScrollVideo, ScrollImage, ScrollPanImage, ScrollPanImageTLBR, ScrollPanImageTRBL, ScrollPanImageLR, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
+import { ScrollVideo, ScrollImage, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
 import ClientLogos from '../components/ClientLogos';
 import { useFilter } from '../context/FilterContext';
 import { trackEvent } from '../utils/analytics';
@@ -275,7 +275,7 @@ const Home = () => {
                           />
                         </div>
                         <div className="h-[40vh] md:h-[54vh] lg:h-full" style={{ flex: '30 1 0%' }}>
-                          <ScrollPanImage
+                          <ScrollImage
                             src={project.images[3].src}
                             alt={project.images[3].alt}
                             className="w-full h-full object-cover"
@@ -363,11 +363,10 @@ const Home = () => {
                       // Second image hidden on mobile
                       <div className="flex flex-col flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[45vh]">
                         <div style={{ flex: '80 1 0%' }} className="overflow-hidden">
-                          <ScrollPanImageTLBR
+                          <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
-                            panSpeed={0.46}
                           />
                         </div>
                         <div className="hidden md:block overflow-hidden" style={{ flex: '20 1 0%' }}>
@@ -411,28 +410,25 @@ const Home = () => {
                       <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
                         <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[35vh]">
                           <div className="h-[35vh] md:h-full overflow-hidden" style={{ flex: '40 1 0%' }}>
-                            <ScrollPanImageTLBR
+                            <ScrollImage
                               src={project.images[2].src}
                               alt={project.images[2].alt}
                               className="w-full h-full object-cover"
-                              panSpeed={0.15}
                             />
                           </div>
                           <div className="h-[35vh] md:h-full overflow-hidden" style={{ flex: '60 1 0%' }}>
-                            <ScrollPanImageLR
+                            <ScrollImage
                               src={project.images[3].src}
                               alt={project.images[3].alt}
                               className="w-full h-full object-cover"
-                              panSpeed={0.15}
                             />
                           </div>
                         </div>
                         <div className="w-full h-[35vh] md:h-[45vh] overflow-hidden">
-                          <ScrollPanImageTRBL
+                          <ScrollImage
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
-                            panSpeed={0.15}
                           />
                         </div>
                       </div>
