@@ -64,8 +64,13 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
     if (visibleCount >= clients.length) return;
 
     if (animationMode === 'all-at-once') {
-      // All logos appear at once
-      setVisibleCount(clients.length);
+      // All logos appear at once - wait for them to be hidden first, then show all
+      if (visibleCount === 0) {
+        const timeout = setTimeout(() => {
+          setVisibleCount(clients.length);
+        }, 500);
+        return () => clearTimeout(timeout);
+      }
       return;
     }
 
