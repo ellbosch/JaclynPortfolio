@@ -162,9 +162,10 @@ const ProjectPage = () => {
             </div>
           ) : slug === 'mode' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
-              {project.videos.map((video, index) => (
-                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
-              ))}
+              {/* Ambient video at top */}
+              {project.videos[0] && (
+                <FadeInVideo src={project.videos[0].src} className="w-full h-auto" />
+              )}
               {/* First image full width */}
               <img
                 src={project.images[0].src}
@@ -188,10 +189,20 @@ const ProjectPage = () => {
                   />
                 </div>
               </div>
+              {/* 4th image */}
+              <img
+                src={project.images[3].src}
+                alt={project.images[3].alt}
+                className="max-w-full h-auto"
+              />
+              {/* Scroll video after 4 images */}
+              {project.videos[1] && (
+                <FadeInVideo src={project.videos[1].src} className="w-full h-auto" />
+              )}
               {/* Remaining images */}
-              {project.images.slice(3).map((image, index) => (
+              {project.images.slice(4).map((image, index) => (
                 <img
-                  key={`image-${index + 3}`}
+                  key={`image-${index + 4}`}
                   src={image.src}
                   alt={image.alt}
                   className="max-w-full h-auto"
