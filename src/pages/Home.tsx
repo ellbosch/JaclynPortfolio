@@ -370,10 +370,9 @@ const Home = () => {
                             panSpeed={0.92}
                           />
                         </div>
-                        <div className="hidden md:block" style={{ flex: '20 1 0%' }}>
-                          <ScrollImage
-                            src={project.images[1].src}
-                            alt={project.images[1].alt}
+                        <div className="hidden md:block overflow-hidden" style={{ flex: '20 1 0%' }}>
+                          <ScrollVideo
+                            src={project.videos[2].src}
                             className="w-full h-full object-cover"
                           />
                         </div>
