@@ -8,6 +8,7 @@ const FadeInVideo = ({ src, className }: { src: string; className?: string }) =>
   return (
     <video
       src={src}
+      preload="auto"
       controls
       muted
       playsInline
@@ -197,6 +198,7 @@ const ProjectPage = () => {
                 <div className="lg:w-1/3 bg-black flex justify-center items-center lg:h-[70vh]">
                   <video
                     src={project.videos[2].src}
+                    preload="auto"
                     autoPlay
                     muted
                     loop

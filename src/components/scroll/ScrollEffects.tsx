@@ -28,7 +28,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
           }
         });
       },
-      { threshold: 0.01, rootMargin: '200px 0px' }
+      { threshold: 0.01, rootMargin: '600px 0px' }
     );
 
     observer.observe(container);
@@ -41,6 +41,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
       <video
         ref={videoRef}
         src={src}
+        preload="auto"
         muted
         loop
         playsInline
