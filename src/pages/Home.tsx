@@ -88,7 +88,7 @@ const Home = () => {
       {/* Hero Section - takes up 80vh so projects peek at bottom */}
       <section className="mt-15 md:mt-auto px-2 lg:px-4 h-auto md:h-[80vh] flex flex-col justify-center">
         <h1
-          className={`font-bold text-orange-500 dark:text-orange-400 transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
+          className={`font-bold text-black dark:text-white transition-opacity duration-500 ${fadeStage >= 1 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: "'pragmatica', sans-serif",
             fontSize: 'clamp(65px, 8vw, 90px)',
