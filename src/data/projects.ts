@@ -2,6 +2,20 @@ import type { Project } from './types';
 
 export const projects: Project[] = [
   {
+    slug: 'modern-sprout',
+    title: 'Modern Sprout',
+    categories: ['3d-visualization'],
+    shortDescription: 'Set up the page structure, content to follow',
+    fullDescription: `Set up the page structure, content to follow.`,
+    thumbnail: { src: '/images/logos/modernsprout.webp', alt: 'Modern Sprout thumbnail' },
+    images: [],
+    videos: [],
+    skills: [],
+    year: 2024,
+    featured: true,
+    order: 0,
+  },
+  {
     slug: 'nocturne',
     title: 'Nocturne',
     categories: ['3d-visualization'],
