@@ -14,7 +14,7 @@ export const projects: Project[] = [
       { src: '/images/projects/modern-sprout/birds-on-the-block-product.webp', alt: 'Modern Sprout 3' },
       { src: '/images/projects/modern-sprout/three-houses-renders.webp', alt: 'Modern Sprout 4' },
     ],
-    videos: [{ src: '/videos/modern-sprout-wip-r1v1.mp4', alt: 'Modern Sprout video' }],
+    videos: [{ src: '/videos/modern-sprout-video-r1v2.mp4', alt: 'Modern Sprout video' }],
     skills: [],
     year: 2024,
     featured: true,
