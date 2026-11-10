@@ -123,7 +123,7 @@ const Home = () => {
               }}
             />
             <span className="relative text-gray-500 dark:text-gray-400">
-              Industrial Design, 3D Rendering, and 3D Animation.
+              Portfolio Preview Test
             </span>
           </span>
           {/* Mobile version - two lines, hidden on larger screens */}
@@ -145,7 +145,7 @@ const Home = () => {
                 }}
               />
               <span className="relative text-gray-500 dark:text-gray-400">
-                Industrial Design, 3D Rendering,
+                Portfolio Preview Test
               </span>
             </span>
             <span className="block h-2" />
@@ -166,7 +166,7 @@ const Home = () => {
                 }}
               />
               <span className="relative text-gray-500 dark:text-gray-400">
-                and 3D Animation.
+                (fast-path test)
               </span>
             </span>
           </span>
