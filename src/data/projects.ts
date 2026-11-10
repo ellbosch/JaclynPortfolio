@@ -9,7 +9,7 @@ export const projects: Project[] = [
     fullDescription: `Modern Sprout approached me to create photo-realistic renders of their <a href="https://modernsprout.com/products/birds-on-the-block-window-birdfeeder?variant=43181775487074" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Birds on the Block</a> products for their packaging. I developed the images for both the pack of 3 box and the individual product boxes. Physically-based dynamics in Cinema4d were used to virtually "fill" each bird feeder with seed geometries, allowing for photo-realism and the ability to create multiple different render angles.`,
     thumbnail: { src: '/images/logos/modernsprout.webp', alt: 'Modern Sprout thumbnail' },
     images: [],
-    videos: [],
+    videos: [{ src: '/videos/modern-sprout-wip-r1v1.mp4', alt: 'Modern Sprout video' }],
     skills: [],
     year: 2024,
     featured: true,
