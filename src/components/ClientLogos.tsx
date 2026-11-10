@@ -31,6 +31,7 @@ const clientToProject: Record<string, string> = {
   'Nice': 'nice-hr40-remote',
   'Jabra': 'jabra-packaging',
   'Netgear': 'netgear-nighthawk',
+  'Modern Sprout': 'modern-sprout',
   'Aura Glow': 'auraglow',
   'Whistle': 'whistle',
   'Spansive': 'spansive',

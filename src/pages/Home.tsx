@@ -526,6 +526,9 @@ const Home = () => {
                     ) : project.slug === 'netgear-nighthawk' ? (
                       // Netgear: video only on home page, images only on subpage
                       null
+                    ) : project.slug === 'modern-sprout' ? (
+                      // Modern Sprout: video only on home page, images only on subpage
+                      null
                     ) : (
                       <div className="flex flex-col gap-1 sm:gap-2 lg:gap-4">
                         {rows.map((row, rowIndex) => (
