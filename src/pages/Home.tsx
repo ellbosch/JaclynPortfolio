@@ -172,14 +172,14 @@ const Home = () => {
           </span>
         </p>
         <p
-          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-2xl md:text-[32px] ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-gray-500 dark:text-gray-400 mb-12 md:mb-20 transition-opacity duration-500 text-xl md:text-2xl ${fadeStage >= 2 ? 'opacity-100' : 'opacity-0'}`}
           style={{
             fontFamily: '"adobe-garamond-pro", serif',
             fontWeight: 400,
             lineHeight: '1.6',
           }}
         >
-          Reach out by{' '}
+          Get in touch by{' '}
           <a
             href="#"
             onClick={(e) => {
