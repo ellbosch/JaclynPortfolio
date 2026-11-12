@@ -14,6 +14,7 @@ export const projects: Project[] = [
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/img-1127.webp', alt: 'Modern Sprout 2' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/birds-on-the-block-product.webp', alt: 'Modern Sprout 3' },
       { src: 'https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/three-houses-renders.webp', alt: 'Modern Sprout 4' },
+      { src: 'https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/img-1127-v2.webp', alt: 'Modern Sprout 5' },
     ],
     videos: [{ src: 'https://storage.googleapis.com/jaclyn-portfolio-20d22-media/videos/modern-sprout-video-r1v2.mp4', alt: 'Modern Sprout video' }],
     skills: [],
