@@ -1,0 +1,2530 @@
+{
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/ArloUltra_OctaneRenders_optimized.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/ArloUltra_OctaneRenders_optimized.mp4.poster.webp",
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/Arlo_Mockups_V2.webp": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Mockups_V2.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Mockups_V2.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Mockups_V2.webp.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Mockups_V2.webp.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/Arlo_Sketchwall_03.webp": {
+  "h": 1399,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Sketchwall_03.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Sketchwall_03.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Sketchwall_03.webp.w1920.webp"
+   ],
+   [
+    2488,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/Arlo_Sketchwall_03.webp.w2488.webp"
+   ]
+  ],
+  "w": 2488
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_2MountedCeiling.jpg": {
+  "h": 1687,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_2MountedCeiling.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_2MountedCeiling.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_2MountedCeiling.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_2MountedCeiling.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_CMFcases.jpg": {
+  "h": 1687,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_CMFcases.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_CMFcases.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_CMFcases.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_CMFcases.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_closeup.jpg": {
+  "h": 1687,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_closeup.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_closeup.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_closeup.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_closeup.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_floating.jpg": {
+  "h": 1687,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_floating.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_floating.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_floating.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_floating.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_footshot.jpg": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_footshot.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_footshot.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_footshot.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_footshot.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_legacy.jpg": {
+  "h": 1687,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_legacy.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_legacy.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_legacy.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_legacy.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/EnlistedWeb_ArloG5_Octane_lightonshot.jpg": {
+  "h": 1687,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_lightonshot.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_lightonshot.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_lightonshot.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/EnlistedWeb_ArloG5_Octane_lightonshot.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Arlo/cover%2Bshot%2Bredo.jpg": {
+  "h": 1500,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/cover%2Bshot%2Bredo.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/cover%2Bshot%2Bredo.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/cover%2Bshot%2Bredo.jpg.w1920.webp"
+   ],
+   [
+    2100,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Arlo/cover%2Bshot%2Bredo.jpg.w2100.webp"
+   ]
+  ],
+  "w": 2100
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_3-4_LED_Light_Opt_B_Lights_On_Dusk_R1V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_3-4_LED_Light_Opt_B_Lights_On_Dusk_R1V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_3-4_LED_Light_Opt_B_Lights_On_Dusk_R1V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_3-4_LED_Light_Opt_B_Lights_On_Dusk_R1V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_3-4_LED_Light_Opt_B_Lights_On_Dusk_R1V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Case_Open_Lifestyle_View_R1V1.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Case_Open_Lifestyle_View_R1V1.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Case_Open_Lifestyle_View_R1V1.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Case_Open_Lifestyle_View_R1V1.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Case_Open_Lifestyle_View_R1V1.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Package_3-4_View_R3V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Package_3-4_View_R3V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Package_3-4_View_R3V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Package_3-4_View_R3V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Complete_Package_3-4_View_R3V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_ES_Whitening_Tube%20%2B%20Gel_View_R3V2%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_ES_Whitening_Tube%20%2B%20Gel_View_R3V2%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_ES_Whitening_Tube%20%2B%20Gel_View_R3V2%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_ES_Whitening_Tube%20%2B%20Gel_View_R3V2%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_ES_Whitening_Tube%20%2B%20Gel_View_R3V2%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_LED_Light_Opt_E_Lights_Off_Dusk_R1V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_LED_Light_Opt_E_Lights_Off_Dusk_R1V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_LED_Light_Opt_E_Lights_Off_Dusk_R1V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_LED_Light_Opt_E_Lights_Off_Dusk_R1V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_LED_Light_Opt_E_Lights_Off_Dusk_R1V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Lifestyle_Whitening_Pen_Counter_Scene_R1V1.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Lifestyle_Whitening_Pen_Counter_Scene_R1V1.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Lifestyle_Whitening_Pen_Counter_Scene_R1V1.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Lifestyle_Whitening_Pen_Counter_Scene_R1V1.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Lifestyle_Whitening_Pen_Counter_Scene_R1V1.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Plain%20Tray_3-4_View_Twilight_R3V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Plain%20Tray_3-4_View_Twilight_R3V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Plain%20Tray_3-4_View_Twilight_R3V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Plain%20Tray_3-4_View_Twilight_R3V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Plain%20Tray_3-4_View_Twilight_R3V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening%20Strips_Opened_Foil_Sachet_View_R1V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening%20Strips_Opened_Foil_Sachet_View_R1V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening%20Strips_Opened_Foil_Sachet_View_R1V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening%20Strips_Opened_Foil_Sachet_View_R1V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening%20Strips_Opened_Foil_Sachet_View_R1V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Twilight_Background_R1V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Twilight_Background_R1V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Twilight_Background_R1V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Twilight_Background_R1V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Twilight_Background_R1V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Un-Capped_Close_Up_R1V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Un-Capped_Close_Up_R1V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Un-Capped_Close_Up_R1V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Un-Capped_Close_Up_R1V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Pen_Front_View_Un-Capped_Close_Up_R1V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Strips_Packaging_Front_View_R1V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Strips_Packaging_Front_View_R1V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Strips_Packaging_Front_View_R1V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Strips_Packaging_Front_View_R1V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Strips_Packaging_Front_View_R1V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Tube_Close-Up_View_R2V1%20copy.webp": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Tube_Close-Up_View_R2V1%20copy.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Tube_Close-Up_View_R2V1%20copy.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Tube_Close-Up_View_R2V1%20copy.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow%2BEnlisted_Marketing_Renders_Whitening_Tube_Close-Up_View_R2V1%20copy.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow_GB_forwb_closeup_2_0140_noised.webp": {
+  "h": 3840,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_closeup_2_0140_noised.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_closeup_2_0140_noised.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_closeup_2_0140_noised.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_closeup_2_0140_noised.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/Auraglow_GB_forwb_persp_1%20square_0140redo0140nised.webp": {
+  "h": 3840,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_persp_1%20square_0140redo0140nised.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_persp_1%20square_0140redo0140nised.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_persp_1%20square_0140redo0140nised.webp.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/Auraglow_GB_forwb_persp_1%20square_0140redo0140nised.webp.w2560.webp"
+   ]
+  ],
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Auraglow/auraglow2_optimized.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Auraglow/auraglow2_optimized.mp4.poster.webp",
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/MODE/MODE_Website_Scroll_optimized.mp4": {
+  "h": 2160,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/MODE/MODE_Website_Scroll_optimized.mp4.poster.webp",
+  "w": 3804
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/MODE/Mode_ambient_optimized.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/MODE/Mode_ambient_optimized.mp4.poster.webp",
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/MODE/water_brush_optimized.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/MODE/water_brush_optimized.mp4.poster.webp",
+  "w": 608
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Netgear/Night-Hawk_optimized.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Netgear/Night-Hawk_optimized.mp4.poster.webp",
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Nice/Nice_Remote_optimized.mp4": {
+  "h": 2160,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nice/Nice_Remote_optimized.mp4.poster.webp",
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Nighthawk_R80_Hero-scaled.jpg": {
+  "h": 1440,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Hero-scaled.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Hero-scaled.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Hero-scaled.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Hero-scaled.jpg.w2560.webp"
+   ]
+  ],
+  "w": 2560
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Nighthawk_R80_Top-scaled.jpg": {
+  "h": 1440,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Top-scaled.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Top-scaled.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Top-scaled.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_R80_Top-scaled.jpg.w2560.webp"
+   ]
+  ],
+  "w": 2560
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Nighthawk_Vision_Board.jpg": {
+  "h": 1080,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_Vision_Board.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_Vision_Board.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nighthawk_Vision_Board.jpg.w1920.webp"
+   ]
+  ],
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Q-Egg/Q-Egg_optimized.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Q-Egg/Q-Egg_optimized.mp4.poster.webp",
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg": {
+  "h": 3326,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg.w1920.webp"
+   ]
+  ],
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DL_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_DR_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Docked_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Front%20Ortho_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Tactile%20Dark/Control4_Remotes_Marketing%20Renders_Tactile%20Dark_Ortho%20Right_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_DR_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Docked_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Front_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_LR_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Dark/Control4_Remotes_Marketing%20Renders_Touch%20Dark_Right_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png": {
+  "h": 3840,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DL_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png": {
+  "h": 3840,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20DR_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Docked_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Front%20Ortho_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png": {
+  "h": 3839,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/control4/Touch%20Light/Control4_Remotes_Marketing%20Renders_Touch%20Light%20Right%20Ortho_R1v1.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/amazon.png": {
+  "h": 363,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/amazon.png.w640.webp"
+   ],
+   [
+    1200,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/amazon.png.w1200.webp"
+   ]
+  ],
+  "w": 1200
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/arcboats.png": {
+  "h": 149,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/arcboats.png.w640.webp"
+   ],
+   [
+    687,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/arcboats.png.w687.webp"
+   ]
+  ],
+  "w": 687
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/arlo.png": {
+  "h": 497,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/arlo.png.w640.webp"
+   ],
+   [
+    1083,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/arlo.png.w1083.webp"
+   ]
+  ],
+  "w": 1083
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/auraglow.png": {
+  "h": 69,
+  "variants": [
+   [
+    300,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/auraglow.png.w300.webp"
+   ]
+  ],
+  "w": 300
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/bestbuy.png": {
+  "h": 936,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bestbuy.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bestbuy.png.w1280.webp"
+   ],
+   [
+    1600,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bestbuy.png.w1600.webp"
+   ]
+  ],
+  "w": 1600
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/bose.png": {
+  "h": 287,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bose.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bose.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bose.png.w1920.webp"
+   ],
+   [
+    2344,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/bose.png.w2344.webp"
+   ]
+  ],
+  "w": 2344
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/control4.png": {
+  "h": 177,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/control4.png.w640.webp"
+   ],
+   [
+    751,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/control4.png.w751.webp"
+   ]
+  ],
+  "w": 751
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/jabra.png": {
+  "h": 134,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/jabra.png.w640.webp"
+   ]
+  ],
+  "w": 640
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/microsoft.png": {
+  "h": 256,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/microsoft.png.w640.webp"
+   ],
+   [
+    1200,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/microsoft.png.w1200.webp"
+   ]
+  ],
+  "w": 1200
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/mode.webp": {
+  "h": 237,
+  "variants": [
+   [
+    600,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/mode.webp.w600.webp"
+   ]
+  ],
+  "w": 600
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/modernsprout.webp": {
+  "h": 133,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/modernsprout.webp.w640.webp"
+   ],
+   [
+    900,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/modernsprout.webp.w900.webp"
+   ]
+  ],
+  "w": 900
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/netgear.png": {
+  "h": 524,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/netgear.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/netgear.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/netgear.png.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/netgear.png.w2560.webp"
+   ]
+  ],
+  "w": 3552
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/nice.png": {
+  "h": 637,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nice.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nice.png.w1280.webp"
+   ],
+   [
+    1500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nice.png.w1500.webp"
+   ]
+  ],
+  "w": 1500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/nocturne.webp": {
+  "h": 224,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nocturne.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nocturne.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nocturne.webp.w1920.webp"
+   ],
+   [
+    2048,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/nocturne.webp.w2048.webp"
+   ]
+  ],
+  "w": 2048
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/samsung.png": {
+  "h": 184,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/samsung.png.w640.webp"
+   ],
+   [
+    1200,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/samsung.png.w1200.webp"
+   ]
+  ],
+  "w": 1200
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/sports-research.png": {
+  "h": 104,
+  "variants": [
+   [
+    400,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/sports-research.png.w400.webp"
+   ]
+  ],
+  "w": 400
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/starkey.png": {
+  "h": 204,
+  "variants": [
+   [
+    393,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/starkey.png.w393.webp"
+   ]
+  ],
+  "w": 393
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/logos/whistle.png": {
+  "h": 166,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/whistle.png.w640.webp"
+   ],
+   [
+    901,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/logos/whistle.png.w901.webp"
+   ]
+  ],
+  "w": 901
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/arcsport/01-boat-at-speed.jpg": {
+  "h": 1670,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/01-boat-at-speed.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/01-boat-at-speed.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/01-boat-at-speed.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/01-boat-at-speed.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/arcsport/02-arc-sport-advanced.png": {
+  "h": 844,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/02-arc-sport-advanced.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/02-arc-sport-advanced.png.w1280.webp"
+   ],
+   [
+    1500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/02-arc-sport-advanced.png.w1500.webp"
+   ]
+  ],
+  "w": 1500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/arcsport/03-arc-sport-social.jpg": {
+  "h": 844,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/03-arc-sport-social.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/03-arc-sport-social.jpg.w1280.webp"
+   ],
+   [
+    1500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/03-arc-sport-social.jpg.w1500.webp"
+   ]
+  ],
+  "w": 1500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/arcsport/04-aerial-wake.png": {
+  "h": 1201,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/04-aerial-wake.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/04-aerial-wake.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/04-aerial-wake.png.w1920.webp"
+   ]
+  ],
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/arcsport/05-modern-dark.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/05-modern-dark.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/05-modern-dark.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/05-modern-dark.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/arcsport/05-modern-dark.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/01-elite7-active.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/01-elite7-active.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/01-elite7-active.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/01-elite7-active.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/01-elite7-active.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/02-render.png": {
+  "h": 1110,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/02-render.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/02-render.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/02-render.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/02-render.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/03-render-2.png": {
+  "h": 684,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/03-render-2.png.w640.webp"
+   ],
+   [
+    1154,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/03-render-2.png.w1154.webp"
+   ]
+  ],
+  "w": 1154
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/04-elite7-pro.jpg": {
+  "h": 1407,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/04-elite7-pro.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/04-elite7-pro.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/04-elite7-pro.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/04-elite7-pro.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/05-photo.jpg": {
+  "h": 1512,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/05-photo.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/05-photo.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/05-photo.jpg.w1920.webp"
+   ],
+   [
+    2016,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/05-photo.jpg.w2016.webp"
+   ]
+  ],
+  "w": 2016
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/06-elite-family.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/06-elite-family.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/06-elite-family.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/06-elite-family.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/06-elite-family.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/07-panacast-exploded.jpg": {
+  "h": 1407,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/07-panacast-exploded.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/07-panacast-exploded.jpg.w1280.webp"
+   ],
+   [
+    1758,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/07-panacast-exploded.jpg.w1758.webp"
+   ]
+  ],
+  "w": 1758
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/jabra-packaging/08-panacast-box.jpg": {
+  "h": 1407,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/08-panacast-box.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/08-panacast-box.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/08-panacast-box.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/jabra-packaging/08-panacast-box.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/mode/01-landscape.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/01-landscape.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/01-landscape.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/01-landscape.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/01-landscape.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/mode/03-brushhead.png": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/03-brushhead.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/03-brushhead.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/03-brushhead.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/03-brushhead.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/mode/04-mode-01.jpg": {
+  "h": 3752,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/04-mode-01.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/04-mode-01.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/04-mode-01.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/04-mode-01.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/mode/05-website-visual.png": {
+  "h": 1080,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/05-website-visual.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/05-website-visual.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/05-website-visual.png.w1920.webp"
+   ]
+  ],
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/mode/06-scroll.png": {
+  "h": 1080,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/06-scroll.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/06-scroll.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/06-scroll.png.w1920.webp"
+   ]
+  ],
+  "w": 1920
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/mode/07-charger.png": {
+  "h": 2160,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/07-charger.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/07-charger.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/07-charger.png.w1920.webp"
+   ],
+   [
+    2160,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/mode/07-charger.png.w2160.webp"
+   ]
+  ],
+  "w": 2160
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/birds-on-the-block-product.webp": {
+  "h": 2400,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/birds-on-the-block-product.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/birds-on-the-block-product.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/birds-on-the-block-product.webp.w1920.webp"
+   ],
+   [
+    2398,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/birds-on-the-block-product.webp.w2398.webp"
+   ]
+  ],
+  "w": 2398
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/img-1127.webp": {
+  "h": 1350,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/img-1127.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/img-1127.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/img-1127.webp.w1920.webp"
+   ],
+   [
+    2400,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/img-1127.webp.w2400.webp"
+   ]
+  ],
+  "w": 2400
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/msxjl-fop-opt1.webp": {
+  "h": 1116,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/msxjl-fop-opt1.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/msxjl-fop-opt1.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/msxjl-fop-opt1.webp.w1920.webp"
+   ],
+   [
+    2400,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/msxjl-fop-opt1.webp.w2400.webp"
+   ]
+  ],
+  "w": 2400
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/modern-sprout/three-houses-renders.webp": {
+  "h": 1350,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/three-houses-renders.webp.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/three-houses-renders.webp.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/three-houses-renders.webp.w1920.webp"
+   ],
+   [
+    2400,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/modern-sprout/three-houses-renders.webp.w2400.webp"
+   ]
+  ],
+  "w": 2400
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/nice-hr40-remote/01-remote-outro.png": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/01-remote-outro.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/01-remote-outro.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/01-remote-outro.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/01-remote-outro.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/nice-hr40-remote/02-prototypes.jpg": {
+  "h": 1124,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/02-prototypes.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/02-prototypes.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/02-prototypes.jpg.w1920.webp"
+   ],
+   [
+    2000,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/02-prototypes.jpg.w2000.webp"
+   ]
+  ],
+  "w": 2000
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/nice-hr40-remote/03-button-layout.png": {
+  "h": 913,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/03-button-layout.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/03-button-layout.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/03-button-layout.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/03-button-layout.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/nice-hr40-remote/05-remote-float.png": {
+  "h": 2120,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/05-remote-float.png.w640.webp"
+   ],
+   [
+    1193,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/05-remote-float.png.w1193.webp"
+   ]
+  ],
+  "w": 1193
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/nice-hr40-remote/06-buttons-closeup.png": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/06-buttons-closeup.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/06-buttons-closeup.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/06-buttons-closeup.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/06-buttons-closeup.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/nice-hr40-remote/07-docked-closeup.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/07-docked-closeup.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/07-docked-closeup.jpg.w1280.webp"
+   ],
+   [
+    1406,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/nice-hr40-remote/07-docked-closeup.jpg.w1406.webp"
+   ]
+  ],
+  "w": 1406
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/q-egg/01-exploded.jpg": {
+  "h": 1296,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/01-exploded.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/01-exploded.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/01-exploded.jpg.w1920.webp"
+   ],
+   [
+    2304,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/01-exploded.jpg.w2304.webp"
+   ]
+  ],
+  "w": 2304
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/q-egg/02-case-slide.jpg": {
+  "h": 1296,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/02-case-slide.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/02-case-slide.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/02-case-slide.jpg.w1920.webp"
+   ],
+   [
+    2304,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/02-case-slide.jpg.w2304.webp"
+   ]
+  ],
+  "w": 2304
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/q-egg/03-marble.jpg": {
+  "h": 1296,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/03-marble.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/03-marble.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/03-marble.jpg.w1920.webp"
+   ],
+   [
+    2304,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/03-marble.jpg.w2304.webp"
+   ]
+  ],
+  "w": 2304
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/q-egg/04-contact-case.jpg": {
+  "h": 1296,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/04-contact-case.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/04-contact-case.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/04-contact-case.jpg.w1920.webp"
+   ],
+   [
+    2304,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/q-egg/04-contact-case.jpg.w2304.webp"
+   ]
+  ],
+  "w": 2304
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/01-lifestyle-bedroom.jpg": {
+  "h": 1667,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/01-lifestyle-bedroom.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/01-lifestyle-bedroom.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/01-lifestyle-bedroom.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/01-lifestyle-bedroom.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/02-photo-1.jpg": {
+  "h": 3333,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/02-photo-1.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/02-photo-1.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/02-photo-1.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/02-photo-1.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/03-photo-2.jpg": {
+  "h": 1756,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/03-photo-2.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/03-photo-2.jpg.w1280.webp"
+   ],
+   [
+    1317,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/03-photo-2.jpg.w1317.webp"
+   ]
+  ],
+  "w": 1317
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/04-no-cases.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/04-no-cases.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/04-no-cases.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/04-no-cases.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/04-no-cases.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/05-packaging-sleeve.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/05-packaging-sleeve.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/05-packaging-sleeve.jpg.w1280.webp"
+   ],
+   [
+    1406,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/05-packaging-sleeve.jpg.w1406.webp"
+   ]
+  ],
+  "w": 1406
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/06-packaging-open.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/06-packaging-open.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/06-packaging-open.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/06-packaging-open.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/06-packaging-open.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/spansive/07-aframe.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/07-aframe.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/07-aframe.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/07-aframe.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/spansive/07-aframe.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/01-website.png": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/01-website.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/01-website.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/01-website.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/01-website.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/02-sketch-01.jpg": {
+  "h": 2411,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/02-sketch-01.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/02-sketch-01.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/02-sketch-01.jpg.w1920.webp"
+   ],
+   [
+    2411,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/02-sketch-01.jpg.w2411.webp"
+   ]
+  ],
+  "w": 2411
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/03-sketch-03.jpg": {
+  "h": 2368,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/03-sketch-03.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/03-sketch-03.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/03-sketch-03.jpg.w1920.webp"
+   ],
+   [
+    2368,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/03-sketch-03.jpg.w2368.webp"
+   ]
+  ],
+  "w": 2368
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/04-screenshot.jpg": {
+  "h": 1241,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/04-screenshot.jpg.w640.webp"
+   ],
+   [
+    1241,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/04-screenshot.jpg.w1241.webp"
+   ]
+  ],
+  "w": 1241
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/05-process.jpg": {
+  "h": 1667,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/05-process.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/05-process.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/05-process.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/05-process.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/06-website-2.png": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/06-website-2.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/06-website-2.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/06-website-2.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/06-website-2.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/07-website-3.png": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/07-website-3.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/07-website-3.png.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/07-website-3.png.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/07-website-3.png.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/starkey/08-lifestyle.png": {
+  "h": 1500,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/08-lifestyle.png.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/08-lifestyle.png.w1280.webp"
+   ],
+   [
+    1500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/starkey/08-lifestyle.png.w1500.webp"
+   ]
+  ],
+  "w": 1500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/whistle/01-collars.jpg": {
+  "h": 1406,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/01-collars.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/01-collars.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/01-collars.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/01-collars.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/whistle/02-green-taupe.png": {
+  "h": 1125,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/02-green-taupe.png.w640.webp"
+   ],
+   [
+    1112,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/02-green-taupe.png.w1112.webp"
+   ]
+  ],
+  "w": 1112
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/whistle/03-product.jpg": {
+  "h": 2774,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/03-product.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/03-product.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/03-product.jpg.w1920.webp"
+   ],
+   [
+    2218,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/03-product.jpg.w2218.webp"
+   ]
+  ],
+  "w": 2218
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/whistle/04-photo.jpg": {
+  "h": 1667,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/04-photo.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/04-photo.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/04-photo.jpg.w1920.webp"
+   ],
+   [
+    2500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/04-photo.jpg.w2500.webp"
+   ]
+  ],
+  "w": 2500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/whistle/05-dog.jpg": {
+  "h": 1000,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/05-dog.jpg.w640.webp"
+   ],
+   [
+    1250,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/05-dog.jpg.w1250.webp"
+   ]
+  ],
+  "w": 1250
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/images/projects/whistle/06-exploded.jpg": {
+  "h": 1500,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/06-exploded.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/06-exploded.jpg.w1280.webp"
+   ],
+   [
+    1500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/images/projects/whistle/06-exploded.jpg.w1500.webp"
+   ]
+  ],
+  "w": 1500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nighthawk_famshot04-scaled.jpg": {
+  "h": 1441,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_famshot04-scaled.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_famshot04-scaled.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_famshot04-scaled.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_famshot04-scaled.jpg.w2560.webp"
+   ]
+  ],
+  "w": 2560
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nighthawk_front02_cropped.jpg": {
+  "h": 2251,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_front02_cropped.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_front02_cropped.jpg.w1280.webp"
+   ],
+   [
+    1500,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_front02_cropped.jpg.w1500.webp"
+   ]
+  ],
+  "w": 1500
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nighthawk_vertical_vertical-scaled.jpg": {
+  "h": 1441,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_vertical_vertical-scaled.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_vertical_vertical-scaled.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_vertical_vertical-scaled.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nighthawk_vertical_vertical-scaled.jpg.w2560.webp"
+   ]
+  ],
+  "w": 2560
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-1.jpg": {
+  "h": 1940,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-1.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-1.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-1.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-1.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3456
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-2.jpg": {
+  "h": 1942,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-2.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-2.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-2.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-2.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3456
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-3.jpg": {
+  "h": 1938,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-3.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-3.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-3.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-3.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3456
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-4.jpg": {
+  "h": 1940,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-4.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-4.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-4.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-4.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3454
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-4k.mp4": {
+  "h": 2160,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-4k.mp4.poster.webp",
+  "w": 3840
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-5.jpg": {
+  "h": 1940,
+  "variants": [
+   [
+    640,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-5.jpg.w640.webp"
+   ],
+   [
+    1280,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-5.jpg.w1280.webp"
+   ],
+   [
+    1920,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-5.jpg.w1920.webp"
+   ],
+   [
+    2560,
+    "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-5.jpg.w2560.webp"
+   ]
+  ],
+  "w": 3456
+ },
+ "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/videos/modern-sprout-video-r1v2.mp4": {
+  "h": 1080,
+  "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/videos/modern-sprout-video-r1v2.mp4.poster.webp",
+  "w": 1920
+ }
+}

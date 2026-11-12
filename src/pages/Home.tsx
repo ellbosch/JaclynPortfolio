@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Img from '../components/common/Img';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects, formatCategories } from '../data/projects';
 import { ScrollVideo, ScrollImage, ScrollCrossfadeImages } from '../components/scroll/ScrollEffects';
@@ -287,7 +288,7 @@ const Home = () => {
                       // First image hidden on mobile
                       <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 items-stretch h-auto md:h-[35vh] lg:h-[45vh]">
                         <div className="hidden md:block overflow-hidden" style={{ flex: '30 1 0%' }}>
-                          <img
+                          <Img
                             src={project.images[3].src}
                             alt={project.images[3].alt}
                             className="w-full h-full object-cover object-bottom"
@@ -381,7 +382,7 @@ const Home = () => {
                       // First image hidden on mobile
                       <div className="flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[25vh] lg:h-[45vh]">
                         <div className="hidden md:block overflow-hidden" style={{ flex: '20 1 0%' }}>
-                          <img
+                          <Img
                             src={project.images[0].src}
                             alt={project.images[0].alt}
                             className="w-full h-full object-cover"
@@ -399,7 +400,7 @@ const Home = () => {
                     ) : project.slug === 'auraglow' && project.images.length >= 3 ? (
                       // Custom AuraGlow layout: single image (3rd from subpage)
                       <div className="overflow-hidden h-[25vh] sm:h-[30vh] lg:h-[50vh]">
-                        <img
+                        <Img
                           src={project.images[2].src}
                           alt={project.images[2].alt}
                           className="w-full h-full object-cover"
@@ -489,7 +490,7 @@ const Home = () => {
                       // First image hidden on mobile
                       <div className="flex flex-row gap-1 sm:gap-2 lg:gap-4 h-auto md:h-[40vh]">
                         <div style={{ flex: '1 1 0%' }} className="hidden md:block overflow-hidden">
-                          <img
+                          <Img
                             src={project.images[5].src}
                             alt={project.images[5].alt}
                             className="w-full h-full object-cover"

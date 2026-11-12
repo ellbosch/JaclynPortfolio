@@ -1,4 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
+import Img, { posterFor } from '../components/common/Img';
+import { LazyVideo } from '../components/scroll/ScrollEffects';
 import { useState } from 'react';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
 import { trackEvent } from '../utils/analytics';
@@ -6,16 +8,15 @@ import { trackEvent } from '../utils/analytics';
 const FadeInVideo = ({ src, className }: { src: string; className?: string }) => {
   const [loaded, setLoaded] = useState(false);
   return (
-    <video
+    <LazyVideo
       src={src}
-      preload="auto"
       controls
       muted
       playsInline
       autoPlay
       loop
       onLoadedData={() => setLoaded(true)}
-      className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+      className={`${className} transition-opacity duration-500 ${loaded || posterFor(src) ? 'opacity-100' : 'opacity-0'}`}
     />
   );
 };
@@ -78,7 +79,7 @@ const ProjectPage = () => {
       {/* Hero Image */}
       {project.heroImage && (
         <div className="mb-12">
-          <img
+          <Img
             src={project.heroImage.src}
             alt={project.heroImage.alt}
             className="w-full h-auto"
@@ -133,7 +134,7 @@ const ProjectPage = () => {
           {slug === 'control4' ? (
             <div className="space-y-1 sm:space-y-2 lg:space-y-4">
               {/* First image full width */}
-              <img
+              <Img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 className="w-full h-auto max-h-[100vh] object-contain bg-white"
@@ -142,7 +143,7 @@ const ProjectPage = () => {
               <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
                 {project.images.slice(1).filter((_, i) => ![4, 9, 14].includes(i)).map((image, index) => (
                   <div key={`image-${index + 1}`} className="w-full md:basis-[calc(50%-0.5rem)] md:flex-1">
-                    <img
+                    <Img
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-auto max-h-[80vh] object-contain bg-white"
@@ -154,7 +155,7 @@ const ProjectPage = () => {
               <div className="flex flex-row items-end gap-1 sm:gap-2 lg:gap-4 bg-white p-2 sm:p-4">
                 {[project.images[5], project.images[10], project.images[15]].map((image, index) => (
                   <div key={`docked-${index}`} className="flex-1" style={{ transform: index > 0 ? 'scale(0.91)' : undefined, transformOrigin: 'bottom center' }}>
-                    <img
+                    <Img
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-auto object-contain"
@@ -170,7 +171,7 @@ const ProjectPage = () => {
                 <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* First image full width */}
-              <img
+              <Img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 className="max-w-full h-auto"
@@ -178,14 +179,14 @@ const ProjectPage = () => {
               {/* 4th and 2nd images side by side on md+ */}
               <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div className="flex-1">
-                  <img
+                  <Img
                     src={project.images[3].src}
                     alt={project.images[3].alt}
                     className="w-full h-auto"
                   />
                 </div>
                 <div className="flex-1 overflow-hidden">
-                  <img
+                  <Img
                     src={project.images[1].src}
                     alt={project.images[1].alt}
                     className="w-full h-full object-cover"
@@ -196,9 +197,8 @@ const ProjectPage = () => {
               {/* Water brush video (33%) + brushhead image (67%) inline on lg+ */}
               <div className="w-full flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4 px-2 sm:px-0">
                 <div className="lg:w-1/3 bg-black flex justify-center items-center lg:h-[70vh]">
-                  <video
+                  <LazyVideo
                     src={project.videos[2].src}
-                    preload="auto"
                     autoPlay
                     muted
                     loop
@@ -207,7 +207,7 @@ const ProjectPage = () => {
                   />
                 </div>
                 <div className="lg:w-2/3">
-                  <img
+                  <Img
                     src={project.images[2].src}
                     alt={project.images[2].alt}
                     className="w-full lg:h-[70vh] object-cover"
@@ -216,7 +216,7 @@ const ProjectPage = () => {
               </div>
               {/* Remaining images */}
               {[project.images[4], project.images[5]].map((image, index) => (
-                <img
+                <Img
                   key={`image-${index}`}
                   src={image.src}
                   alt={image.alt}
@@ -232,14 +232,14 @@ const ProjectPage = () => {
               {/* 2nd and 3rd images side by side on md+ (right under video) */}
               <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div className="flex-1">
-                  <img
+                  <Img
                     src={project.images[1].src}
                     alt={project.images[1].alt}
                     className="w-full h-auto"
                   />
                 </div>
                 <div className="flex-1">
-                  <img
+                  <Img
                     src={project.images[2].src}
                     alt={project.images[2].alt}
                     className="w-full h-auto"
@@ -247,14 +247,14 @@ const ProjectPage = () => {
                 </div>
               </div>
               {/* First image full width */}
-              <img
+              <Img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 className="max-w-full h-auto"
               />
               {/* Remaining images */}
               {project.images.slice(3).map((image, index) => (
-                <img
+                <Img
                   key={`image-${index + 3}`}
                   src={image.src}
                   alt={image.alt}
@@ -269,7 +269,7 @@ const ProjectPage = () => {
               ))}
               {/* All images except last two */}
               {project.images.slice(0, -2).map((image, index) => (
-                <img
+                <Img
                   key={`image-${index}`}
                   src={image.src}
                   alt={image.alt}
@@ -279,14 +279,14 @@ const ProjectPage = () => {
               {/* Last two images side by side - 33/67 split */}
               <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div style={{ flex: '1 1 33%' }}>
-                  <img
+                  <Img
                     src={project.images[project.images.length - 2].src}
                     alt={project.images[project.images.length - 2].alt}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div style={{ flex: '2 1 67%' }}>
-                  <img
+                  <Img
                     src={project.images[project.images.length - 1].src}
                     alt={project.images[project.images.length - 1].alt}
                     className="w-full h-full object-cover"
@@ -300,7 +300,7 @@ const ProjectPage = () => {
                 <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* First image full width */}
-              <img
+              <Img
                 src={project.images[0].src}
                 alt={project.images[0].alt}
                 className="max-w-full h-auto"
@@ -308,21 +308,21 @@ const ProjectPage = () => {
               {/* 2nd, 3rd, and 4th images inline on lg+ */}
               <div className="w-full flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-4">
                 <div className="flex-1">
-                  <img
+                  <Img
                     src={project.images[1].src}
                     alt={project.images[1].alt}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex-1">
-                  <img
+                  <Img
                     src={project.images[2].src}
                     alt={project.images[2].alt}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex-1">
-                  <img
+                  <Img
                     src={project.images[3].src}
                     alt={project.images[3].alt}
                     className="w-full h-full object-cover"
@@ -331,7 +331,7 @@ const ProjectPage = () => {
               </div>
               {/* Remaining images */}
               {project.images.slice(4).map((image, index) => (
-                <img
+                <Img
                   key={`image-${index + 4}`}
                   src={image.src}
                   alt={image.alt}
@@ -345,7 +345,7 @@ const ProjectPage = () => {
                 <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {project.images.map((image, index) => (
-                <img
+                <Img
                   key={`image-${index}`}
                   src={image.src}
                   alt={image.alt}

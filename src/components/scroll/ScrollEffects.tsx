@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Img, { mediaInfo } from '../common/Img';
 
 // Detect if device is mobile/touch - disable scroll effects on mobile for performance
 const isMobile = () => {
@@ -7,24 +8,29 @@ const isMobile = () => {
 };
 
 // Scroll-based video component with autoplay on visibility
+// Videos only start downloading when they come near the viewport; until then a
+// lightweight poster frame (first frame of the video) holds the space.
 export const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+  const info = mediaInfo(src);
 
   useEffect(() => {
-    const video = videoRef.current;
     const container = containerRef.current;
-    if (!video || !container) return;
+    if (!container) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const video = videoRef.current;
           if (entry.isIntersecting) {
-            video.play().catch(() => {
+            setNear(true);
+            video?.play().catch(() => {
               // Autoplay may be blocked by browser
             });
           } else {
-            video.pause();
+            video?.pause();
           }
         });
       },
@@ -40,14 +46,61 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
         ref={videoRef}
-        src={src}
-        preload="auto"
+        src={near ? src : undefined}
+        poster={info?.poster}
+        width={info?.w}
+        height={info?.h}
+        preload={near ? 'auto' : 'none'}
+        autoPlay={near}
         muted
         loop
         playsInline
         className={className}
       />
     </div>
+  );
+};
+
+// Same lazy behaviour for project-page videos, keeping their own attributes (controls etc.)
+export const LazyVideo = ({
+  src,
+  className,
+  onLoadedData,
+  ...rest
+}: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string }) => {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [near, setNear] = useState(false);
+  const info = mediaInfo(src);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '600px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      {...rest}
+      src={near ? src : undefined}
+      poster={info?.poster}
+      width={info?.w}
+      height={info?.h}
+      preload={near ? 'auto' : 'none'}
+      autoPlay={near && rest.autoPlay}
+      onLoadedData={onLoadedData}
+      className={className}
+    />
   );
 };
 
@@ -81,7 +134,7 @@ export const ScrollImage = ({ src, alt, className, style }: { src: string; alt: 
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -133,7 +186,7 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -180,7 +233,7 @@ export const ScrollPanImageTLBR = ({ src, alt, className, panSpeed = 1 }: { src:
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -224,7 +277,7 @@ export const ScrollPanImageTRBL = ({ src, alt, className, panSpeed = 1 }: { src:
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -267,7 +320,7 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -310,7 +363,7 @@ export const ScrollPanImageLR = ({ src, alt, className, panSpeed = 1 }: { src: s
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -373,7 +426,7 @@ export const ScrollCrossfadeImages = ({
   return (
     <div ref={containerRef} className="relative w-full h-full overflow-hidden">
       {images.map((image, index) => (
-        <img
+        <Img
           key={index}
           src={image.src}
           alt={image.alt}
