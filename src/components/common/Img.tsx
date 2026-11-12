@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react';
 import type { ImgHTMLAttributes } from 'react';
 import manifest from '../../data/mediaManifest.json';
 
-type Entry = { w: number; h: number; variants?: [number, string][]; poster?: string };
+type Entry = { w: number; h: number; variants?: [number, string][]; poster?: string; video?: string };
 const media = manifest as unknown as Record<string, Entry>;
 
 export const mediaInfo = (src?: string): Entry | undefined => (src ? media[src] : undefined);

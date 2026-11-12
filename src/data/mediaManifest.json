@@ -538,9 +538,10 @@
   "w": 1920
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/MODE/MODE_Website_Scroll_optimized.mp4": {
-  "h": 2160,
+  "h": 1080,
   "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/MODE/MODE_Website_Scroll_optimized.mp4.poster.webp",
-  "w": 3804
+  "video": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/video1080/MODE/MODE_Website_Scroll_optimized.mp4",
+  "w": 1902
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/MODE/Mode_ambient_optimized.mp4": {
   "h": 1080,
@@ -558,9 +559,10 @@
   "w": 1920
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Nice/Nice_Remote_optimized.mp4": {
-  "h": 2160,
+  "h": 1080,
   "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Nice/Nice_Remote_optimized.mp4.poster.webp",
-  "w": 3840
+  "video": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/video1080/Nice/Nice_Remote_optimized.mp4",
+  "w": 1920
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Nighthawk_R80_Hero-scaled.jpg": {
   "h": 1440,
@@ -627,6 +629,7 @@
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/Q-Egg/Q-Egg_optimized.mp4": {
   "h": 1080,
   "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/Q-Egg/Q-Egg_optimized.mp4.poster.webp",
+  "video": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/video1080/Q-Egg/Q-Egg_optimized.mp4",
   "w": 1920
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/control4/220722_Control4_Remotes_Marketing%20Renders_3%20for%20Print_Opt9_R1v2.jpg": {
@@ -2496,9 +2499,10 @@
   "w": 3454
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-4k.mp4": {
-  "h": 2160,
+  "h": 1080,
   "poster": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/nocturne-4k.mp4.poster.webp",
-  "w": 3840
+  "video": "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/opt/video1080/nocturne-4k.mp4",
+  "w": 1920
  },
  "https://storage.googleapis.com/jaclyn-portfolio-20d22-media/nocturne-5.jpg": {
   "h": 1940,

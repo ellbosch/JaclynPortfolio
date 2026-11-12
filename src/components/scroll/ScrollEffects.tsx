@@ -14,7 +14,10 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
+  const [fallback, setFallback] = useState(false);
   const info = mediaInfo(src);
+  // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
+  const playSrc = !fallback && info?.video ? info.video : src;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -46,7 +49,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
         ref={videoRef}
-        src={near ? src : undefined}
+        src={near ? playSrc : undefined}
         poster={info?.poster}
         width={info?.w}
         height={info?.h}
@@ -55,6 +58,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
         muted
         loop
         playsInline
+        onError={() => setFallback(true)}
         className={className}
       />
     </div>
@@ -70,7 +74,10 @@ export const LazyVideo = ({
 }: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string }) => {
   const ref = useRef<HTMLVideoElement>(null);
   const [near, setNear] = useState(false);
+  const [fallback, setFallback] = useState(false);
   const info = mediaInfo(src);
+  // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
+  const playSrc = !fallback && info?.video ? info.video : src;
 
   useEffect(() => {
     const el = ref.current;
@@ -92,13 +99,17 @@ export const LazyVideo = ({
     <video
       ref={ref}
       {...rest}
-      src={near ? src : undefined}
+      src={near ? playSrc : undefined}
       poster={info?.poster}
       width={info?.w}
       height={info?.h}
       preload={near ? 'auto' : 'none'}
       autoPlay={near && rest.autoPlay}
       onLoadedData={onLoadedData}
+      onError={(e) => {
+        setFallback(true);
+        rest.onError?.(e);
+      }}
       className={className}
     />
   );
