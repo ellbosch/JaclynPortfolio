@@ -45,6 +45,19 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
     return () => observer.disconnect();
   }, []);
 
+  // Once the file is attached, explicitly start playback (like the original
+  // component did) instead of relying on the autoplay attribute alone, which
+  // real browsers may ignore for a src added after mount.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!near || !video) return;
+    video.muted = true;
+    video.setAttribute('muted', '');
+    video.play().catch(() => {
+      // Autoplay may be blocked by browser
+    });
+  }, [near, playSrc]);
+
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
@@ -94,6 +107,17 @@ export const LazyVideo = ({
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Start playback explicitly once the file is attached (see ScrollVideo).
+  useEffect(() => {
+    const el = ref.current;
+    if (!near || !el || !rest.autoPlay) return;
+    el.muted = true;
+    el.setAttribute('muted', '');
+    el.play().catch(() => {
+      // Autoplay may be blocked by browser; controls remain available
+    });
+  }, [near, playSrc, rest.autoPlay]);
 
   return (
     <video
