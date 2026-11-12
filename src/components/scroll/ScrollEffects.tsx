@@ -10,10 +10,12 @@ const isMobile = () => {
 // Scroll-based video component with autoplay on visibility
 // Videos only start downloading when they come near the viewport; until then a
 // lightweight poster frame (first frame of the video) holds the space.
-export const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
+export const ScrollVideo = ({ src, className, eager = false }: { src: string; className: string; eager?: boolean }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [near, setNear] = useState(false);
+  // eager: top-of-page video, rendered exactly like the live site (src on first
+  // render, no poster) so Safari starts it as fast as production does.
+  const [near, setNear] = useState(eager);
   const [fallback, setFallback] = useState(false);
   const info = mediaInfo(src);
   // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
@@ -62,7 +64,7 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
         ref={videoRef}
-        poster={info?.poster}
+        poster={eager ? undefined : info?.poster}
         width={info?.w}
         height={info?.h}
         // Always "auto": with no src nothing downloads, and Safari only honours
@@ -86,10 +88,12 @@ export const LazyVideo = ({
   src,
   className,
   onLoadedData,
+  eager = false,
   ...rest
-}: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string }) => {
+}: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string; eager?: boolean }) => {
   const ref = useRef<HTMLVideoElement>(null);
-  const [near, setNear] = useState(false);
+  // eager: first video on the page, rendered exactly like the live site.
+  const [near, setNear] = useState(eager);
   const [fallback, setFallback] = useState(false);
   const info = mediaInfo(src);
   // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
@@ -97,7 +101,7 @@ export const LazyVideo = ({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || eager) return;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {
@@ -126,7 +130,7 @@ export const LazyVideo = ({
     <video
       ref={ref}
       {...rest}
-      poster={info?.poster}
+      poster={eager ? undefined : info?.poster}
       width={info?.w}
       height={info?.h}
       // See ScrollVideo: keep preload "auto" and attach src last (Safari).

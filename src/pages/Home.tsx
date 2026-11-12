@@ -259,6 +259,7 @@ const Home = () => {
                       <div className="mb-1 sm:mb-2 lg:mb-4">
                         <ScrollVideo
                           src={project.videos[0].src}
+                          eager={projectIndex === 0}
                           className="w-full h-auto"
                         />
                       </div>
