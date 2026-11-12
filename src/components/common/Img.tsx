@@ -9,7 +9,7 @@ export const mediaInfo = (src?: string): Entry | undefined => (src ? media[src] 
 export const posterFor = (src?: string): string | undefined => mediaInfo(src)?.poster;
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & {
-  /** Load immediately (above-the-fold images). Default: lazy. */
+  /** Unused: every image loads eagerly, like production. */
   priority?: boolean;
 };
 
@@ -32,7 +32,7 @@ const Img = forwardRef<HTMLImageElement, Props>(({ src, priority, sizes, ...rest
       sizes={variants ? sizes ?? '100vw' : undefined}
       width={rest.width ?? entry?.w}
       height={rest.height ?? entry?.h}
-      loading={priority ? 'eager' : 'lazy'}
+      loading="eager"
       decoding="async"
       onError={(e) => {
         if (variants) setFallback(true);
