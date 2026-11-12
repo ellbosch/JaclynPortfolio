@@ -62,17 +62,20 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
         ref={videoRef}
-        src={near ? playSrc : undefined}
         poster={info?.poster}
         width={info?.w}
         height={info?.h}
-        preload={near ? 'auto' : 'none'}
-        autoPlay={near}
+        // Always "auto": with no src nothing downloads, and Safari only honours
+        // the preload value present when src is attached (none -> slow start).
+        preload="auto"
+        autoPlay
         muted
         loop
         playsInline
         onError={() => setFallback(true)}
         className={className}
+        // src last so every other attribute is in place before loading begins.
+        src={near ? playSrc : undefined}
       />
     </div>
   );
@@ -123,18 +126,18 @@ export const LazyVideo = ({
     <video
       ref={ref}
       {...rest}
-      src={near ? playSrc : undefined}
       poster={info?.poster}
       width={info?.w}
       height={info?.h}
-      preload={near ? 'auto' : 'none'}
-      autoPlay={near && rest.autoPlay}
+      // See ScrollVideo: keep preload "auto" and attach src last (Safari).
+      preload="auto"
       onLoadedData={onLoadedData}
       onError={(e) => {
         setFallback(true);
         rest.onError?.(e);
       }}
       className={className}
+      src={near ? playSrc : undefined}
     />
   );
 };
