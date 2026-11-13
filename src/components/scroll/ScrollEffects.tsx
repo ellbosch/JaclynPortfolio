@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Img, { mediaInfo } from '../common/Img';
 
 // Detect if device is mobile/touch - disable scroll effects on mobile for performance
 const isMobile = () => {
@@ -6,25 +7,31 @@ const isMobile = () => {
   return window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
 };
 
-// Scroll-based video component with autoplay on visibility
+// Scroll-based video component with autoplay on visibility.
+// Every video loads straight away, like the live site (src on first render, no
+// poster); the smaller 1080p copy is used when one exists.
 export const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [fallback, setFallback] = useState(false);
+  const info = mediaInfo(src);
+  // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
+  const playSrc = !fallback && info?.video ? info.video : src;
 
   useEffect(() => {
-    const video = videoRef.current;
     const container = containerRef.current;
-    if (!video || !container) return;
+    if (!container) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const video = videoRef.current;
           if (entry.isIntersecting) {
-            video.play().catch(() => {
+            video?.play().catch(() => {
               // Autoplay may be blocked by browser
             });
           } else {
-            video.pause();
+            video?.pause();
           }
         });
       },
@@ -36,18 +43,77 @@ export const ScrollVideo = ({ src, className }: { src: string; className: string
     return () => observer.disconnect();
   }, []);
 
+  // Explicitly start playback (also after a fallback src swap) instead of
+  // relying on the autoplay attribute alone.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.setAttribute('muted', '');
+    video.play().catch(() => {
+      // Autoplay may be blocked by browser
+    });
+  }, [playSrc]);
+
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
         ref={videoRef}
-        src={src}
+        width={info?.w}
+        height={info?.h}
         preload="auto"
+        autoPlay
         muted
         loop
         playsInline
+        onError={() => setFallback(true)}
         className={className}
+        src={playSrc}
       />
     </div>
+  );
+};
+
+// Project-page video: loads straight away like the live site, keeping its own
+// attributes (controls etc.) and using the smaller 1080p copy when one exists.
+export const LazyVideo = ({
+  src,
+  className,
+  onLoadedData,
+  ...rest
+}: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string }) => {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [fallback, setFallback] = useState(false);
+  const info = mediaInfo(src);
+  // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
+  const playSrc = !fallback && info?.video ? info.video : src;
+
+  // Explicitly start playback (also after a fallback src swap).
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !rest.autoPlay) return;
+    el.muted = true;
+    el.setAttribute('muted', '');
+    el.play().catch(() => {
+      // Autoplay may be blocked by browser; controls remain available
+    });
+  }, [playSrc, rest.autoPlay]);
+
+  return (
+    <video
+      ref={ref}
+      {...rest}
+      width={info?.w}
+      height={info?.h}
+      preload="auto"
+      onLoadedData={onLoadedData}
+      onError={(e) => {
+        setFallback(true);
+        rest.onError?.(e);
+      }}
+      className={className}
+      src={playSrc}
+    />
   );
 };
 
@@ -81,7 +147,7 @@ export const ScrollImage = ({ src, alt, className, style }: { src: string; alt: 
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -133,7 +199,7 @@ export const ScrollPanImage = ({ src, alt, className }: { src: string; alt: stri
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -180,7 +246,7 @@ export const ScrollPanImageTLBR = ({ src, alt, className, panSpeed = 1 }: { src:
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -224,7 +290,7 @@ export const ScrollPanImageTRBL = ({ src, alt, className, panSpeed = 1 }: { src:
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -267,7 +333,7 @@ export const ScrollPanImageTB = ({ src, alt, className }: { src: string; alt: st
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -310,7 +376,7 @@ export const ScrollPanImageLR = ({ src, alt, className, panSpeed = 1 }: { src: s
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
-      <img
+      <Img
         ref={imgRef}
         src={src}
         alt={alt}
@@ -373,7 +439,7 @@ export const ScrollCrossfadeImages = ({
   return (
     <div ref={containerRef} className="relative w-full h-full overflow-hidden">
       {images.map((image, index) => (
-        <img
+        <Img
           key={index}
           src={image.src}
           alt={image.alt}

@@ -1,4 +1,5 @@
 import { clients } from '../data/clients';
+import Img from './common/Img';
 import { useEffect, useState, useRef } from 'react';
 import { getAllProjects } from '../data/projects';
 import { trackEvent } from '../utils/analytics';
@@ -124,8 +125,9 @@ const ClientLogos = ({ startAnimation = true, skipAnimation = false }: ClientLog
                 setVisibleTooltip(null);
               }}
             >
-              <img
+              <Img
                 src={client.logo}
+                sizes="240px"
                 alt={`${client.name} logo`}
                 onClick={() => hasWork && handleLogoClick(client.name)}
                 className="h-5 sm:h-6 md:h-7 lg:h-8 w-auto object-contain grayscale brightness-0 dark:invert hover:opacity-100 transition-opacity duration-500"
