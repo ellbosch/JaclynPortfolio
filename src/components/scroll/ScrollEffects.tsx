@@ -7,15 +7,12 @@ const isMobile = () => {
   return window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
 };
 
-// Scroll-based video component with autoplay on visibility
-// Videos only start downloading when they come near the viewport; until then a
-// lightweight poster frame (first frame of the video) holds the space.
-export const ScrollVideo = ({ src, className, eager = false }: { src: string; className: string; eager?: boolean }) => {
+// Scroll-based video component with autoplay on visibility.
+// Every video loads straight away, like the live site (src on first render, no
+// poster); the smaller 1080p copy is used when one exists.
+export const ScrollVideo = ({ src, className }: { src: string; className: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  // eager: top-of-page video, rendered exactly like the live site (src on first
-  // render, no poster) so Safari starts it as fast as production does.
-  const [near, setNear] = useState(eager);
   const [fallback, setFallback] = useState(false);
   const info = mediaInfo(src);
   // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
@@ -30,7 +27,6 @@ export const ScrollVideo = ({ src, className, eager = false }: { src: string; cl
         entries.forEach((entry) => {
           const video = videoRef.current;
           if (entry.isIntersecting) {
-            setNear(true);
             video?.play().catch(() => {
               // Autoplay may be blocked by browser
             });
@@ -47,28 +43,24 @@ export const ScrollVideo = ({ src, className, eager = false }: { src: string; cl
     return () => observer.disconnect();
   }, []);
 
-  // Once the file is attached, explicitly start playback (like the original
-  // component did) instead of relying on the autoplay attribute alone, which
-  // real browsers may ignore for a src added after mount.
+  // Explicitly start playback (also after a fallback src swap) instead of
+  // relying on the autoplay attribute alone.
   useEffect(() => {
     const video = videoRef.current;
-    if (!near || !video) return;
+    if (!video) return;
     video.muted = true;
     video.setAttribute('muted', '');
     video.play().catch(() => {
       // Autoplay may be blocked by browser
     });
-  }, [near, playSrc]);
+  }, [playSrc]);
 
   return (
     <div ref={containerRef} className="overflow-hidden w-full h-full">
       <video
         ref={videoRef}
-        poster={eager ? undefined : info?.poster}
         width={info?.w}
         height={info?.h}
-        // Always "auto": with no src nothing downloads, and Safari only honours
-        // the preload value present when src is attached (none -> slow start).
         preload="auto"
         autoPlay
         muted
@@ -76,64 +68,43 @@ export const ScrollVideo = ({ src, className, eager = false }: { src: string; cl
         playsInline
         onError={() => setFallback(true)}
         className={className}
-        // src last so every other attribute is in place before loading begins.
-        src={near ? playSrc : undefined}
+        src={playSrc}
       />
     </div>
   );
 };
 
-// Same lazy behaviour for project-page videos, keeping their own attributes (controls etc.)
+// Project-page video: loads straight away like the live site, keeping its own
+// attributes (controls etc.) and using the smaller 1080p copy when one exists.
 export const LazyVideo = ({
   src,
   className,
   onLoadedData,
-  eager = false,
   ...rest
-}: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string; eager?: boolean }) => {
+}: React.VideoHTMLAttributes<HTMLVideoElement> & { src: string }) => {
   const ref = useRef<HTMLVideoElement>(null);
-  // eager: first video on the page, rendered exactly like the live site.
-  const [near, setNear] = useState(eager);
   const [fallback, setFallback] = useState(false);
   const info = mediaInfo(src);
   // Smaller 1080p copy when one exists; the original stays in the bucket as a fallback.
   const playSrc = !fallback && info?.video ? info.video : src;
 
+  // Explicitly start playback (also after a fallback src swap).
   useEffect(() => {
     const el = ref.current;
-    if (!el || eager) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setNear(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '600px 0px' }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  // Start playback explicitly once the file is attached (see ScrollVideo).
-  useEffect(() => {
-    const el = ref.current;
-    if (!near || !el || !rest.autoPlay) return;
+    if (!el || !rest.autoPlay) return;
     el.muted = true;
     el.setAttribute('muted', '');
     el.play().catch(() => {
       // Autoplay may be blocked by browser; controls remain available
     });
-  }, [near, playSrc, rest.autoPlay]);
+  }, [playSrc, rest.autoPlay]);
 
   return (
     <video
       ref={ref}
       {...rest}
-      poster={eager ? undefined : info?.poster}
       width={info?.w}
       height={info?.h}
-      // See ScrollVideo: keep preload "auto" and attach src last (Safari).
       preload="auto"
       onLoadedData={onLoadedData}
       onError={(e) => {
@@ -141,7 +112,7 @@ export const LazyVideo = ({
         rest.onError?.(e);
       }}
       className={className}
-      src={near ? playSrc : undefined}
+      src={playSrc}
     />
   );
 };

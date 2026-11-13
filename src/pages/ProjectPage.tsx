@@ -1,23 +1,22 @@
 import { useParams, Link } from 'react-router-dom';
-import Img, { posterFor } from '../components/common/Img';
+import Img from '../components/common/Img';
 import { LazyVideo } from '../components/scroll/ScrollEffects';
 import { useState } from 'react';
 import { getProjectBySlug, getAllProjects, formatCategories } from '../data/projects';
 import { trackEvent } from '../utils/analytics';
 
-const FadeInVideo = ({ src, className, eager = false }: { src: string; className?: string; eager?: boolean }) => {
+const FadeInVideo = ({ src, className }: { src: string; className?: string }) => {
   const [loaded, setLoaded] = useState(false);
   return (
     <LazyVideo
       src={src}
-      eager={eager}
       controls
       muted
       playsInline
       autoPlay
       loop
       onLoadedData={() => setLoaded(true)}
-      className={`${className} transition-opacity duration-500 ${loaded || (!eager && posterFor(src)) ? 'opacity-100' : 'opacity-0'}`}
+      className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
     />
   );
 };
@@ -169,7 +168,7 @@ const ProjectPage = () => {
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {/* First two videos at top */}
               {project.videos.slice(0, 2).map((video, index) => (
-                <FadeInVideo key={`video-${index}`} src={video.src} eager={index === 0} className="w-full h-auto" />
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* First image full width */}
               <Img
@@ -228,7 +227,7 @@ const ProjectPage = () => {
           ) : slug === 'arlo' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
-                <FadeInVideo key={`video-${index}`} src={video.src} eager={index === 0} className="w-full h-auto" />
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* 2nd and 3rd images side by side on md+ (right under video) */}
               <div className="w-full flex flex-col md:flex-row gap-1 sm:gap-2 lg:gap-4">
@@ -266,7 +265,7 @@ const ProjectPage = () => {
           ) : slug === 'netgear-nighthawk' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
-                <FadeInVideo key={`video-${index}`} src={video.src} eager={index === 0} className="w-full h-auto" />
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* All images except last two */}
               {project.images.slice(0, -2).map((image, index) => (
@@ -298,7 +297,7 @@ const ProjectPage = () => {
           ) : slug === 'starkey' ? (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
-                <FadeInVideo key={`video-${index}`} src={video.src} eager={index === 0} className="w-full h-auto" />
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {/* First image full width */}
               <Img
@@ -343,7 +342,7 @@ const ProjectPage = () => {
           ) : (
             <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-4">
               {project.videos.map((video, index) => (
-                <FadeInVideo key={`video-${index}`} src={video.src} eager={index === 0} className="w-full h-auto" />
+                <FadeInVideo key={`video-${index}`} src={video.src} className="w-full h-auto" />
               ))}
               {project.images.map((image, index) => (
                 <Img
